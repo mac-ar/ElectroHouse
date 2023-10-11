@@ -7,7 +7,7 @@
 - Leandro Loto:
 - Agustin Ingacio Miranda:
 - Lourdes Natalia Castillo:
-- Maria Constanza Fontenla:
+- Maria Constanza Fontenla: Estudiante de ing. en agrimensura, 28 años, SDE capital
 
 # Descripcion del Sitio ℹ️ :
 - Queremos contarte que este es un sitio de ventas de productos de Lineas Blancas entre los cuales ofrecemos los siguientes productos:
