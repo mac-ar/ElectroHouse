@@ -1,6 +1,6 @@
 ## Hola somos el equipo de ElectroHouse ✋:
 
-##Integrantes del Grupo 👷‍♂️:
+##Integrantes del Grupo 👷‍♂️💻:
 - Daniel Mora Sole:
 - Marcelo Campos:
 - Roque Peralta:  
@@ -14,6 +14,9 @@
 - Lavaropas, Secarropas, Planchas, LavaVajilla, Heladeras, Freezers, Cocinas, Microondas, Aire Acondicionados y otros.
 - Estos productos estan orientados a personas sofisticadas y con un gusto moderno y exquisito. 
 - Desde Santiago del Estero hacemos envios a todo el Pais. Gratis!! dentro de la provincia y para el resto del pais te lo enviamos gratis!! superando el importe de $200.000 en el total de la compra, visitanos y asombrate.
+
+## Podes encontrarnos en las siguientes Redes Sociales: 
+- <a href="https://www.facebook.com/#">
 
 
 # Sitios de Referencias 🌎 :
