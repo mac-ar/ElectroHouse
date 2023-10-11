@@ -1,6 +1,6 @@
 ## Hola somos el equipo de ElectroHouse ✋:
 
-##Integrantes del Grupo 👷‍♂️💻:
+## Integrantes del Grupo 👷‍♂️💻:
 - Daniel Mora Sole:
 - Marcelo Campos:
 - Roque Peralta:  
@@ -9,7 +9,7 @@
 - Lourdes Natalia Castillo:
 - Maria Constanza Fontenla:
 
-#Descripcion del Sitio ℹ️ :
+# Descripcion del Sitio ℹ️ :
 - Queremos contarte que este es un sitio de ventas de productos de Lineas Blancas entre los cuales ofrecemos los siguientes productos:
 - Lavaropas, Secarropas, Planchas, LavaVajilla, Heladeras, Freezers, Cocinas, Microondas, Aire Acondicionados y otros.
 - Estos productos estan orientados a personas sofisticadas y con un gusto moderno y exquisito. 
