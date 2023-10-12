@@ -2,7 +2,7 @@
 
 ## Integrantes del Grupo 👷‍♂️💻:
 - Daniel Mora Sole:
-- Marcelo Campos:
+- Marcelo Campos 👨‍🦱: Analista de Sistemas y Programador, trabajo en la Obra Social IOSEP en la area de Informatica (Sistemas).
 - Roque Peralta: Ing en Computacion, reparo Pc tanto Software como tambien Hardware, trabajo en el Poder Judicial, tengo 45 años  
 - Leandro Loto:
 - Agustin Ingacio Miranda:
