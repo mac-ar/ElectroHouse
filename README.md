@@ -2,7 +2,7 @@
 
 ## Integrantes del Equipo de Trabajo 👷‍♂️💻:
 - Daniel Mora Sole:
-- Marcelo Campos: Analista de Sistemas y PRogramador, trabajo en la Obra Social IOSEP en Dep. Informatica (Sistemas).
+- Marcelo Campos 👨‍🦱: Analista de Sistemas y PRogramador, trabajo en la Obra Social IOSEP en Dep. Informatica (Sistemas).
 - Roque Peralta: Ing en Computacion, reparo Pc tanto Software como tambien Hardware, trabajo en el Poder Judicial, tengo 45 años  
 - Leandro Loto:
 - Agustin Ingacio Miranda:
