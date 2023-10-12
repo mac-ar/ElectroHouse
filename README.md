@@ -1,6 +1,6 @@
 ## Hola somos el equipo de ElectroHouse ✋:
 
-## Integrantes del Grupo 👷‍♂️💻:
+## Integrantes del Equipo de Trabajo 👷‍♂️💻:
 - Daniel Mora Sole:
 - Marcelo Campos:
 - Roque Peralta: Ing en Computacion, reparo Pc tanto Software como tambien Hardware, trabajo en el Poder Judicial, tengo 45 años  
