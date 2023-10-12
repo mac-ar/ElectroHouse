@@ -1,7 +1,9 @@
 ## Hola somos el equipo de ElectroHouse ✋:
 
 ## Integrantes del Equipo de Trabajo 👷‍♂️💻:
-- Daniel Mora Sole:
+
+- Daniel Mora Sole: Estudiante de ing. en Informatica, recido en Santiago del Estero, tengo 51 años, 
+trabajo en el Poder Judicial en el Area de Informatica. Tecnico de Hardware y Sofware, TI, redes y servidores. email: dmorasole@hotmail.com.
 - Marcelo Campos 👨‍🦱: Analista de Sistemas y PRogramador, trabajo en la Obra Social IOSEP en Dep. Informatica (Sistemas).
 - Roque Peralta: Ing en Computacion, reparo Pc tanto Software como tambien Hardware, trabajo en el Poder Judicial, tengo 45 años  
 - Leandro Loto:
