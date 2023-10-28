@@ -1,0 +1,41 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+:root{
+    --primary-100:#0066CC;
+    --primary-200:#5c93ff;
+    --primary-300:#ccf6ff;
+    --accent-100:#66CCFF;
+    --accent-200:#006d9b;
+    --text-100:#333333;
+    --text-200:#5c5c5c;
+    --bg-100:#ecf5ff;
+    --bg-200:#e2ebf5;
+    --bg-300:#343131;
+    --bg-logo:#04c4cc;
+}
+
+.header-main{
+    background-color: #e1f2f1;
+}
+
+.header-main__bar-services{
+    background-color:#e2ebec;   
+}
+.header-main__bar-logo{
+    background-color: var(--bg-logo);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 3px 10px;    
+}
+.logoEH{
+    width: 150px;
+}
+
+.nav-main{
+    background-color:#97e4e9;
+}
