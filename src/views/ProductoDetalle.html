@@ -3,9 +3,165 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" />
+    <link rel="stylesheet" href="/CSS/producto.css">
+    <link rel="stylesheet" href="/CSS/Style.css">
+
+
+
+    <title>Detalle de producto</title>
 </head>
+
 <body>
+   
     
+    <body>
+        <header>
+            <div class="container-header">
+                <div class="div-segui">
+                    <ul class="ul-segui">
+                        <li><a href="#">Segui tu Compra</a></li>
+                        <li><a href="#">Sucursales</a></li>
+                        <li><a href="#">Centro de Ayuda</a></li>
+                    </ul>
+                </div>
+                <div class="container-nav">
+                    <span>LOGO</span>
+                    <div class="search-input">
+                        <input type="text" name="buscar" id="buscar" placeholder="Search">
+                        <span><i class="fa-solid fa-magnifying-glass" id="lupa"></i></span>
+                    </div>
+                    <span>
+                        <p>mi cuenta</p><i class="fa-solid fa-circle-user"></i>
+                    </span>
+                    <span>
+                        <p>carrito</p><i class="fa-solid fa-cart-shopping"></i>
+                    </span>
+                </div>
+                <nav class="menu">
+                    <span>MENU</span>
+                    <nav>
+                        <ul>
+                            <li><a href="#">Electrodomesticos</a></li>
+                            <li><a href="#">Refrigeracion</a></li>
+                            <li><a href="#">Lavado y Limpieza</a></li>
+                            <li><a href="#">Calefaccion</a></li>
+                            <li><a href="#">OUTLET</a></li>
+                        </ul>
+                    </nav>
+                </nav>
+            </div>
+        </header>
+
+        <main>
+            <h1>DETALLE DEL PRODUCTO</h1>
+
+            <section class="info-del-producto">
+                
+            <div class="producto_precio">
+
+                <img src="/img/heladera.jpg" alt="imagen del producto" class="producto-descripcion">
+                <p class="precio">$30.000</p>
+
+                <br>
+
+                <ul class="tarjetas" type='circle'>
+                    <li type='disc'>Mastercard hasta 3 cuotas sin interés</li>
+                    <li type='disc'>Visa Santander Río hasta 6 cuotas sin interés</li>
+                    <li type='disc'>Tarjeta 3</li>
+                    <li type='disc'>Tarjeta 4</li>
+                </ul>
+
+            </div>
+
+            <div class="contenedor-producto">
+                <h2 class="modelo-producto">Heladera ElectroHouse modelo 2023</h2>
+
+                <div class="sucursal">Confirmar sucursal más cercana para retiro o envío:</div>
+                
+                <br>
+
+                <form action="codpostal.html" method="POST">
+                    <label for="codigo postal" name="codpostal">Código postal</label>
+                    <input type="text" id="codigo postal" name="codpostal"></input>
+                    <button type="submit">Buscar</button>
+                    <p>Sucursal: Santiago Del Estero</p>
+                </form>
+
+                <button class="agregar">Agregar al carrito de compras/Comprar ahora</button>
+
+            </div>
+
+        </section>
+
+            <br>
+
+            <div class="detalles">
+                <h3>Especificaciones técnicas</h3>
+            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Iusto fugit pariatur vel nam, cum voluptate, obcaecati tempora inventore mollitia minus aperiam unde dolorum laborum? Quos aperiam illum natus, tempora hic sed nesciunt repellat laudantium deleniti voluptas voluptatum molestias dolorum sint eaque iure iste cum maiores assumenda. Praesentium neque qui corrupti!</p>
+            </div>
+
+            <div class="detalles">
+            <h3>Descripción</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Id blanditiis dolorum, laudantium repudiandae tenetur hic, mollitia illum voluptatem nam nemo eaque cumque odit facere quos quam? Sequi cum omnis in voluptate, quis sunt harum culpa porro vitae impedit alias repudiandae distinctio amet recusandae sapiente? Nihil maxime incidunt debitis ducimus maiores?</p>
+            </div>
+
+            <div class="detalles">
+            <h3>Productos relacionados</h3>
+            <p>Heladera 2</p>
+            <p>Heladera 3</p>
+            <p>Heladera 4</p>
+            </div>
+
+
+        </main>
+
+
+
+
+
+
+
+        <footer>
+            <div class="container-footer">
+                <div class="logo">
+                    <h2>LOGO</h2>
+                    <i class="fa-brands fa-facebook"></i>
+                    <i class="fa-brands fa-instagram"></i>
+                    <i class="fa-brands fa-twitter"></i>
+                </div>
+                <div class="direccion">
+                    <h3>Dirección<i class="fa-solid fa-house"></i></h3>
+                    <ul>
+                        <li>Calle Falsa Nº 1234</li>
+                        <li>Lun-Sab 08:00 a 17:00</li>
+                    </ul>
+                </div>
+                <div class="consulta">
+                    <h3>Consultas<i class="fa-solid fa-envelope"></i></h3>
+                    <ul>
+                        <li>rrhh@electrohouse.com.ar</li>
+                        <li>consultas@electrohouse.com.ar</li>
+                    </ul>
+                </div>
+                <div class="telefono">
+                    <h3>Via de Comunicación<i class="fa-solid fa-square-phone"></i></h3>
+                    <ul>
+                        <li>0800-43210000<i class="fa-solid fa-phone"></i></li>
+                        <li>+54 (11) 43210000<i class="fa-brands fa-whatsapp"></i></li>
+                        <li>+54 (11) 43210100<i class="fa-brands fa-whatsapp"></i></li>
+                    </ul>
+                </div>
+                <div class="servicio">
+                    <h3>Servicio Tecnico</h3>
+                    <ul>
+                        <li>serviciotecnico@electrohouse.com.ar<i class="fa-solid fa-envelope"></i></li>
+                        <li>+54 (11) 43210200<i class="fa-brands fa-whatsapp"></i></li>
+                    </ul>
+    
+                </div>
+            </div>
+        </footer>
+
 </body>
 </html>

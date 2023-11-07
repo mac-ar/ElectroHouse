@@ -1,0 +1,230 @@
+
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+:root {
+    --primary-100: #0066CC;
+    --primary-200: #5c93ff;
+    --primary-300: #ccf6ff;
+    --accent-100: #66CCFF;
+    --accent-200: #006d9b;
+    --text-100: #333333;
+    --text-200: #5c5c5c;
+    --bg-100: #ecf5ff;
+    --bg-200: #e2ebf5;
+    --bg-300: #343131;
+}
+
+header {
+    margin: 0 auto;
+    padding: 10px;
+    background-color: var(--accent-100);
+}
+
+ul {
+    list-style-type: none;
+}
+a {
+    text-decoration: none;
+}
+
+header .container-header {
+    width: 90%;
+    display: flex;
+    margin: 10px auto;
+    flex-direction: column;
+}
+
+header .div-segui {
+    border: 1.5px solid var(--bg-300);
+    border-radius: 5px;
+    margin-bottom: 10px;
+    padding: 5px;
+}
+
+header .div-segui .ul-segui {
+    width: 50%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+/*-----class container-nav -----*/
+header .container-nav {
+    margin-bottom: 10px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    border: 1.5px solid var(--bg-300);
+    border-radius: 5px;
+    padding: 5px;
+}
+
+header .container-nav .search-input {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    border: 1px solid var(--bg-300);
+    border-radius: 3px;
+    /* background-color: white;*/
+}
+
+header .container-nav .search-input input {
+    width: 120px;
+    height: 20px;
+    border: none;
+    outline: none;
+    text-align: left;
+}
+
+header .container-nav .search-input i {
+    height: 20px;
+    width: 20px;
+    color: var(--bg-300);
+    border-radius: 50px;
+    margin-left: 5px;
+    margin-bottom: 1px;
+}
+
+header .container-nav span {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+header .container-nav span i {
+    height: 20px;
+    width: 20px;
+    color: var(--bg-300);
+    border-radius: 50px;
+    margin-left: 5px;
+    margin-bottom: 1px;
+}
+
+/*-----class MENU -----*/
+header .menu {
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 10px;
+    justify-content: space-around;
+    align-items: center;
+    border: 1.5px solid var(--bg-300);
+    border-radius: 5px;
+    padding: 5px;
+}
+
+header .menu ul {
+    display: flex;
+    flex-direction: row;
+}
+
+header .menu ul li {
+    margin: 10px;
+}
+
+/*-------------***********   FOOTER  ***********-----------------*/
+
+footer {
+    margin: 0 auto;
+    padding: 10px;
+    font-size: 14px;
+    background-color: var(--accent-200);
+}
+
+
+footer .container-footer {
+    width: 90%;
+    margin: 10px auto;
+    display: flex;
+    flex-direction: row;
+    align-items: start;
+    justify-content: space-around;
+    border: 1.5px solid var(--bg-300);
+    border-radius: 5px;
+}
+
+footer h3 {
+    text-align: center;
+    margin-bottom: 5px;
+}
+
+.producto_precio {
+    color: #333333;
+    font-weight: bold;
+    background-color: var(--bg-200);
+    width: 390px;
+    height: 550px;
+    margin: 10px;
+}
+
+h1 {
+    color: #006d9b;
+    font-family: Verdana;
+    font-style: normal;
+    font-weight: 700;
+    text-align: center;
+}
+
+.producto-descripcion {
+    border: solid 1px black;
+    margin: 20px;
+    width: 350px;
+}
+
+.precio {
+    width: 370px;
+    text-align: center;
+    font-family: Verdana;
+}
+
+.tarjetas {
+    margin-left: 20px;
+    
+}
+
+.modelo-producto {
+    margin: 20px;
+}
+
+.contenedor-producto {
+    background-color: var(--bg-200);
+    width: 390px;
+    height: 300px;
+    margin-left: 10px;
+    margin-top: 10px;
+}
+
+.detalles {
+    margin: 10px;
+    background-color: var(--bg-200);
+    width: 90%;
+    padding: 20px;
+    border: solid 2px black;
+
+}
+
+.detalles h3 {
+    text-align: center;
+    font-size: 18px;
+    font-family: Verdana;
+}
+
+.sucursal {
+    margin-top: 10px;
+    margin-bottom: 10x;
+}
+
+.agregar {
+    margin-top: 20px;
+}
+
+@media(min-width:550px) {
+    .info-del-producto{
+        display: flex;
+        width: 90%;
+        justify-content: center;
+        }
+}
