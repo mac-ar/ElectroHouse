@@ -47,10 +47,16 @@ header a {
     text-decoration: none
 }
 
+body {
+    font-family: 'Roboto', sans-serif;
+    font-size: 12px; 
+}
+
 .main-body-container {
-    padding: 5px 0px;
+    padding: 10px 0px;
     width: 98%;
     margin: auto;
+    background-color: #ebebeb;
 }
 
 .main-bar-services{
