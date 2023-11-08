@@ -21,16 +21,16 @@
     /* Fuente Barra de Servicios */
     --font-bar-service: #767676;
 
-    --primary-100: #FFFFFF;
-    --primary-200: #e0e0e0;
-    --primary-300: #9b9b9b;
-    --accent-100: #FFCC00;
-    --accent-200: #916e00;
-    --text-100: #000000;
-    --text-200: #2c2c2c;
+    --primary-1000: #FFFFFF;
+    --primary-2000: #e0e0e0;
+    --primary-3000: #9b9b9b;
+    --accent-1000: #FFCC00;
+    --accent-2000: #916e00;
+    --text-1000: #000000;
+    --text-2000: #2c2c2c;
     --bg-1000: #04C4CC;
     --bg-2000: #00bac2;
-    --bg-3000: #00939b;
+    --bg-3000: #00939b;;
 }
 
 form {
