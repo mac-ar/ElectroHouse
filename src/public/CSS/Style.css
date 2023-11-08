@@ -21,16 +21,16 @@
     /* Fuente Barra de Servicios */
     --font-bar-service: #767676;
 
-    --primary-100:#FFFFFF;
-    --primary-200:#e0e0e0;
-    --primary-300:#9b9b9b;
-    --accent-100:#FFCC00;
-    --accent-200:#916e00;
-    --text-100:#000000;
-    --text-200:#2c2c2c;
-    --bg-100:#04C4CC;
-    --bg-200:#00bac2;
-    --bg-300:#00939b;
+    --primary-1000:#FFFFFF;
+    --primary-2000:#e0e0e0;
+    --primary-3000:#9b9b9b;
+    --accent-1000:#FFCC00;
+    --accent-2000:#916e00;
+    --text-1000:#000000;
+    --text-2000:#2c2c2c;
+    --bg-1000:#04C4CC;
+    --bg-2000:#00bac2;
+    --bg-3000:#00939b;
 }
 
 header{
@@ -92,14 +92,14 @@ body {
 .header-main__bar-logo{
     background-color: var(--bg-logo-header);
     display: flex;
-    flex-flow: row nowrap;
-    justify-content: space-between;
+    flex-flow: row wrap;
+    justify-content: space-around;
     align-items: center;
     margin-top: 3px;
 }
 /* LOGO IMAGEN */
 .logoEH img{    
-    width: 150px;
+    width: 100px;
 }
 
 .search-bar {
@@ -110,8 +110,9 @@ body {
    /* Caja de texto Busqueda */
 .search-bar input {
    border: solid 1px white;
-   width: 500px;
+   width: 175px;
    height: 40px;
+   text-align: center;
 }
 
 /* Icono de barra Busqueda */
@@ -132,8 +133,13 @@ body {
 
 .menu-user { 
     display: flex;
-    justify-content:space-evenly;
-    align-items:end;  
+    justify-content:space-between;
+    align-items:center;  
+    margin-right: 10px;
+}
+
+.menu-user p {
+    display: none;
 }
 
 .menu-user a {

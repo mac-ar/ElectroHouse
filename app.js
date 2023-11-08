@@ -4,7 +4,7 @@ const path = require('path');
 
 app.use(express.static(path.join(__dirname, 'src', 'public')));
 
-/* RUTAS */
+    /*****  RUTAS *******/
 app.get('/', (req,res)=>{
     res.sendFile(path.join(__dirname, "src", 'views', 'index.html'))
 })
@@ -15,5 +15,6 @@ app.get('/Registro', (req,res)=>{
     res.sendFile(path.join(__dirname, "src", 'views', 'Registro.html'))
 })
 
+/* SERVIDOR */
 const port = 3000;
 app.listen(port, () => console.log(`Servidor Ejecuntandose en puerto: ${port}`))
