@@ -7,7 +7,7 @@ trabajo en el Poder Judicial en el Area de Informatica. Tecnico de Hardware y So
 - Marcelo Campos 👨‍🦱: Analista de Sistemas y Programador, trabajo en la Obra Social IOSEP en Dep. Informatica (Sistemas).
 - Roque Peralta: Ing en Computacion, reparo Pc tanto Software como tambien Hardware, trabajo en el Poder Judicial, tengo 45 años  
 - Leandro Loto:
-- Agustin Ingacio Miranda:
+- Agustin Ingacio Miranda: Estudiante de C.P.N, tengo 28 años de edad, vivo en la ciudad de La Banda, Pcia. de Santigo del Estero.
 - Lourdes Natalia Castillo:
 - Maria Constanza Fontenla: Estudiante de ing. en agrimensura, 28 años, SDE capital
 
