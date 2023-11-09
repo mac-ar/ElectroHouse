@@ -62,10 +62,6 @@ h1 {
     text-align: center;
 }
 
-
-
-
-
 .img-producto {
     border: solid 1px black;
     margin: 8px;
@@ -93,6 +89,14 @@ h1 {
     height: 300px;
     margin-left: 10px;
     margin-top: 10px;
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.contenedor-producto p {
+    text-align: center;
+    margin-top: 10px;
 }
 
 .detalles {
@@ -102,8 +106,6 @@ h1 {
     padding: 10px;
     border: solid 2px var(--bg-3000);
     border-radius: 4%;
-    
-
 }
 
 .detalles h3 {
@@ -112,23 +114,45 @@ h1 {
     font-family: Verdana;
     line-height: 2;
 }
+
 #codigo-postal {
     width: 100px;
+    margin: 0px 5px 0px 5px;
 }
+
+.bt-buscar{
+    text-align: center;
+    border-top: 1.5px solid var(--Negro);
+    width: 60px;
+}
+
 .sucursal {
     margin-top: 10px;
-    margin-bottom: 10x;
+  /*  margin-bottom: 20x;  */
+    height: 30;
+    text-align: center;
+}
+.form-CP{
+    margin-top: 10px;
+    display:flex;
+    justify-content: center;
 }
 
 .agregar {
     margin-top: 20px;
-}
+    text-align: center;
+    border-top: 1.5px solid var(--Negro);
+    width: 150px;
+    border-radius: 5px;
+ }
+
+
 .info-del-producto {
 width: 99%;
 
 }
 
-@media(min-width:382px) {
+@media(min-width:600px) {
     .info-del-producto{
         display: flex;
         width: 98%;
