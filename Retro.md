@@ -9,6 +9,7 @@ Empezar a hacer 🦈
      
     Tener en cuenta las responsabilidades que nos asignamos.
     Trabajar con ramas de git
+    Profundizar conocimientos en herramientas como GitHub, etc
 
 Seguir haciendo 🔨⏩
     
