@@ -66,6 +66,7 @@ main .container .carrito {
     border-left: 1px;
     border-color: var(--text-200);
     border-style: inset;
+    border-radius: 5%;
     background-color: rgb(206, 201, 201);
 }
 

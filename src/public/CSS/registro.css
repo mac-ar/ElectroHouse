@@ -37,7 +37,7 @@ form {
     width: 450px;
     height: 400px;
     border: 1.5px solid var(--bg-300);
-    border-radius: 10px;
+    border-radius: 5%;
     margin: 20px auto;
     box-shadow: 7px 13px 37px var(--text-100);
 }
