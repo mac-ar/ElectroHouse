@@ -314,7 +314,11 @@ footer h3 {
     }
 
     .menu-user a {
-        font-size: 16px;
+        font-size: 18px;
+    }
+
+    .menu-user i {
+        font-size: 25px;
     }
 
     footer {

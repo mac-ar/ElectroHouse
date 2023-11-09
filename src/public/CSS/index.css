@@ -159,7 +159,7 @@
 
 
 /* MEDIA TABLET 493px */
-@media (min-width: 470px) {
+@media (min-width: 450px) {
     .items_description {
         display: block;
     }
@@ -178,14 +178,6 @@
 
     .section-product article:hover .prod-descripcion{    
         visibility: visible;               
-    }
-    
+    }   
 
-}
-
-/* MEDIA DESKTOP 769px */
-@media (min-width: 769px) {
-    /* main article {
-        box-shadow: 0px 0px 10px rgb(100, 100, 100);
-    }    */
 }
