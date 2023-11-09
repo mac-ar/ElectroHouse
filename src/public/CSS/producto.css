@@ -146,6 +146,10 @@ h1 {
     border-radius: 5px;
  }
 
+ .agregar a {
+    text-decoration: none;
+ }
+
 
 .info-del-producto {
 width: 99%;
