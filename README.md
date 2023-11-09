@@ -17,8 +17,8 @@ trabajo en el Poder Judicial en el Area de Informatica. Tecnico de Hardware y So
 - Estos productos estan orientados a personas sofisticadas y con un gusto moderno y exquisito. 
 - Desde Santiago del Estero hacemos envios a todo el Pais. Gratis!! dentro de la provincia y para el resto del pais te lo enviamos gratis!! superando el importe de $200.000 en el total de la compra, visitanos y asombrate.
 
-## Podes encontrarnos en las siguientes Redes Sociales: 
-- <a href="https://www.facebook.com/#">
+## Tablero de Tarea (Trello): 
+- <a href="https://trello.com/b/uYvtAVgA/grupo-04?completedInviteSignup=1">
 
 
 # Sitios de Referencias 🌎 :
