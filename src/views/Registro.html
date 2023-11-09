@@ -1,11 +1,156 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
+    <!-- MI ESTILO -->
+    <link rel="stylesheet" href="CSS/Style.css">
+    <link rel="stylesheet" href="CSS/registro.css">
+    <link rel="icon" type="image/x-icon" href="/img/ico/electro.ico">
+
+    <!-- Fuentes Google -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap" rel="stylesheet">
+
+    <!-- Iconos Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+        integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+
+    <title>Registro</title>
 </head>
+
 <body>
-    
+    <div class="main-body-container">
+        <header class="header-main">
+            <div>
+                <!-- Barra de Servicios -->
+                <div class="main-bar-services">
+                    <ul class="nav-bar-service">
+                        <li><a href="#"><i class="fa-solid fa-truck-fast"></i>Segui tu compra</a></li>
+                        <li><a href="#"><i class="fa-solid fa-gear"></i>Servicio Tecnico</a></li>
+                        <li><a href="#"><i class="fa-solid fa-store"></i>Sucursales</a></li>
+                        <li><a href="#"><i class="fa-solid fa-phone-volume"></i>Ventas telefonicas</a></li>
+                        <li><a href="#"><i class="fa-regular fa-comments"></i>Centro de Ayuda</a></li>
+                    </ul>
+                </div>
+                <!-- Barra Logo - Search - Menu Login/Carrito -->
+                <div class="header-main__bar-logo">
+                    <div class="logoEH">
+                        <img src="img/ico/logoEHV.png" alt="Logo">
+                    </div>
+                    <div class="search-bar">
+                        <div>
+                            <input type="text" placeholder="Buscar Productos, marcas..." name="buscar">
+                        </div>
+                        <div>
+                            <button type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
+                        </div>
+
+                    </div>
+                    <div class="nav-bar-user">
+                        <ul class="menu-user">
+                            <li><a href="/Registro">Registrate</a><i class="fa-regular fa-address-card"></i></li>
+                            <li><a href="/Login">Ingresar</a><i class="fa-regular fa-circle-user"></i></li>
+                            <li><a href="/Carrito">Mi Carrito</a><i class="fa-solid fa-cart-shopping"></i></li>
+                        </ul>
+                    </div>
+                </div>
+                <!-- Barra de Menu -->
+                <nav class="nav-main">
+                    <div>
+                        <ul class="menu">
+                            <li><a href="/">Inicio</a><i class="fa-solid fa-house"></i></li>
+                            <li><a href="">Electrodomesticos</a></li>
+                            <li><a href="">Refrigeracion</a></li>
+                            <li><a href="">Calefaccion</a></li>
+                            <li><a href="">Hogar</a></li>
+                            <li><a href="">Outlet</a></li>
+                        </ul>
+                    </div>
+                </nav>
+            </div>
+        </header>
+
+        <!-- MAIN -->
+        <main>
+            <form action="" method="post">
+                <h2>Formulario Registración</h2>
+                <div class="formulario">
+                    <div class="label">
+                        <label for="nombre">Nombre</label>
+                        <label for="apellido">Apellido</label>
+                        <label for="email">E-Mail</label>
+                        <label for="usuario">Usuario</label>
+                        <label for="password1">Password</label>
+                        <label for="password2">Confirmar Password</label>
+                    </div>
+                    <div class="input">
+                        <input type="text" name="nombre" id="nombre">
+                        <input type="text" name="apellido" id="apellido">
+                        <input type="email" name="email" id="email" required>
+                        <input type="text" name="usuario" id="usuario" required>
+                        <input type="password" name="password1" id="password1" required>
+                        <input type="password" name="password2" id="password2" required>
+                    </div>
+                </div>
+                <div class="botones">
+                    <button type="reset" value="Borrar">Borrar</button>
+                    <button type="submit" value="Enviar">Enviar</button>
+                </div>
+            </form>
+
+        </main>
+
+        <footer>
+            <div class="container-footer">
+                <div class="logo">
+                    <img src="/img/ico/logoEHV.png" alt="Logo">
+                    <i class="fa-brands fa-facebook"></i>
+                    <i class="fa-brands fa-instagram"></i>
+                    <i class="fa-brands fa-twitter"></i>
+                </div>
+                <div class="direccion">
+                    <h3>Dirección<i class="fa-solid fa-house"></i></h3>
+                    <ul>
+                        <li>Calle Falsa Nº 1234</li>
+                        <li>Lun-Sab 08:00 a 17:00</li>
+                    </ul>
+                </div>
+                <div class="consulta">
+                    <h3>Consultas<i class="fa-solid fa-envelope"></i></h3>
+                    <ul>
+                        <li>rrhh@electrohouse.com.ar</li>
+                        <li>consultas@electrohouse.com.ar</li>
+                    </ul>
+                </div>
+                <div class="telefono">
+                    <h3>Via de Comunicación<i class="fa-solid fa-square-phone"></i></h3>
+                    <ul>
+                        <li>0800-43210000<i class="fa-solid fa-phone"></i></li>
+                    </ul>
+                </div>
+                <div class="Whatsapp">
+                    <h3>Whatsapp<i class="fa-brands fa-whatsapp"></i></h3>
+                    <ul>
+                        <li>+54 (11) 43210000<i class="fa-brands fa-whatsapp"></i></li>
+                        <li>+54 (11) 43210100<i class="fa-brands fa-whatsapp"></i></li>
+                    </ul>
+                </div>
+                <div class="servicio">
+                    <h3>Servicio Tecnico<i class="fa-solid fa-screwdriver-wrench"></i></h3>
+                    <ul>
+                        <li>serviciotecnico@electrohouse.com.ar<i class="fa-regular fa-envelope"></i></li>
+                        <li>+54 (11) 43210200<i class="fa-brands fa-whatsapp"></i></li>
+                    </ul>
+
+                </div>
+            </div>
+        </footer>
+    </div>
 </body>
+
 </html>
