@@ -53,9 +53,9 @@
     margin-bottom: 40px;
 }
 
-/* .section-product article img {
-    width: 200px;
-} */
+.section-product a {
+    text-decoration: none;    
+}
 .section-product article img {
     width: 250px;
     height: 300px;
