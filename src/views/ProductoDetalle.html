@@ -14,13 +14,13 @@
 
 <body>
   <div class="main-body-container">
-   
+ 
     <header class="header-main">
         <div>
             <!-- Barra de Servicios -->
             <div class="main-bar-services">
                 <ul class="nav-bar-service">
-                    <li><a href="#"><i class="fa-solid fa-truck-fast bg-icon"></i>Segui tu compra</a></li>
+                    <li><a href="#"><i class="fa-solid fa-truck-fast"></i>Segui tu compra</a></li>
                     <li><a href="#"><i class="fa-solid fa-gear"></i>Servicio Tecnico</a></li>
                     <li><a href="#"><i class="fa-solid fa-store"></i>Sucursales</a></li>
                     <li><a href="#"><i class="fa-solid fa-phone-volume"></i>Ventas telefonicas</a></li>
@@ -43,17 +43,24 @@
                 </div>
                 <div class="nav-bar-user">
                     <ul class="menu-user">
-                        <li><a href="#">Registrate</a><i class="fa-regular fa-address-card"></i></li>
-                        <li><a href="#">Ingresar</a><i class="fa-regular fa-circle-user"></i></li>
-                        <li><a href="#">Mi Carrito</a><i class="fa-solid fa-cart-shopping"></i></li>
+                        <li><a href="/Registro">
+                                <p>Registrate</p><i class="fa-regular fa-address-card"></i>
+                            </a></li>
+                        <li><a href="/Login">
+                                <p>Ingresar</p><i class="fa-regular fa-circle-user"></i>
+                            </a></li>
+                        <li><a href="/Carrito">
+                                <p>Carrito</p><i class="fa-solid fa-cart-shopping"></i>
+                            </a></li>
                     </ul>
                 </div>
             </div>
             <!-- Barra de Menu -->
             <nav class="nav-main">
-                <div>
-                    <ul class="menu">
-                        <li><a href="">Inicio</a><i class="fa-solid fa-house"></i></li>
+                <div class="container-ul">
+                    <div class="home-burger"> <a href="/"><i class="fa-solid fa-house "></i></a> </div>
+                    <ul class="menu">                            
+                        <li><a href="/">Inicio</a>></i></li>
                         <li><a href="">Electrodomesticos</a></li>
                         <li><a href="">Refrigeracion</a></li>
                         <li><a href="">Calefaccion</a></li>
@@ -64,7 +71,7 @@
             </nav>
         </div>
     </header>
-
+ 
     <main>
         <h1>DETALLE DEL PRODUCTO</h1>
 
@@ -72,16 +79,16 @@
                 
             <div class="producto_precio">
 
-                <img src="/img/heladera.jpg" alt="imagen del producto" class="img-producto">
-                <p class="precio">$30.000</p>
+                <img src="/img/product/heladera.jpg" alt="imagen del producto" class="img-producto">
+                <p class="precio">$300.000</p>
 
                 <br>
 
                 <ul class="tarjetas" type='circle'>
                     <li type='disc'>Mastercard hasta 3 cuotas sin interés</li>
                     <li type='disc'>Visa Santander Río hasta 6 cuotas sin interés</li>
-                    <li type='disc'>Tarjeta 3</li>
-                    <li type='disc'>Tarjeta 4</li>
+                    <li type='disc'>Naranja X 1 solo pago</li>
+                    <li type='disc'>Otras tarjetas plan Z</li>
                 </ul>
 
             </div>
@@ -89,19 +96,22 @@
             <div class="contenedor-producto">
                 <h2 class="modelo-producto">Heladera ElectroHouse modelo 2023</h2>
 
-                <div class="sucursal">Confirmar sucursal más cercana para retiro o envío:</div>
+                <div class="sucursal"> <p>Confirmar sucursal más cercana para retiro o envío:</p> </div>
                 
+                <br>
+                <br>
                 <br>
 
                 <form action="codpostal.html" method="POST">
+                   <div class ="form-CP"> 
                     <label for="codigo postal" name="codpostal">Código postal</label>
-                    <input type="text" id="codigo-postal" name="codpostal"></input>
-                    <button type="submit">Buscar</button>
-                    <p>Sucursal: Santiago Del Estero</p>
+                    <input type="text" id="codigo-postal" name="codpostal" value="G4200"></input>
+                    <button class="bt-buscar" type="submit" >Buscar</button>
+                   </div>
+                    <p>Sucursal: Santiago Del Estero </p>
                 </form>
-
-                <button class="agregar">Agregar al carrito de compras/Comprar ahora</button>
-
+                <button class="agregar">Agregar al carrito de compras / Comprar ahora</button>
+         
             </div>
 
       </section>
@@ -127,6 +137,7 @@
       </section>
     </main>
 
+<!--  nuevo pie-->
         <footer>
             <div class="container-footer">
                 <div class="logo">
@@ -135,6 +146,7 @@
                     <i class="fa-brands fa-instagram"></i>
                     <i class="fa-brands fa-twitter"></i>
                 </div>
+
                 <div class="direccion">
                     <h3>Dirección<i class="fa-solid fa-house"></i></h3>
                     <ul>
@@ -142,6 +154,7 @@
                         <li>Lun-Sab 08:00 a 17:00</li>
                     </ul>
                 </div>
+
                 <div class="consulta">
                     <h3>Consultas<i class="fa-solid fa-envelope"></i></h3>
                     <ul>
@@ -149,12 +162,14 @@
                         <li>consultas@electrohouse.com.ar</li>
                     </ul>
                 </div>
+
                 <div class="telefono">
                     <h3>Via de Comunicación<i class="fa-solid fa-square-phone"></i></h3>
                     <ul>
                         <li>0800-43210000<i class="fa-solid fa-phone"></i></li>
                     </ul>
                 </div>
+
                 <div class="Whatsapp">
                     <h3>Whatsapp<i class="fa-brands fa-whatsapp"></i></h3>
                     <ul>
@@ -162,16 +177,17 @@
                         <li>+54 (11) 43210100<i class="fa-brands fa-whatsapp"></i></li>
                     </ul>
                 </div>
+
                 <div class="servicio">
                     <h3>Servicio Tecnico<i class="fa-solid fa-screwdriver-wrench"></i></h3>
                     <ul>
                         <li>serviciotecnico@electrohouse.com.ar<i class="fa-regular fa-envelope"></i></li>
                         <li>+54 (11) 43210200<i class="fa-brands fa-whatsapp"></i></li>
                     </ul>
-
                 </div>
+
             </div>
-        </footer>
+        </footer
 
     </div>
   </body>
