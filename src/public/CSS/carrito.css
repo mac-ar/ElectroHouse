@@ -116,7 +116,11 @@ main .container .carrito .botones {
     margin-top: 50px;
 }
 
-main .container .carrito .botones button {
+main .container .carrito .botones a {
+    text-decoration: none;
+}
+
+main .container .carrito .botones input {
     width: 90%;
     margin: 5px auto;
     background-color: var(--accent-100);
@@ -126,7 +130,7 @@ main .container .carrito .botones button {
     align-items: center;
 }
 
-main .container .carrito .botones button:hover {
+main .container .carrito .botones input:hover {
     background-color: var(--primary-100);
     color: var(--bg-100);
     cursor: pointer;
