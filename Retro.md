@@ -37,7 +37,7 @@ Hacer más 🤙
     Profundizar mas en los temas anteriormente vistos.
    
 Empezar a hacer 🦈    
-    
+    Realizar Weekly.
     Profundizar conocimientos en herramientas Web como GitHub.
     Profundizar conocimientos en herramientas Web OnRender.
 
