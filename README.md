@@ -13,7 +13,7 @@ trabajo en el Poder Judicial en el Area de Informatica. Tecnico de Hardware y So
 
 # Descripcion del Sitio ℹ️ :
 - Queremos contarte que este es un sitio de ventas de productos de Lineas Blancas entre los cuales ofrecemos los siguientes productos:
-- Lavaropas, Secarropas, Planchas, LavaVajilla, Heladeras, Freezers, Cocinas, Microondas, Aire Acondicionados y otros.
+- Lavarropas, Secarropas, Planchas, LavaVajilla, Heladeras, Freezers, Cocinas, Microondas, Aire Acondicionados y otros.
 - Estos productos estan orientados a personas sofisticadas y con un gusto moderno y exquisito. 
 - Desde Santiago del Estero hacemos envios a todo el Pais. Gratis!! dentro de la provincia y para el resto del pais te lo enviamos gratis!! superando el importe de $200.000 en el total de la compra, visitanos y asombrate.
 
