@@ -7,18 +7,18 @@ trabajo en el Poder Judicial en el Area de Informatica. Tecnico de Hardware y So
 - Marcelo Campos 👨‍🦱: Analista de Sistemas y Programador, trabajo en la Obra Social IOSEP en Dep. Informatica (Sistemas).
 - Roque Peralta: Ing en Computacion, reparo Pc tanto Software como tambien Hardware, trabajo en el Poder Judicial, tengo 45 años  
 - Leandro Loto:
-- Agustin Ingacio Miranda:
+- Agustin Ingacio Miranda: Estudiante de C.P.N, tengo 28 años de edad, vivo en la ciudad de La Banda, Pcia. de Santigo del Estero.
 - Lourdes Natalia Castillo:
 - Maria Constanza Fontenla: Estudiante de ing. en agrimensura, 28 años, SDE capital
 
 # Descripcion del Sitio ℹ️ :
 - Queremos contarte que este es un sitio de ventas de productos de Lineas Blancas entre los cuales ofrecemos los siguientes productos:
-- Lavaropas, Secarropas, Planchas, LavaVajilla, Heladeras, Freezers, Cocinas, Microondas, Aire Acondicionados y otros.
+- Lavarropas, Secarropas, Planchas, LavaVajilla, Heladeras, Freezers, Cocinas, Microondas, Aire Acondicionados y otros.
 - Estos productos estan orientados a personas sofisticadas y con un gusto moderno y exquisito. 
 - Desde Santiago del Estero hacemos envios a todo el Pais. Gratis!! dentro de la provincia y para el resto del pais te lo enviamos gratis!! superando el importe de $200.000 en el total de la compra, visitanos y asombrate.
 
-## Podes encontrarnos en las siguientes Redes Sociales: 
-- <a href="https://www.facebook.com/#">
+## Tablero de Tarea (Trello): 
+- <a href="https://trello.com/b/uYvtAVgA/grupo-04?completedInviteSignup=1">Trello</a>
 
 
 # Sitios de Referencias 🌎 :
