@@ -183,12 +183,13 @@ body {
     margin: 0 7px;
 }
 
-.home-burger{
-    display: flex ;
+.home-burger {
+    display: flex;
     align-items: center;
     font-size: 25px;
-    margin: 0 10px;    
+    margin: 0 10px;
 }
+
 .home-burger a i {
     color: white;
 
@@ -210,7 +211,7 @@ footer .container-footer {
     padding-right: 10px;
     display: flex;
     flex-flow: column wrap;
-    align-items: center;
+    align-items: flex-start;
     align-content: center;
     justify-content: space-between;
 }
@@ -261,8 +262,8 @@ footer h3 {
         display: flex;
     }
 
-    .home-burger{
-        display: none ;        
+    .home-burger {
+        display: none;
     }
 }
 
@@ -274,8 +275,9 @@ footer h3 {
     }
 
     .menu-user a {
-    font-size: 15px;    
-}
+        font-size: 15px;
+    }
+
     .logoEH img {
         width: 150px;
     }
@@ -303,12 +305,12 @@ footer h3 {
     }
 
     /* Icono de barra Busqueda */
-    .search-bar i {        
+    .search-bar i {
         font-size: 22px;
     }
 
     /* Boton Buscar */
-    .search-bar button {       
+    .search-bar button {
         width: 52px;
         height: 52px;
     }

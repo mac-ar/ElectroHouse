@@ -91,9 +91,13 @@ form .formulario .input select {
     height: 20px;
 }
 
+form .formulario .input textarea {
+    resize: none;
+}
+
 form .botones {
     width: 70%;
-    margin: 30px auto;
+    margin: 10px auto;
     text-align: center;
 }
 

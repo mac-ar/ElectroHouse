@@ -7,8 +7,11 @@ const productoController = {
     Carrito: (req, res) => {
         res.render('../views/products/Carrito')
     },
-    abmProducto: (req, res) => {
-        res.render('../views/products/abmProducto')
+    editarProducto: (req, res) => {
+        res.render('../views/products/editarProducto')
+    },
+    agregarProducto: (req, res) => {
+        res.render('../views/products/agregarProducto')
     }
 
 }

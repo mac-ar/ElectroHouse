@@ -4,10 +4,12 @@ const router = express.Router();
 
 const productoControl = require('../controllers/productoControl');
 
-router.get('/abmProducto', productoControl.abmProducto);
+router.get('/editarProducto', productoControl.editarProducto);
 
 router.get('/Carrito', productoControl.Carrito);
 
 router.get('/ProductoDetalle', productoControl.productoDetalle);
+
+router.get('/agregarProducto', productoControl.agregarProducto);
 
 module.exports = router;
