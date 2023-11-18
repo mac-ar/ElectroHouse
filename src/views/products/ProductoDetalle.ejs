@@ -1,90 +1,94 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" />
-    <link rel="stylesheet" href="/CSS/producto.css">
-    <link rel="stylesheet" href="/CSS/Style.css">
 
 
+<%- include('../partials/head.ejs', {myStyle: "producto.css" , title: "Detalle de producto" }) %>
 
-    <title>Detalle de producto</title>
-</head>
+    <body>
+        <div class="main-body-container">
 
-<body>
-  <div class="main-body-container">
- 
-    <%- include('../partials/header.ejs') %>
- 
-    <main>
-        <h1>DETALLE DEL PRODUCTO</h1>
+            <%- include('../partials/header.ejs') %>
 
-      <section class="info-del-producto">
-                
-            <div class="producto_precio">
+                <main>
+                    <h1>DETALLE DEL PRODUCTO</h1>
 
-                <img src="/img/product/heladera.jpg" alt="imagen del producto" class="img-producto">
-                <p class="precio">$300.000</p>
+                    <section class="info-del-producto">
 
-                <br>
+                        <div class="producto_precio">
 
-                <ul class="tarjetas" type='circle'>
-                    <li type='disc'>Mastercard hasta 3 cuotas sin interés</li>
-                    <li type='disc'>Visa Santander Río hasta 6 cuotas sin interés</li>
-                    <li type='disc'>Naranja X 1 solo pago</li>
-                    <li type='disc'>Otras tarjetas plan Z</li>
-                </ul>
+                            <img src="/img/product/heladera.jpg" alt="imagen del producto" class="img-producto">
+                            <p class="precio">$300.000</p>
 
-            </div>
+                            <br>
 
-            <div class="contenedor-producto">
-                <h2 class="modelo-producto">Heladera ElectroHouse modelo 2023</h2>
+                            <ul class="tarjetas" type='circle'>
+                                <li type='disc'>Mastercard hasta 3 cuotas sin interés</li>
+                                <li type='disc'>Visa Santander Río hasta 6 cuotas sin interés</li>
+                                <li type='disc'>Naranja X 1 solo pago</li>
+                                <li type='disc'>Otras tarjetas plan Z</li>
+                            </ul>
 
-                <div class="sucursal"> <p>Confirmar sucursal más cercana para retiro o envío:</p> </div>
-                
-                <br>
-                <br>
-                <br>
+                        </div>
 
-                <form action="codpostal.html" method="POST">
-                   <div class ="form-CP"> 
-                    <label for="codigo postal" name="codpostal">Código postal</label>
-                    <input type="text" id="codigo-postal" name="codpostal" value="G4200"></input>
-                    <button class="bt-buscar" type="submit" >Buscar</button>
-                   </div>
-                    <p>Sucursal: Santiago Del Estero </p>
-                </form>
-                <button class="agregar"><a href="/Carrito">Agregar al carrito de compras / Comprar ahora</a></button>
-         
-            </div>
+                        <div class="contenedor-producto">
+                            <h2 class="modelo-producto">Heladera ElectroHouse modelo 2023</h2>
 
-      </section>
+                            <div class="sucursal">
+                                <p>Confirmar sucursal más cercana para retiro o envío:</p>
+                            </div>
 
-            
-      <section class="contenedor-detalle"> 
-            <div class="detalles">
-                <h3>Especificaciones técnicas</h3>
-            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Iusto fugit pariatur vel nam, cum voluptate, obcaecati tempora inventore mollitia minus aperiam unde dolorum laborum? Quos aperiam illum natus, tempora hic sed nesciunt repellat laudantium deleniti voluptas voluptatum molestias dolorum sint eaque iure iste cum maiores assumenda. Praesentium neque qui corrupti!</p>
-            </div>
+                            <br>
+                            <br>
+                            <br>
 
-            <div class="detalles">
-            <h3>Descripción</h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Id blanditiis dolorum, laudantium repudiandae tenetur hic, mollitia illum voluptatem nam nemo eaque cumque odit facere quos quam? Sequi cum omnis in voluptate, quis sunt harum culpa porro vitae impedit alias repudiandae distinctio amet recusandae sapiente? Nihil maxime incidunt debitis ducimus maiores?</p>
-            </div>
+                            <form action="codpostal.html" method="POST">
+                                <div class="form-CP">
+                                    <label for="codigo postal" name="codpostal">Código postal</label>
+                                    <input type="text" id="codigo-postal" name="codpostal" value="G4200"></input>
+                                    <button class="bt-buscar" type="submit">Buscar</button>
+                                </div>
+                                <p>Sucursal: Santiago Del Estero </p>
+                            </form>
+                            <button class="agregar"><a href="/Carrito">Agregar al carrito de compras / Comprar
+                                    ahora</a></button>
 
-            <div class="detalles">
-            <h3>Productos relacionados</h3>
-            <p>Heladera 2</p>
-            <p>Heladera 3</p>
-            <p>Heladera 4</p>
-            </div>
-      </section>
-    </main>
+                        </div>
 
-<!--  nuevo pie-->
-    <%- include('../partials/footer.ejs') %>
+                    </section>
 
-    </div>
-  </body>
+
+                    <section class="contenedor-detalle">
+                        <div class="detalles">
+                            <h3>Especificaciones técnicas</h3>
+                            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Iusto fugit pariatur vel nam,
+                                cum voluptate, obcaecati tempora inventore mollitia minus aperiam unde dolorum laborum?
+                                Quos aperiam illum natus, tempora hic sed nesciunt repellat laudantium deleniti voluptas
+                                voluptatum molestias dolorum sint eaque iure iste cum maiores assumenda. Praesentium
+                                neque qui corrupti!</p>
+                        </div>
+
+                        <div class="detalles">
+                            <h3>Descripción</h3>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Id blanditiis dolorum,
+                                laudantium repudiandae tenetur hic, mollitia illum voluptatem nam nemo eaque cumque odit
+                                facere quos quam? Sequi cum omnis in voluptate, quis sunt harum culpa porro vitae
+                                impedit alias repudiandae distinctio amet recusandae sapiente? Nihil maxime incidunt
+                                debitis ducimus maiores?</p>
+                        </div>
+
+                        <div class="detalles">
+                            <h3>Productos relacionados</h3>
+                            <p>Heladera 2</p>
+                            <p>Heladera 3</p>
+                            <p>Heladera 4</p>
+                        </div>
+                    </section>
+                </main>
+
+                <!--  nuevo pie-->
+                <%- include('../partials/footer.ejs') %>
+
+        </div>
+    </body>
+
 </html>

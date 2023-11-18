@@ -1,279 +1,269 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
-    <!-- MI ESTILO -->
-    <link rel="stylesheet" href="CSS/Style.css">
-    <link rel="stylesheet" href="CSS/index.css">
-    <link rel="icon" type="image/x-icon" href="/img/ico/electro.ico">
+<%- include('./partials/head.ejs', {myStyle: "index.css" , title: "Inicio" }) %>
 
-    <!-- Fuentes Google -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap" rel="stylesheet">
+    <body>
+        <!-- Contenedo Principal del Body  -->
+        <div class="main-body-container">
+            <%- include('./partials/header.ejs') %>
 
-    <!-- Iconos Awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
-        integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
-        crossorigin="anonymous" referrerpolicy="no-referrer" />
-
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title>Inicio</title>
-</head>
-
-<body>
-    <!-- Contenedo Principal del Body  -->
-    <div class="main-body-container">
-        <%- include('./partials/header.ejs') %>
-
-        <!-- MAIN -->
-        <main>
-            <div class="banner-oferta">
-                <img src="img/banners/coccion-cybermonday.jpg" alt="banner coccion cybermonday">
-            </div>
-
-            <h3 class="titulares">Mira nuestros nuevos productos!!</h3>
-
-            <section class="section-product">
-                <a href="/ProductoDetalle">
-                    <article class="articles">
-                        <div>
-                            <img src="/img/product/heladera.jpg" alt="Imagen Heladera">
-                        </div>
-                        <div class="items_description">
-                            <i class="fa-solid fa-truck-fast bg-icon"></i>
-                            <div class="container-price">
-                                <p class="precio">$390.770 </p>
-                                <p class="descuento">40% OFF</p>
-                            </div>
-                            <div class="pay">
-                                <img class="cuota" src="/img/banners/cuotas-sin-interes.png" alt="logo-intereses">
-                                <img class="credit-card" src="/img/banners/visa-santander.png" alt="Card Visa">
-                            </div>
-                            <div class="prod-descripcion">
-                                <b>Ver Heladera Electrolux</b>
-                            </div>
-                        </div>
-                    </article>
-                </a>
-
-                <a href="/ProductoDetalle">
-                <article class="articles">
-                    <div>
-                        <img src="/img/product/aire.jpg" alt="Imagen aire/acond">
+                <!-- MAIN -->
+                <main>
+                    <div class="banner-oferta">
+                        <img src="img/banners/coccion-cybermonday.jpg" alt="banner coccion cybermonday">
                     </div>
-                    <div class="items_description">
-                        <i class="fa-solid fa-truck-fast bg-icon"></i>
-                        <div class="container-price">
-                            <p class="precio">$690.770 </p>
-                            <p class="descuento">40% OFF</p>
-                        </div>
-                        <div class="pay">
-                            <img class="cuota" src="/img/banners/cuotas-sin-interes.png" alt="logo-intereses">
-                            <img class="credit-card" src="/img/banners/visa-santander.png" alt="Card Visa">
-                        </div>
-                        <div class="prod-descripcion">
-                            <b>Ver Aire Split BGH</b>
-                        </div>
-                    </div>
-                </article>
-                </a>
 
-                <a href="/ProductoDetalle">
-                <article class="articles">
-                    <div>
-                        <img src="/img/product/licuadora.jpg" alt="Imagen Licuadora">
-                    </div>
-                    <div class="items_description">
-                        <i class="fa-solid fa-truck-fast bg-icon"></i>
-                        <div class="container-price">
-                            <p class="precio">$69.770 </p>
-                            <p class="descuento">40% OFF</p>
-                        </div>
-                        <div class="pay">
-                            <img class="cuota" src="/img/banners/cuotas-sin-interes.png" alt="logo-intereses">
-                            <img class="credit-card" src="/img/banners/visa-santander.png" alt="Card Visa">
-                        </div>
-                        <div class="prod-descripcion">
-                            <b>Ver Licuadora Liliana</b>
-                        </div>
-                    </div>
-                </article>
-                </a>
+                    <h3 class="titulares">Mira nuestros nuevos productos!!</h3>
 
+                    <section class="section-product">
+                        <a href="/ProductoDetalle">
+                            <article class="articles">
+                                <div>
+                                    <img src="/img/product/heladera.jpg" alt="Imagen Heladera">
+                                </div>
+                                <div class="items_description">
+                                    <i class="fa-solid fa-truck-fast bg-icon"></i>
+                                    <div class="container-price">
+                                        <p class="precio">$390.770 </p>
+                                        <p class="descuento">40% OFF</p>
+                                    </div>
+                                    <div class="pay">
+                                        <img class="cuota" src="/img/banners/cuotas-sin-interes.png"
+                                            alt="logo-intereses">
+                                        <img class="credit-card" src="/img/banners/visa-santander.png" alt="Card Visa">
+                                    </div>
+                                    <div class="prod-descripcion">
+                                        <b>Ver Heladera Electrolux</b>
+                                    </div>
+                                </div>
+                            </article>
+                        </a>
 
-                <a href="/ProductoDetalle">
-                <article class="articles">
-                    <div>
-                        <img src="/img/product/plancha.jpg" alt="Imagen Plancha">
-                    </div>
-                    <div class="items_description">
-                        <i class="fa-solid fa-truck-fast bg-icon"></i>
-                        <div class="container-price">
-                            <p class="precio">$36.750 </p>
-                            <p class="descuento">40% OFF</p>
-                        </div>
-                        <div class="pay">
-                            <img class="cuota" src="/img/banners/cuotas-sin-interes.png" alt="logo-intereses">
-                            <img class="credit-card" src="/img/banners/visa-santander.png" alt="Card Visa">
-                        </div>
-                        <div class="prod-descripcion">
-                            <b>Ver Plancha Phillips</b>
-                        </div>
-                    </div>
-                </article>
-                </a>
+                        <a href="/ProductoDetalle">
+                            <article class="articles">
+                                <div>
+                                    <img src="/img/product/aire.jpg" alt="Imagen aire/acond">
+                                </div>
+                                <div class="items_description">
+                                    <i class="fa-solid fa-truck-fast bg-icon"></i>
+                                    <div class="container-price">
+                                        <p class="precio">$690.770 </p>
+                                        <p class="descuento">40% OFF</p>
+                                    </div>
+                                    <div class="pay">
+                                        <img class="cuota" src="/img/banners/cuotas-sin-interes.png"
+                                            alt="logo-intereses">
+                                        <img class="credit-card" src="/img/banners/visa-santander.png" alt="Card Visa">
+                                    </div>
+                                    <div class="prod-descripcion">
+                                        <b>Ver Aire Split BGH</b>
+                                    </div>
+                                </div>
+                            </article>
+                        </a>
 
-                <a href="/ProductoDetalle">
-                <article class="articles">
-                    <div>
-                        <img src="/img/product/micro.jpg" alt="Imagen aire/acond">
-                    </div>
-                    <div class="items_description">
-                        <i class="fa-solid fa-truck-fast bg-icon"></i>
-                        <div class="container-price">
-                            <p class="precio">$115.770 </p>
-                            <p class="descuento">40% OFF</p>
-                        </div>
-                        <div class="pay">
-                            <img class="cuota" src="/img/banners/cuotas-sin-interes.png" alt="logo-intereses">
-                            <img class="credit-card" src="/img/banners/visa-santander.png" alt="Card Visa">
-                        </div>
-                        <div class="prod-descripcion">
-                            <b>Ver Microondas BGH</b>
-                        </div>
-                    </div>
-                </article>
-                </a>
-            </section>
-
-            <!-- SECCION DE OFERTAS -->
-            <div class="banner-oferta">
-                <img src="img/banners/heladeras-cybermonday.jpg" alt="banner coccion cybermonday">
-            </div>
-
-            <h3 class="titulares">Un CyberMonday de Ofertas !!!</h3>
-
-            <section class="section-product">
-                <a href="/ProductoDetalle">
-                <article class="articles">
-                    <div>
-                        <img src="/img/product/estufa.jpg" alt="Imagen Estufa">
-                    </div>
-                    <div class="items_description">
-                        <i class="fa-solid fa-truck-fast bg-icon"></i>
-                        <div class="container-price">
-                            <p class="precio">$25.530 </p>
-                            <p class="descuento">40% OFF</p>
-                        </div>
-                        <div class="pay">
-                            <img class="cuota" src="/img/banners/cuotas-sin-interes.png" alt="logo-intereses">
-                            <img class="credit-card" src="/img/banners/visa-santander.png" alt="Card Visa">
-                        </div>
-                        <div class="prod-descripcion">
-                            <b>Ver Estufa Gamma</b>
-                        </div>
-                    </div>
-                </article>
-                </a>
-
-                <a href="/ProductoDetalle">
-                <article class="articles">
-                    <div>
-                        <img src="/img/product/cafetera.jpg" alt="Imagen aire/acond">
-                    </div>
-                    <div class="items_description">
-                        <i class="fa-solid fa-truck-fast bg-icon"></i>
-                        <div class="container-price">
-                            <p class="precio">$116.290 </p>
-                            <p class="descuento">40% OFF</p>
-                        </div>
-                        <div class="pay">
-                            <img class="cuota" src="/img/banners/cuotas-sin-interes.png" alt="logo-intereses">
-                            <img class="credit-card" src="/img/banners/visa-santander.png" alt="Card Visa">
-                        </div>
-                        <div class="prod-descripcion">
-                            <b>Ver Cafetera Express</b>
-                        </div>
-                    </div>
-                </article>
-                </a>
-
-                <a href="/ProductoDetalle">
-                <article class="articles">
-                    <div>
-                        <img src="/img/product/lavarropa.jpg" alt="Imagen aire/acond">
-                    </div>
-                    <div class="items_description">
-                        <i class="fa-solid fa-truck-fast bg-icon"></i>
-                        <div class="container-price">
-                            <p class="precio">$389.999 </p>
-                            <p class="descuento">40% OFF</p>
-                        </div>
-                        <div class="pay">
-                            <img class="cuota" src="/img/banners/cuotas-sin-interes.png" alt="logo-intereses">
-                            <img class="credit-card" src="/img/banners/visa-santander.png" alt="Card Visa">
-                        </div>
-                        <div class="prod-descripcion">
-                            <b>Ver Lavarropa Drean</b>
-                        </div>
-                    </div>
-                </article>
-                </a>
-
-                <a href="/ProductoDetalle">
-                <article class="articles">
-                    <div>
-                        <img src="/img/product/aspiradora.jpg" alt="Imagen Aspiradora">
-                    </div>
-                    <div class="items_description">
-                        <i class="fa-solid fa-truck-fast bg-icon"></i>
-                        <div class="container-price">
-                            <p class="precio">$85.490 </p>
-                            <p class="descuento">40% OFF</p>
-                        </div>
-                        <div class="pay">
-                            <img class="cuota" src="/img/banners/cuotas-sin-interes.png" alt="logo-intereses">
-                            <img class="credit-card" src="/img/banners/visa-santander.png" alt="Card Visa">
-                        </div>
-                        <div class="prod-descripcion">
-                            <b>Ver Plancha Gamma</b>
-                        </div>
-                    </div>
-                </article>
-                </a>
-
-                <a href="/ProductoDetalle">
-                <article class="articles">
-                    <div>
-                        <img src="/img/product/batidora.jpg" alt="Imagen Batidora">
-                    </div>
-                    <div class="items_description">
-                        <i class="fa-solid fa-truck-fast bg-icon"></i>
-                        <div class="container-price">
-                            <p class="precio">$77.399 </p>
-                            <p class="descuento">40% OFF</p>
-                        </div>
-                        <div class="pay">
-                            <img class="cuota" src="/img/banners/cuotas-sin-interes.png" alt="logo-intereses">
-                            <img class="credit-card" src="/img/banners/visa-santander.png" alt="Card Visa">
-                        </div>
-                        <div class="prod-descripcion">
-                            <b>Ver Heladera BGH</b>
-                        </div>
-                    </div>
-                </article>
-                </a>
-            </section>
-
-        </main>
-
-        <%- include('./partials/footer.ejs') %>
-    </div>
+                        <a href="/ProductoDetalle">
+                            <article class="articles">
+                                <div>
+                                    <img src="/img/product/licuadora.jpg" alt="Imagen Licuadora">
+                                </div>
+                                <div class="items_description">
+                                    <i class="fa-solid fa-truck-fast bg-icon"></i>
+                                    <div class="container-price">
+                                        <p class="precio">$69.770 </p>
+                                        <p class="descuento">40% OFF</p>
+                                    </div>
+                                    <div class="pay">
+                                        <img class="cuota" src="/img/banners/cuotas-sin-interes.png"
+                                            alt="logo-intereses">
+                                        <img class="credit-card" src="/img/banners/visa-santander.png" alt="Card Visa">
+                                    </div>
+                                    <div class="prod-descripcion">
+                                        <b>Ver Licuadora Liliana</b>
+                                    </div>
+                                </div>
+                            </article>
+                        </a>
 
 
-</body>
+                        <a href="/ProductoDetalle">
+                            <article class="articles">
+                                <div>
+                                    <img src="/img/product/plancha.jpg" alt="Imagen Plancha">
+                                </div>
+                                <div class="items_description">
+                                    <i class="fa-solid fa-truck-fast bg-icon"></i>
+                                    <div class="container-price">
+                                        <p class="precio">$36.750 </p>
+                                        <p class="descuento">40% OFF</p>
+                                    </div>
+                                    <div class="pay">
+                                        <img class="cuota" src="/img/banners/cuotas-sin-interes.png"
+                                            alt="logo-intereses">
+                                        <img class="credit-card" src="/img/banners/visa-santander.png" alt="Card Visa">
+                                    </div>
+                                    <div class="prod-descripcion">
+                                        <b>Ver Plancha Phillips</b>
+                                    </div>
+                                </div>
+                            </article>
+                        </a>
+
+                        <a href="/ProductoDetalle">
+                            <article class="articles">
+                                <div>
+                                    <img src="/img/product/micro.jpg" alt="Imagen aire/acond">
+                                </div>
+                                <div class="items_description">
+                                    <i class="fa-solid fa-truck-fast bg-icon"></i>
+                                    <div class="container-price">
+                                        <p class="precio">$115.770 </p>
+                                        <p class="descuento">40% OFF</p>
+                                    </div>
+                                    <div class="pay">
+                                        <img class="cuota" src="/img/banners/cuotas-sin-interes.png"
+                                            alt="logo-intereses">
+                                        <img class="credit-card" src="/img/banners/visa-santander.png" alt="Card Visa">
+                                    </div>
+                                    <div class="prod-descripcion">
+                                        <b>Ver Microondas BGH</b>
+                                    </div>
+                                </div>
+                            </article>
+                        </a>
+                    </section>
+
+                    <!-- SECCION DE OFERTAS -->
+                    <div class="banner-oferta">
+                        <img src="img/banners/heladeras-cybermonday.jpg" alt="banner coccion cybermonday">
+                    </div>
+
+                    <h3 class="titulares">Un CyberMonday de Ofertas !!!</h3>
+
+                    <section class="section-product">
+                        <a href="/ProductoDetalle">
+                            <article class="articles">
+                                <div>
+                                    <img src="/img/product/estufa.jpg" alt="Imagen Estufa">
+                                </div>
+                                <div class="items_description">
+                                    <i class="fa-solid fa-truck-fast bg-icon"></i>
+                                    <div class="container-price">
+                                        <p class="precio">$25.530 </p>
+                                        <p class="descuento">40% OFF</p>
+                                    </div>
+                                    <div class="pay">
+                                        <img class="cuota" src="/img/banners/cuotas-sin-interes.png"
+                                            alt="logo-intereses">
+                                        <img class="credit-card" src="/img/banners/visa-santander.png" alt="Card Visa">
+                                    </div>
+                                    <div class="prod-descripcion">
+                                        <b>Ver Estufa Gamma</b>
+                                    </div>
+                                </div>
+                            </article>
+                        </a>
+
+                        <a href="/ProductoDetalle">
+                            <article class="articles">
+                                <div>
+                                    <img src="/img/product/cafetera.jpg" alt="Imagen aire/acond">
+                                </div>
+                                <div class="items_description">
+                                    <i class="fa-solid fa-truck-fast bg-icon"></i>
+                                    <div class="container-price">
+                                        <p class="precio">$116.290 </p>
+                                        <p class="descuento">40% OFF</p>
+                                    </div>
+                                    <div class="pay">
+                                        <img class="cuota" src="/img/banners/cuotas-sin-interes.png"
+                                            alt="logo-intereses">
+                                        <img class="credit-card" src="/img/banners/visa-santander.png" alt="Card Visa">
+                                    </div>
+                                    <div class="prod-descripcion">
+                                        <b>Ver Cafetera Express</b>
+                                    </div>
+                                </div>
+                            </article>
+                        </a>
+
+                        <a href="/ProductoDetalle">
+                            <article class="articles">
+                                <div>
+                                    <img src="/img/product/lavarropa.jpg" alt="Imagen aire/acond">
+                                </div>
+                                <div class="items_description">
+                                    <i class="fa-solid fa-truck-fast bg-icon"></i>
+                                    <div class="container-price">
+                                        <p class="precio">$389.999 </p>
+                                        <p class="descuento">40% OFF</p>
+                                    </div>
+                                    <div class="pay">
+                                        <img class="cuota" src="/img/banners/cuotas-sin-interes.png"
+                                            alt="logo-intereses">
+                                        <img class="credit-card" src="/img/banners/visa-santander.png" alt="Card Visa">
+                                    </div>
+                                    <div class="prod-descripcion">
+                                        <b>Ver Lavarropa Drean</b>
+                                    </div>
+                                </div>
+                            </article>
+                        </a>
+
+                        <a href="/ProductoDetalle">
+                            <article class="articles">
+                                <div>
+                                    <img src="/img/product/aspiradora.jpg" alt="Imagen Aspiradora">
+                                </div>
+                                <div class="items_description">
+                                    <i class="fa-solid fa-truck-fast bg-icon"></i>
+                                    <div class="container-price">
+                                        <p class="precio">$85.490 </p>
+                                        <p class="descuento">40% OFF</p>
+                                    </div>
+                                    <div class="pay">
+                                        <img class="cuota" src="/img/banners/cuotas-sin-interes.png"
+                                            alt="logo-intereses">
+                                        <img class="credit-card" src="/img/banners/visa-santander.png" alt="Card Visa">
+                                    </div>
+                                    <div class="prod-descripcion">
+                                        <b>Ver Plancha Gamma</b>
+                                    </div>
+                                </div>
+                            </article>
+                        </a>
+
+                        <a href="/ProductoDetalle">
+                            <article class="articles">
+                                <div>
+                                    <img src="/img/product/batidora.jpg" alt="Imagen Batidora">
+                                </div>
+                                <div class="items_description">
+                                    <i class="fa-solid fa-truck-fast bg-icon"></i>
+                                    <div class="container-price">
+                                        <p class="precio">$77.399 </p>
+                                        <p class="descuento">40% OFF</p>
+                                    </div>
+                                    <div class="pay">
+                                        <img class="cuota" src="/img/banners/cuotas-sin-interes.png"
+                                            alt="logo-intereses">
+                                        <img class="credit-card" src="/img/banners/visa-santander.png" alt="Card Visa">
+                                    </div>
+                                    <div class="prod-descripcion">
+                                        <b>Ver Heladera BGH</b>
+                                    </div>
+                                </div>
+                            </article>
+                        </a>
+                    </section>
+
+                </main>
+
+                <%- include('./partials/footer.ejs') %>
+        </div>
+
+
+    </body>
 
 </html>

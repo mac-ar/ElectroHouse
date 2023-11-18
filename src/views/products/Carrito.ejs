@@ -1,69 +1,49 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
-    <!-- MI ESTILO -->
-    <link rel="stylesheet" href="CSS/Style.css">
-    <link rel="stylesheet" href="CSS/carrito.css">
-    <link rel="icon" type="image/x-icon" href="/img/ico/electro.ico">
 
+<%- include('../partials/head.ejs', {myStyle: "carrito.css" , title: "Mi Carrito" }) %>
 
-    <!-- Fuentes Google -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap" rel="stylesheet">
+    <body>
+        <!-- Contenedo Principal del Body  -->
+        <div class="main-body-container">
+            <%- include('../partials/header.ejs') %>
 
-    <!-- Iconos Awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
-        integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
-        crossorigin="anonymous" referrerpolicy="no-referrer" />
+                <!-- MAIN -->
+                <main>
+                    <h3>Mi CARRITO de Compras</h3>
+                    <div class="container">
+                        <section class="articulos">
+                            <div class="containerArt">
+                                <img src="/img/product/heladera.jpg" alt="" width="150px" height="150px">
+                                <label for="number">Heladera ElectroHouse modelo 2023</label>
+                                <input type="number" name="cantidad" id="" value="1" min="1" max="5">
+                                <p>$ 300.000,00</p>
+                                <a href="#"><i class="fa-regular fa-trash-can"></i></a>
+                            </div>
+                        </section>
 
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title>Mi Carrito</title>
-</head>
-
-<body>
-    <!-- Contenedo Principal del Body  -->
-    <div class="main-body-container">
-        <%- include('../partials/header.ejs') %>
-
-        <!-- MAIN -->
-        <main>
-            <h3>Mi CARRITO de Compras</h3>
-            <div class="container">
-                <section class="articulos">
-                    <div class="containerArt">
-                        <img src="/img/product/heladera.jpg" alt="" width="150px" height="150px">
-                        <label for="number">Heladera ElectroHouse modelo 2023</label>
-                        <input type="number" name="cantidad" id="" value="1" min="1" max="5">
-                        <p>$ 300.000,00</p>
-                        <a href="#"><i class="fa-regular fa-trash-can"></i></a>
+                        <section class="carrito">
+                            <label for="subtotal">
+                                <div>
+                                    <p>SubTotal:</p>
+                                    <p>$ 300.000,00</p>
+                                </div>
+                                <div>
+                                    <p>TOTAL</p>
+                                    <p>$ 300.000,00</p>
+                                </div>
+                            </label>
+                            <div class="botones">
+                                <a href="/"><input type="submit" value="Finalizar Compra"></a>
+                                <a href="/"><input type="submit" value="Seguir Comprando"></a>
+                            </div>
+                        </section>
                     </div>
-                </section>
+                </main>
 
-                <section class="carrito">
-                    <label for="subtotal">
-                        <div>
-                            <p>SubTotal:</p>
-                            <p>$ 300.000,00</p>
-                        </div>
-                        <div>
-                            <p>TOTAL</p>
-                            <p>$ 300.000,00</p>
-                        </div>
-                    </label>
-                    <div class="botones">
-                        <a href="/"><input type="submit" value="Finalizar Compra"></a>
-                        <a href="/"><input type="submit" value="Seguir Comprando"></a>
-                    </div>
-                </section>
-            </div>
-        </main>
-
-        <%- include('../partials/footer.ejs') %>
-    </div>
-</body>
+                <%- include('../partials/footer.ejs') %>
+        </div>
+    </body>
 
 </html>
