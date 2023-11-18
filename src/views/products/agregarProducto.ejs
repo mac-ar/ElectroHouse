@@ -1,38 +1,49 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    <div class="main-container">
 
-        <main>
-            <form action="/" method="all">
-                
-                <div><input type="text" placeholder="Nombre de Producto"></div>
-                <div><input type="text" placeholder="Descripcion del Producto" size="100"></div>
-                <div><input type="file" placeholder="Subir Imagen del Producto"></div>
-                <div><select name="Categoria" id="categoria" >
-                    <option value="Valor01">Valor01</option>
-                    <option value="Valor02">Valor02</option>
-                    <option value="Valor03">Valor03</option>
-                    <option value="Valor04">Valor04</option>
-                </select></div>
-                <div><input type="text" placeholder="Especificaciones Tecnicas"></div>
-                <div><input type="number" placeholder="Precio del Producto" min="0" max="999999999" maxlength="9"></div>
-                <div><input type="text" placeholder="Descuento del Producto" min="0" max="999999999" maxlength="9"></div>
+<%- include('../partials/head.ejs', {myStyle: "agregarProducto.css" , title: "Producto Nuevo" }) %>
 
-                <button type="submit">Agregar</button>
-                <button type="submit">Modificar</button>
-                <button type="reset">Borrar</button>
-                
-            </form>
+    <body>
+        <div class="main-container">
+            <%- include('../partials/header.ejs') %>
+                <main>
+                    <form action="" method="post">
+                        <h2>Agregar Producto</h2>
+                        <div class="formulario">
+                            <div class="label">
+                                <label for="nombre">Nombre de Producto</label>
+                                <label for="descripcion">Descripcion del Producto</label>
+                                <label for="imagen">Subir Imagen del Producto</label>
+                                <label for="categoria">Categoria</label>
+                                <label for="precio">Precio del Producto</label>
+                                <label for="especificaciones">Especificaciones Tecnicas</label>
+                            </div>
+                            <div class="input">
+                                <input type="text" name="nombre" id="nombre" required>
+                                <input type="text" name="descripcion" id="descripcion" required>
+                                <input type="file" name="imagen" id="imagen" required>
+                                <div><select name="categoria" id="categoria">
+                                        <option value="Valor01">Valor01</option>
+                                        <option value="Valor02">Valor02</option>
+                                        <option value="Valor03">Valor03</option>
+                                        <option value="Valor04">Valor04</option>
+                                    </select></div>
+                                <input type="number" name="precio" id="precio" min="0" max="999999999" maxlength="9"
+                                    required>
+                                <input type="text" name="especificaciones" id="especificaciones" required>
 
-        </main>
-        
+                            </div>
+                        </div>
+                        <div class="botones">
+                            <button type="reset" value="Borrar">Borrar</button>
+                            <button type="submit" value="Agregar">Agregar</button>
+                        </div>
+                    </form>
+                </main>
 
-    </div>
-</body>
+                <%- include('../partials/footer.ejs') %>
+
+        </div>
+    </body>
+
 </html>

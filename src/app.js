@@ -1,36 +1,25 @@
 const express = require('express');
-const { dirname } = require('path');
 const app = express();
 const path = require('path');
-
-app.use(express.static(path.join(__dirname, 'public')));
-app.set('view engine', 'ejs');
-app.set('views', path.join(__dirname, 'views'));
 
 const mainRouter = require('./routers/indexRouter');
 const productoRouter = require('./routers/productoRouter');
 const userRouter = require('./routers/userRouter.js');
+const agregarRouter = require('./routers/agregarRouter.js');
 
+app.use(express.static(path.join(__dirname, 'public')));
+
+app.set('view engine', 'ejs');
+
+app.set('views', path.join(__dirname, 'views'));
 app.use('/', mainRouter);
-
-/* app.use('/abmProducto', productoRouter);
-app.use('/Carrito', productoRouter);
-app.use('/ProductoDetalle', productoRouter); */
-
-
 
 app.set('users', path.join(__dirname, 'views', 'users'));
 app.use('/', userRouter);
 
 app.set('products', path.join(__dirname, 'views', 'products'));
 app.use('/', productoRouter);
-
-
-
-/* app.use('/Registro', userRouter); */
-
-
-
+app.use('/', agregarRouter);
 
 /* RUTAS */
 /* app.get('/', (req, res) => {
@@ -55,4 +44,4 @@ app.get('/products/abmProducto', (req, res) => {
 
 /* PORT */
 const port = 3000;
-app.listen(port, () => console.log(`Servidor Ejecuntandose en puerto: ${port}`))
+app.listen(port, () => console.log(`Servidor Ejecuntandose en http://localhost:${port}`))
