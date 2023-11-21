@@ -154,10 +154,6 @@
     border: solid 1px #39b54a;
     background-color: rgb(245, 245, 159); 
 }
-
-
-
-
 /* MEDIA TABLET 493px */
 @media (min-width: 450px) {
     .items_description {
