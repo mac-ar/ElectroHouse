@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
 
-
-<%- include('../partials/head.ejs', {myStyle: "producto.css" , title: "Detalle de producto" }) %>
+<%- include('../partials/head.ejs', {Style: "../CSS/Style.css" , myStyle: "../CSS/producto.css" ,
+    title: "Detalle de producto" }) %>
 
     <body>
         <div class="main-body-container">
@@ -16,8 +16,9 @@
 
                         <div class="producto_precio">
 
-                            <img src="/img/product/heladera.jpg" alt="imagen del producto" class="img-producto">
-                            <p class="precio">$300.000</p>
+                            <img src="/img/product/<%=producto.img%>" alt="imagen del producto" class="img-producto">
+                            <p class="precio">$<%=producto.precio%>
+                            </p>
 
                             <br>
 
@@ -26,12 +27,17 @@
                                 <li type='disc'>Visa Santander Río hasta 6 cuotas sin interés</li>
                                 <li type='disc'>Naranja X 1 solo pago</li>
                                 <li type='disc'>Otras tarjetas plan Z</li>
-                            </ul>
 
+                            </ul>
+                            <% if(producto.oferta=='true' ){%>
+                                <h2>OFERTA</h2>
+                                <%}%>
                         </div>
 
                         <div class="contenedor-producto">
-                            <h2 class="modelo-producto">Heladera ElectroHouse modelo 2023</h2>
+                            <h2 class="modelo-producto">
+                                <%=producto.nombre%>
+                            </h2>
 
                             <div class="sucursal">
                                 <p>Confirmar sucursal más cercana para retiro o envío:</p>
@@ -60,20 +66,26 @@
                     <section class="contenedor-detalle">
                         <div class="detalles">
                             <h3>Especificaciones técnicas</h3>
-                            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Iusto fugit pariatur vel nam,
+                            <!--<p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Iusto fugit pariatur vel nam,
                                 cum voluptate, obcaecati tempora inventore mollitia minus aperiam unde dolorum laborum?
                                 Quos aperiam illum natus, tempora hic sed nesciunt repellat laudantium deleniti voluptas
                                 voluptatum molestias dolorum sint eaque iure iste cum maiores assumenda. Praesentium
-                                neque qui corrupti!</p>
+                                neque qui corrupti!</p>-->
+                            <p>
+                                <%=producto.especificaciones%>
+                            </p>
                         </div>
 
                         <div class="detalles">
                             <h3>Descripción</h3>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Id blanditiis dolorum,
+                            <!--<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Id blanditiis dolorum,
                                 laudantium repudiandae tenetur hic, mollitia illum voluptatem nam nemo eaque cumque odit
                                 facere quos quam? Sequi cum omnis in voluptate, quis sunt harum culpa porro vitae
                                 impedit alias repudiandae distinctio amet recusandae sapiente? Nihil maxime incidunt
-                                debitis ducimus maiores?</p>
+                                debitis ducimus maiores?</p>-->
+                            <p>
+                                <%=producto.descripcion%>
+                            </p>
                         </div>
 
                         <div class="detalles">

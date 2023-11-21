@@ -15,7 +15,8 @@ app.use('/', mainRouter);
 
 app.set('users', path.join(__dirname, 'views', 'users'));
 app.use('/', userRouter);
-
+/*
+app.set('products', path.join(__dirname, 'views'));*/
 app.set('products', path.join(__dirname, 'views', 'products'));
 app.use('/', productoRouter);
 

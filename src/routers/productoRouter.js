@@ -8,7 +8,7 @@ router.get('/editarProducto', productoControl.editarProducto);
 
 router.get('/Carrito', productoControl.Carrito);
 
-router.get('/ProductoDetalle', productoControl.productoDetalle);
+router.get('/ProductoDetalle/:id', productoControl.productoDetalle);
 
 router.get('/agregarProducto', productoControl.agregarProducto);
 
