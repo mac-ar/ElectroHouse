@@ -1,5 +1,4 @@
 const listaProductos = require('../data/listaProductos')
-const listaOfertas = require('../data/listaOfertas')
 
 const productoController = {
     productoDetalle: (req, res) => {
