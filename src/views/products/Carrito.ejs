@@ -14,24 +14,46 @@
                     <h3>Mi CARRITO de Compras</h3>
                     <div class="container">
                         <section class="articulos">
-                            <div class="containerArt">
-                                <img src="/img/product/heladera.jpg" alt="" width="150px" height="150px">
-                                <label for="number">Heladera ElectroHouse modelo 2023</label>
-                                <input type="number" name="cantidad" id="" value="1" min="1" max="5">
-                                <p>$ 300.000,00</p>
-                                <a href="#"><i class="fa-regular fa-trash-can"></i></a>
-                            </div>
+                            <% var total=0 %>
+                                <% var subTotal=0 %>
+
+                                    <% listaCarrito.forEach(productos=> { %>
+                                        <% var descu=0 %>
+                                            <article class="containerArt">
+                                                <img src="/img/product/<%= productos.img%>" alt="" width="150px"
+                                                    height="150px">
+                                                <label for="number">
+                                                    <%= productos.nombre%>
+                                                </label>
+                                                <input type="number" name="cantidad" id="cantidad" value="1" min="1"
+                                                    max="5">
+
+                                                <p>$ <%= productos.precio%>
+                                                </p>
+                                                <form action="/borrarCarrito/<%= productos.id%>?_method=DELETE"
+                                                    method="post">
+                                                    <button type="submit"><i
+                                                            class="fa-regular fa-trash-can"></i></button>
+                                                </form>
+                                                <% descu=productos.precio - (((productos.precio * productos.descuento )
+                                                    )/ 100) %>
+                                                    <% subTotal=subTotal + productos.precio %>
+                                                        <% total=total + descu %>
+                                            </article>
+                                            <% }) %>
                         </section>
 
                         <section class="carrito">
                             <label for="subtotal">
                                 <div>
                                     <p>SubTotal:</p>
-                                    <p>$ 300.000,00</p>
+                                    <p>$ <%= subTotal %>
+                                    </p>
                                 </div>
                                 <div>
                                     <p>TOTAL</p>
-                                    <p>$ 300.000,00</p>
+                                    <p class="total">$ <%= total %>
+                                    </p>
                                 </div>
                             </label>
                             <div class="botones">

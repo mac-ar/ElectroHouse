@@ -10,7 +10,7 @@ const listaProductos = [
             img: 'heladera.jpg',
             categoria: '',
             oferta: 'false',
-            precio: 390.770,
+            precio: '390.770',
             descuento: 40,
             especificaciones: `Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem
       aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.
@@ -28,7 +28,7 @@ const listaProductos = [
             img: 'aire.jpg',
             categoria: '',
             oferta: 'false',
-            precio: 690.770,
+            precio: '690.770',
             descuento: 40,
             especificaciones: `Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem
       aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.
@@ -46,7 +46,7 @@ const listaProductos = [
             img: 'licuadora.jpg',
             categoria: '',
             oferta: 'false',
-            precio: 69.770,
+            precio: '69.770',
             descuento: 40,
             especificaciones: `Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem
       aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.
@@ -64,7 +64,7 @@ const listaProductos = [
             img: 'plancha.jpg',
             categoria: '',
             oferta: 'false',
-            precio: 36.750,
+            precio: '36.750',
             descuento: 40,
             especificaciones: `Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem
       aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.
@@ -82,7 +82,7 @@ const listaProductos = [
             img: 'micro.jpg',
             categoria: '',
             oferta: 'false',
-            precio: 115.770,
+            precio: '115.770',
             descuento: 40,
             especificaciones: `Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem
       aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.
@@ -99,7 +99,7 @@ const listaProductos = [
             img: 'estufa.jpg',
             categoria: '',
             oferta: 'true',
-            precio: 25.530,
+            precio: '25.530',
             descuento: 40,
             especificaciones: `Lorem ipsum dolor sit amet consectetur, adipisicing elit. Iusto fugit pariatur vel nam,
       cum voluptate, obcaecati tempora inventore mollitia minus aperiam unde dolorum laborum?
@@ -117,7 +117,7 @@ const listaProductos = [
             img: 'cafetera.jpg',
             categoria: '',
             oferta: 'true',
-            precio: 116.290,
+            precio: '116.290',
             descuento: 40,
             especificaciones: `Lorem ipsum dolor sit amet consectetur, adipisicing elit. Iusto fugit pariatur vel nam,
       cum voluptate, obcaecati tempora inventore mollitia minus aperiam unde dolorum laborum?
@@ -135,7 +135,7 @@ const listaProductos = [
             img: 'lavarropa.jpg',
             categoria: '',
             oferta: 'true',
-            precio: 389.999,
+            precio: '389.999',
             descuento: 40,
             especificaciones: `Lorem ipsum dolor sit amet consectetur, adipisicing elit. Iusto fugit pariatur vel nam,
       cum voluptate, obcaecati tempora inventore mollitia minus aperiam unde dolorum laborum?
@@ -153,7 +153,7 @@ const listaProductos = [
             img: 'aspiradora.jpg',
             categoria: '',
             oferta: 'true',
-            precio: 85.490,
+            precio: '85.490',
             descuento: 40,
             especificaciones: `Lorem ipsum dolor sit amet consectetur, adipisicing elit. Iusto fugit pariatur vel nam,
       cum voluptate, obcaecati tempora inventore mollitia minus aperiam unde dolorum laborum?
@@ -171,7 +171,7 @@ const listaProductos = [
             img: 'batidora.jpg',
             categoria: '',
             oferta: 'true',
-            precio: 77.399,
+            precio: '77.399',
             descuento: 40,
             especificaciones: `Lorem ipsum dolor sit amet consectetur, adipisicing elit. Iusto fugit pariatur vel nam,
       cum voluptate, obcaecati tempora inventore mollitia minus aperiam unde dolorum laborum?
