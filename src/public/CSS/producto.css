@@ -160,9 +160,21 @@ h1 {
     font-size: 40px;
     color: red;
     margin-top: 10px;
-    text-align: center;
+    text-align: start;
     font-family: 'Roboto Condensed', sans-serif;
+    position: relative;
+    animation-name: example;
+    animation-duration: 4s;
+    animation-iteration-count: infinite;
 }
+
+@keyframes example {
+    0%   {color:red; left:0px; top:0px;}
+    25%   {color:yellow; left:100px; top:0px;}
+    50%  {color:red; left:200px; top:0px;}
+    75%  {color:yellow; left:100px; top:0px;}
+    100% {color:red; left:0px; top:0px;}
+  }
 
 @media(min-width:600px) {
     .info-del-producto {
