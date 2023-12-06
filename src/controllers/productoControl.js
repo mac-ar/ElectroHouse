@@ -1,12 +1,8 @@
-<<<<<<< HEAD
 const fs = require('fs');
 const path = require('path')
 
 const pathProducto = path.join(__dirname, '../data/listaProductos.json')
 const listaProductos = JSON.parse(fs.readFileSync(pathProducto, 'utf-8'))
-=======
-const listaProductos = require('../data/listaProductos')
->>>>>>> 1bd719f74d52688c8b9da456e33889f62a54f6b2
 
 const productoController = {
     productoDetalle: (req, res) => {
