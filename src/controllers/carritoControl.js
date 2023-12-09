@@ -14,7 +14,7 @@ const carritoController = {
         // JSON de productos
         const listaProductos = JSON.parse(fs.readFileSync(pathProducto, 'utf-8'))
         const listaCarrito = JSON.parse(fs.readFileSync(pathCarrito, 'utf-8'))
-        const cantidad = req.body.cantidad
+        let cantidad = req.body.cantidad
         listaProductos.forEach(element => {
             if (element.id == req.params.id) {
                 // creamos nuevo producto del formulario 
@@ -28,13 +28,13 @@ const carritoController = {
                     precio: element.precio,
                     descuento: element.descuento,
                     especificaciones: element.especificaciones,
-                    cantidad: cantidad
+                    cantidad: cantidad || req.body.cantidad
                 }
                 // Agrego nuevo producto al carrito
                 listaCarrito.push(newProduct)
             }
         });
-        console.log(cantidad);
+
         // Convertir a JSON y escribir el archivo js
         fs.writeFileSync(pathCarrito, JSON.stringify(listaCarrito, null, ' '))
         // redireccionamos al listado de productos

@@ -25,20 +25,26 @@
                                                 <label for="number">
                                                     <%= productos.nombre%>
                                                 </label>
-                                                <input type="number" name="cantidad" id="cantidad" value="1" min="1"
-                                                    max="5">
-
+                                                <!--<input type="number" name="cantidad" id="cantidad" value="1" min="1"
+                                                    max="5">-->
+                                                <p><b>Cantidad</b>
+                                                    <%= productos.cantidad%>
+                                                </p>
                                                 <p>$ <%= productos.precio%>
                                                 </p>
-                                                <form action="/borrarCarrito/<%= productos.id%>?_method=DELETE"
-                                                    method="post">
-                                                    <button type="submit"><i
-                                                            class="fa-regular fa-trash-can"></i></button>
-                                                </form>
                                                 <% descu=productos.precio - (((productos.precio * productos.descuento )
                                                     )/ 100) %>
-                                                    <% subTotal=subTotal + productos.precio %>
-                                                        <% total=total + descu %>
+                                                    <% subProducto=descu * productos.cantidad%>
+                                                        <p><b>SubTotal</b> $ <%=subProducto%>
+                                                        </p>
+                                                        <form action="/borrarCarrito/<%= productos.id%>?_method=DELETE"
+                                                            method="post">
+                                                            <button type="submit"><i
+                                                                    class="fa-regular fa-trash-can"></i></button>
+                                                        </form>
+
+                                                        <% subTotal=subTotal + (productos.precio * productos.cantidad)%>
+                                                            <% total=total + subProducto %>
                                             </article>
                                             <% }) %>
                         </section>

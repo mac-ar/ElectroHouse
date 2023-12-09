@@ -54,7 +54,7 @@ const productoController = {
             id: nRandom + newNumber,
             img: req.file?.filename || 'img-default.png',
             envio: "",
-            nuevo: "",
+            verIndex: "Oferta",
             pago: "",
             oferta: "true",
             descuento: 40,
@@ -77,7 +77,7 @@ const productoController = {
         //Elimino Imagen
         fs.unlinkSync(path.join(__dirname, '../public/img/product', prodEliminar.img));
         
-        res.redirect('/listadoProductos')
+        res.redirect('/products')
     }
 
 }

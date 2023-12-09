@@ -64,11 +64,11 @@ input{
 }
 
 .btnVer:hover{
-    background-color: blue;
+    background-color: #00939b;
     color:#FFFFFF;
 }
 .btnEditar:hover{
-    background-color: green;
+    background-color: #FFCC00;
     color:#FFFFFF;
 }
 
@@ -84,5 +84,5 @@ input{
     color:#FFFFFF;
 }
 tbody tr:hover{
-    background-color: orange;
+    background-color: #97e4e9;
 }

@@ -9,7 +9,7 @@
             <%- include('../partials/header.ejs') %>
                 <main>
 
-                    <form action="/editarProducto/<%= editProducto.id %>?_method=PUT" method="POST"
+                    <form action="/products/actualizarProducto/<%= editProducto.id %>?_method=PUT" method="POST"
                         enctype="multipart/form-data">
 
                         <h2>Editar Producto <%= editProducto.nombre %>
@@ -25,15 +25,17 @@
                                 <label for="especificaciones">Especificaciones Tecnicas</label>
                             </div>
                             <div class="input">
-                                <input type="text" name="nombre" id="nombre" value="<%= editProducto.nombre %>" disabled>
+                                <input type="text" name="nombre" id="nombre" value="<%= editProducto.nombre %>"
+                                    disabled>
                                 <input type="text" name="descripcion" id="descripcion"
-                                    value="<%= editProducto.descripcion %>" required>
-                                <input type="file" name="imagen" id="imagen" required>
+                                    value="<%= editProducto.descripcion %>" >
+                                <input type="file" name="imagen" id="imagen" >
                                 <div><select name="categoria" id="categoria">
-                                        <option value="Valor01">Valor01</option>
-                                        <option value="Valor02">Valor02</option>
-                                        <option value="Valor03">Valor03</option>
-                                        <option value="Valor04">Valor04</option>
+                                        <option value="Electrodomesticos">Electrodomesticos</option>
+                                        <option value="Refrigeracion">Refrigeracion</option>
+                                        <option value="Calefaccion">Calefaccion</option>
+                                        <option value="Hogar">Hogar</option>
+                                        <option value="OutLet">OutLet</option>
                                     </select></div>
                                 <input type="number" name="precio" id="precio" min="0" max="999999999" maxlength="9"
                                     value="<%= editProducto.precio %>" required>
