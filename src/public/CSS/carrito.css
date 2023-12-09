@@ -65,7 +65,7 @@ main .container .articulos .containerArt img {
 }
 
 main .container .articulos .containerArt label {
-    width: 40%;
+    width: 30%;
 }
 
 main .container .articulos .containerArt input {
@@ -73,7 +73,7 @@ main .container .articulos .containerArt input {
 }
 
 main .container .articulos .containerArt p {
-    width: 10%;
+    width: 20%;
     margin: 0px 5px;
 }
 
