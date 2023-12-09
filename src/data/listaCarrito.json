@@ -31,5 +31,17 @@
   "precio": 390770,
   "descuento": 10,
   "especificaciones": "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium."
+ },
+ {
+  "id": 1,
+  "nombre": "Heladera Electrolux",
+  "descripcion": "Lorem ipsum dolor sit amet consectetur, adipisicing elit.",
+  "img": "heladera.jpg",
+  "categoria": "",
+  "oferta": "false",
+  "precio": 390770,
+  "descuento": 10,
+  "especificaciones": "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium.",
+  "cantidad": "1"
  }
 ]

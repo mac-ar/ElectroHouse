@@ -15,9 +15,7 @@ const productoController = {
         let prodDet = productJs.find(e => e.id == req.params.id)
         res.render('products/ProductoDetalle', { prodDet })
     },
-    Carrito: (req, res) => {
-        res.render('../views/products/Carrito')
-    },
+    
     getEditarProducto: (req, res) => {
         let editProducto = productJs.find(e => e.id == req.params.id);
         res.render('../views/products/editarProducto', {editProducto})

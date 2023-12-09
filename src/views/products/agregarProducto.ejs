@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+    
 
 <%- include('../partials/head.ejs', {Style: "../../CSS/Style.css", myStyle: "../../CSS/agregarProducto.css" , title: "Producto Nuevo" }) %>
 
@@ -23,10 +24,10 @@
                                 <input type="text" name="descripcion" id="descripcion" required>
                                 <input type="file" name="imagen" id="imagen" required>
                                 <div><select name="categoria" id="categoria">
-                                        <option value="Valor01">Valor01</option>
-                                        <option value="Valor02">Valor02</option>
-                                        <option value="Valor03">Valor03</option>
-                                        <option value="Valor04">Valor04</option>
+                                        <option value="Valor01">Electrodomesticos</option>
+                                        <option value="Valor02">Refrigeracion</option>
+                                        <option value="Valor03">Calefaccion</option>
+                                        <option value="Valor04">Hogar</option>
                                     </select></div>
                                 <input type="number" name="precio" id="precio" min="0" max="999999999" maxlength="9"
                                     required>

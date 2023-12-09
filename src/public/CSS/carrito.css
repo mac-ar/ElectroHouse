@@ -108,12 +108,18 @@ main .container .carrito label div {
 
 main .container .carrito label div p {
     margin-right: 5px;
+    font-size: 18px;
+}
+
+main .container .carrito label div .total {
+    margin-left: 5px;
+    font-size: 25px;
 }
 
 main .container .carrito .botones {
     display: flex;
     flex-direction: column;
-    margin-top: 50px;
+    margin-top: 40px;
 }
 
 main .container .carrito .botones a {

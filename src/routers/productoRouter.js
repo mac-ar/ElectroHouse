@@ -1,5 +1,4 @@
 const express = require('express');
-
 const router = express.Router();
 
 const upload = require('../middlewares/multer')
@@ -11,7 +10,7 @@ router.get('/', productoControl.getListadoProductos);
 router.get('/editarProducto/:id', productoControl.getEditarProducto);
 router.put('/actualizarProducto/:id',upload.single('imagen'), productoControl.putActualizarProducto)
 
-router.get('/Carrito', productoControl.Carrito);
+/* router.get('/Carrito', productoControl.Carrito); */
 
 /* router.get('/ProductoDetalle', productoControl.productoDetalle); */
 router.get('/ProductoDetalle/:id', productoControl.getProductoDetalle);

@@ -2,7 +2,7 @@
 <html lang="en">
 
 
-<%- include('../partials/head.ejs', {myStyle: "registro.css" , title: "Registro" }) %>
+<%- include('../partials/head.ejs', {Style: "CSS/Style.css" ,myStyle: "CSS/registro.css" , title: "Registro" }) %>
 
     <body>
         <div class="main-body-container">
@@ -10,7 +10,7 @@
 
                 <!-- MAIN -->
                 <main>
-                    <form action="" method="post">
+                    <form class="form-create" action="/Registro" method="POST"><!-- enctype="multipart/form-data">-->
                         <h2>Formulario Registración</h2>
                         <div class="formulario">
                             <div class="label">
@@ -18,7 +18,7 @@
                                 <label for="apellido">Apellido</label>
                                 <label for="email">E-Mail</label>
                                 <label for="usuario">Usuario</label>
-                                <label for="password1">Password</label>
+                                <label for="password">Password</label>
                                 <label for="password2">Confirmar Password</label>
                             </div>
                             <div class="input">
@@ -26,13 +26,13 @@
                                 <input type="text" name="apellido" id="apellido">
                                 <input type="email" name="email" id="email" required>
                                 <input type="text" name="usuario" id="usuario" required>
-                                <input type="password" name="password1" id="password1" required>
+                                <input type="password" name="password" id="password" required>
                                 <input type="password" name="password2" id="password2" required>
                             </div>
                         </div>
                         <div class="botones">
                             <button type="reset" value="Borrar">Borrar</button>
-                            <button type="submit" value="Enviar">Enviar</button>
+                            <button type="submit">Enviar</button>
                         </div>
                     </form>
 
