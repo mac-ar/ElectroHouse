@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include('../partials/head.ejs', {Style: "../../CSS/Style.css" , myStyle: "../../CSS/listadoProductos.css" ,
+    title: "Listado de Productos" }) %>
+
+    <body>
+        <!-- Contenedo Principal del Body  -->
+        <div class="main-body-container">
+            <%- include('../partials/header.ejs') %>
+
+                <!-- MAIN -->
+                <main>
+
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Id</th>
+                                <th>Imagen</th>
+                                <th>Producto</th>
+                                <th>Categoria</th>
+                                <th>Opcion</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <% productJs.forEach(product=> { %>
+                                <tr>
+                                    <td>
+                                        <%= product.id %>
+                                    </td>
+                                    <td>
+                                        <img src="/img/product/<%= product.img %>" alt="Imagen <%= product.img %>">
+                                    </td>
+                                    <td>
+                                        <%= product.nombre %>
+                                    </td>
+                                    <td>
+                                        <%= product.categoria %>
+                                    </td>
+                                    <td>
+                                        <div class="botones">
+                                            <a href="../products/ProductoDetalle/<%= product.id %>"><input type="button"
+                                                    value="Ver" class="btnVer"></a>
+                                            <a href="../products/editarProducto/<%= product.id %>"><input type="button"
+                                                    value="Editar" class="btnEditar"></a>
+                                            <form action="../products/eliminarProducto/<%= product.id %>?_method=DELETE"
+                                                method="post">
+                                                <input type="submit" value="Eliminar" class="btnEliminar">
+                                            </form>
+                                        </div>
+                                    </td>
+                                </tr>
+
+                                <% }) %>
+                        </tbody>
+
+                    </table>
+
+                </main>
+
+                <%- include('../partials/footer.ejs') %>
+        </div>
+
+    </body>
+
+</html>

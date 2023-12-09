@@ -1,0 +1,28 @@
+[
+ {
+  "id": 1,
+  "nombre": "ROQUE",
+  "apellido": "PERALTA",
+  "email": "pitty4102@gmail.com",
+  "usuario": "pitty",
+  "password": "pitty"
+ },
+ {
+  "id": 1701541373175,
+  "nombre": "bmjg",
+  "apellido": "plxhwir",
+  "email": "deudjc@kjcdh",
+  "usuario": "pitty",
+  "password": "12345",
+  "password2": "56789"
+ },
+ {
+  "id": 1701638786282,
+  "nombre": "gonzalo",
+  "apellido": "peralta",
+  "email": "gonzi@sad",
+  "usuario": "gonzii",
+  "password": "2345",
+  "password2": "3456"
+ }
+]
