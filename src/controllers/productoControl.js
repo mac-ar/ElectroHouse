@@ -17,8 +17,8 @@ const productoController = {
     },
 
     getEditarProducto: (req, res) => {
-        let editProducto = productJs.find(e => e.id == req.params.id);
-        res.render('../views/products/editarProducto', { editProducto })
+        let editProducto = productJs.find(e => e.id == req.params.id);         
+         res.render('../views/products/editarProducto', { editProducto })
     },
 
     putActualizarProducto: (req, res) => {
@@ -28,8 +28,7 @@ const productoController = {
         pUpdate.descripcion = req.body.descripcion || pUpdate.descripcion;
         pUpdate.categoria = req.body.categoria || pUpdate.categoria;
         pUpdate.envio = req.body.envio || pUpdate.envio;
-        pUpdate.verIndex = req.body.verIndex || pUpdate.verIndex;
-        pUpdate.pago = req.body.pago || pUpdate.pago;
+        pUpdate.verIndex = req.body.verIndex || pUpdate.verIndex;        
         pUpdate.oferta = req.body.oferta || pUpdate.oferta;
         pUpdate.precio = req.body.precio || pUpdate.precio;
         pUpdate.descuento = req.body.descuento || pUpdate.descuento;
@@ -48,17 +47,20 @@ const productoController = {
         // Genero codigo para el Id
         let newNumber = productJs.filter(e => e.categoria == req.body.categoria).length + 1;
         let nRandom = Math.floor(Math.random() * 100);
-
+        
         //Genero un nuevo Producto
         const newProduct = {
             id: nRandom + newNumber,
+            nombre: req.body.nombre,
+            descripcion: req.body.descripcion,
             img: req.file?.filename || 'img-default.png',
+            categoria: req.body.categoria,            
+            verIndex: req.body.verIndex,
             envio: "",
-            verIndex: "Oferta",
-            pago: "",
-            oferta: "true",
+            oferta: "",
+            precio: parseFloat(req.body.precio),
             descuento: 40,
-            ...req.body
+            especificaciones: req.body.especificaciones            
         }
         //Agrego el prod nuevo al array
         productJs.push(newProduct);
@@ -71,6 +73,8 @@ const productoController = {
 
         prodEliminar = productJs.find(e => e.id == req.params.id);
         productJs = productJs.filter(e => e.id != req.params.id);
+        console.log(prodEliminar);
+        console.log(productJs);
 
         //Escribo el archivo JS y convierto a JSON
         fs.writeFileSync(productFilePath, JSON.stringify(productJs, null, ' '));
