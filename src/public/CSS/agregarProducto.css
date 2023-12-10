@@ -40,7 +40,7 @@
 
 form {
     width: 450px;
-    height: 400px;
+    /*  height: 440px;*/
     border: 1.5px solid var(--bg-300);
     border-radius: 5%;
     margin: 20px auto;

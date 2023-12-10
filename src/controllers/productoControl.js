@@ -15,20 +15,20 @@ const productoController = {
         let prodDet = productJs.find(e => e.id == req.params.id)
         res.render('products/ProductoDetalle', { prodDet })
     },
-    
+
     getEditarProducto: (req, res) => {
         let editProducto = productJs.find(e => e.id == req.params.id);
-        res.render('../views/products/editarProducto', {editProducto})
+        res.render('../views/products/editarProducto', { editProducto })
     },
 
-    putActualizarProducto: (req, res) =>{
+    putActualizarProducto: (req, res) => {
         let pUpdate = productJs.find(e => e.id == req.params.id);
 
         pUpdate.nombre = req.body.nombre || pUpdate.nombre;
         pUpdate.descripcion = req.body.descripcion || pUpdate.descripcion;
         pUpdate.categoria = req.body.categoria || pUpdate.categoria;
         pUpdate.envio = req.body.envio || pUpdate.envio;
-        pUpdate.nuevo = req.body.nuevo || pUpdate.nuevo;
+        pUpdate.verIndex = req.body.verIndex || pUpdate.verIndex;
         pUpdate.pago = req.body.pago || pUpdate.pago;
         pUpdate.oferta = req.body.oferta || pUpdate.oferta;
         pUpdate.precio = req.body.precio || pUpdate.precio;
@@ -48,7 +48,7 @@ const productoController = {
         // Genero codigo para el Id
         let newNumber = productJs.filter(e => e.categoria == req.body.categoria).length + 1;
         let nRandom = Math.floor(Math.random() * 100);
-        
+
         //Genero un nuevo Producto
         const newProduct = {
             id: nRandom + newNumber,
@@ -67,7 +67,7 @@ const productoController = {
         res.redirect('/')
     },
 
-    delEliminarProducto: (req, res) =>{
+    delEliminarProducto: (req, res) => {
 
         prodEliminar = productJs.find(e => e.id == req.params.id);
         productJs = productJs.filter(e => e.id != req.params.id);
@@ -76,7 +76,7 @@ const productoController = {
         fs.writeFileSync(productFilePath, JSON.stringify(productJs, null, ' '));
         //Elimino Imagen
         fs.unlinkSync(path.join(__dirname, '../public/img/product', prodEliminar.img));
-        
+
         res.redirect('/products')
     }
 

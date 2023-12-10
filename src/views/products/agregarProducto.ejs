@@ -1,8 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
-    
 
-<%- include('../partials/head.ejs', {Style: "../../CSS/Style.css", myStyle: "../../CSS/agregarProducto.css" , title: "Producto Nuevo" }) %>
+
+<%- include('../partials/head.ejs', {Style: "../../CSS/Style.css" , myStyle: "../../CSS/agregarProducto.css" ,
+    title: "Producto Nuevo" }) %>
 
     <body>
         <div class="main-container">
@@ -16,6 +17,7 @@
                                 <label for="descripcion">Descripcion del Producto</label>
                                 <label for="imagen">Subir Imagen del Producto</label>
                                 <label for="categoria">Categoria</label>
+                                <label for="verIndex">Tipo Oferta</label>
                                 <label for="precio">Precio del Producto</label>
                                 <label for="especificaciones">Especificaciones Tecnicas</label>
                             </div>
@@ -24,10 +26,17 @@
                                 <input type="text" name="descripcion" id="descripcion" required>
                                 <input type="file" name="imagen" id="imagen" required>
                                 <div><select name="categoria" id="categoria">
-                                        <option value="Valor01">Electrodomesticos</option>
-                                        <option value="Valor02">Refrigeracion</option>
-                                        <option value="Valor03">Calefaccion</option>
-                                        <option value="Valor04">Hogar</option>
+                                        <option value="">Elige una Categoria</option>
+                                        <option value="Electrodomesticos">Electrodomesticos</option>
+                                        <option value="Refrigeracion">Refrigeracion</option>
+                                        <option value="Calefaccion">Calefaccion</option>
+                                        <option value="Hogar">Hogar</option>
+                                    </select></div>
+                                <div><select name="verIndex" id="verIndex">
+                                        <option value="">Elige una Oferta...</option>
+                                        <option value="Nuevo">Nuevo</option>
+                                        <option value="Oferta">Oferta</option>
+                                        <option value="OutLet">OutLet</option>
                                     </select></div>
                                 <input type="number" name="precio" id="precio" min="0" max="999999999" maxlength="9"
                                     required>

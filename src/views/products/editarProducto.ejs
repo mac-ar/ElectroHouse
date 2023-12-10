@@ -21,6 +21,7 @@
                                 <label for="descripcion">Descripcion del Producto</label>
                                 <label for="imagen">Subir Imagen del Producto</label>
                                 <label for="categoria">Categoria</label>
+                                <label for="verIndex">Tipo Oferta</label>
                                 <label for="precio">Precio del Producto</label>
                                 <label for="especificaciones">Especificaciones Tecnicas</label>
                             </div>
@@ -28,13 +29,23 @@
                                 <input type="text" name="nombre" id="nombre" value="<%= editProducto.nombre %>"
                                     disabled>
                                 <input type="text" name="descripcion" id="descripcion"
-                                    value="<%= editProducto.descripcion %>" >
-                                <input type="file" name="imagen" id="imagen" >
+                                    value="<%= editProducto.descripcion %>">
+                                <input type="file" name="imagen" id="imagen">
                                 <div><select name="categoria" id="categoria">
+                                        <option value="<%= editProducto.categoria %>">
+                                            <%= editProducto.categoria %>
+                                        </option>
                                         <option value="Electrodomesticos">Electrodomesticos</option>
                                         <option value="Refrigeracion">Refrigeracion</option>
                                         <option value="Calefaccion">Calefaccion</option>
                                         <option value="Hogar">Hogar</option>
+                                    </select></div>
+                                <div><select name="verIndex" id="verIndex">
+                                        <option value="<%= editProducto.verIndex %>">
+                                            <%= editProducto.verIndex %>
+                                        </option>
+                                        <option value="Nuevo">Nuevo</option>
+                                        <option value="Oferta">Oferta</option>
                                         <option value="OutLet">OutLet</option>
                                     </select></div>
                                 <input type="number" name="precio" id="precio" min="0" max="999999999" maxlength="9"
