@@ -24,27 +24,15 @@
   "cantidad": "1"
  },
  {
-  "id": 14,
-  "nombre": "Aire Acond. TCL ",
-  "descripcion": "Aire Acond Portatil Frio / Calor 3000F",
-  "img": "img-1702246584987-Aire Acond TCL Portatil FC.jpg",
-  "categoria": "Refrigeracion",
+  "id": 5,
+  "nombre": "Microondas BGH",
+  "descripcion": "Lorem ipsum dolor sit amet consectetur, adipisicing elit.",
+  "img": "micro.jpg",
+  "categoria": "Electrodomesticos",
   "oferta": "",
-  "precio": 570000,
-  "descuento": 40,
-  "especificaciones": "Características generales\r\nTipo de equipo\r\nPortatil\r\nFrio / Calor\r\nSí\r\nPotencia\r\nFrigorías\r\n3000 FG\r\nWatts\r\n3500 watts\r\nConsumo\r\nTipo de gas\r\nR410A\r\nFunciones\r\nTimer\r\nSí\r\nFunción sueño\r\nSí\r\nDimensiones de la unidad interior\r\nAlto unidad interior\r\n68,8 cm\r\nAncho unidad interior\r\n41,9 cm\r\nProf. unidad interior\r\n35,8 cm\r\nPeso unidad interior\r\n23,8 Kg\r\nQue Incluye?\r\nControl remoto\r\nSí\r\nModelo y origen\r\nModelo\r\nTACA-3500FCSA/PORT\r\nOrigen\r\nArgentina",
-  "cantidad": "1"
- },
- {
-  "id": 14,
-  "nombre": "depil",
-  "descripcion": "das",
-  "img": "img-1702247322753-depiladora.jpg",
-  "categoria": "Hogar",
-  "oferta": "",
-  "precio": 32500,
-  "descuento": 40,
-  "especificaciones": "adasda da dasdasdasa asd asdgdfg ",
+  "precio": "115770",
+  "descuento": 5,
+  "especificaciones": "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium.",
   "cantidad": "1"
  }
 ]

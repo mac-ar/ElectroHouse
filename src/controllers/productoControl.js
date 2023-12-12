@@ -50,7 +50,7 @@ const productoController = {
         
         //Genero un nuevo Producto
         const newProduct = {
-            id: nRandom + newNumber,
+            id: newNumber && nRandom,
             nombre: req.body.nombre,
             descripcion: req.body.descripcion,
             img: req.file?.filename || 'img-default.png',
