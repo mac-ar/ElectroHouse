@@ -2,7 +2,7 @@
 <html lang="en">
 
 
-<%- include('../partials/head.ejs', {Style: "CSS/Style.css" ,myStyle: "CSS/registro.css" , title: "Registro" }) %>
+<%- include('../partials/head.ejs', {Style: "../CSS/Style.css" ,myStyle: "../CSS/registro.css" , title: "Registro" }) %>
 
     <body>
         <div class="main-body-container">
@@ -10,30 +10,103 @@
 
                 <!-- MAIN -->
                 <main>
-                    <form class="form-create" action="/Registro" method="POST"><!-- enctype="multipart/form-data">-->
+                    <form class="form-create" action="/user/Registro" method="POST" enctype="multipart/form-data">
+
                         <h2>Formulario Registración</h2>
+
                         <div class="formulario">
-                            <div class="label">
+                            <div class="register">
                                 <label for="nombre">Nombre</label>
-                                <label for="apellido">Apellido</label>
-                                <label for="email">E-Mail</label>
-                                <label for="usuario">Usuario</label>
-                                <label for="password">Password</label>
-                                <label for="password2">Confirmar Password</label>
+                                <input type="text" name="nombre" id="nombre"
+                                    value="<%= locals.oldData ? oldData.nombre : null %>">
+
                             </div>
-                            <div class="input">
-                                <input type="text" name="nombre" id="nombre">
-                                <input type="text" name="apellido" id="apellido">
-                                <input type="email" name="email" id="email" required>
-                                <input type="text" name="usuario" id="usuario" required>
-                                <input type="password" name="password" id="password" required>
-                                <input type="password" name="password2" id="password2" required>
+                            <div>
+                                <% if (locals.errors && errors.nombre) { %>
+                                    <p style="color: red; text-align: end;">
+                                        <%= errors.nombre.msg %>
+                                    </p>
+                                    <% } %>
+                            </div>
+                            <div class="register">
+                                <label for="apellido">Apellido</label>
+                                <input type="text" name="apellido" id="apellido"
+                                    value="<%= locals.oldData ? oldData.apellido : null %>">
+                            </div>
+                            <div>
+                                <% if (locals.errors && errors.apellido) { %>
+                                    <p style="color: red; text-align: end;">
+                                        <%= errors.apellido.msg %>
+                                    </p>
+                                    <% } %>
+                            </div>
+                            <div class="register">
+                                <label for="email">E-Mail</label>
+                                <input type="email" name="email" id="email"
+                                    value="<%= locals.oldData ? oldData.email : null %>">
+                            </div>
+                            <div>
+                                <% if (locals.errors && errors.email) { %>
+                                    <p style="color: red; text-align: end;">
+                                        <%= errors.email.msg %>
+                                    </p>
+                                    <% } %>
+                            </div>
+                            <div class="register">
+                                <label for="foto">Foto de Perfil</label>
+                                <input type="file" name="foto" id="foto"
+                                    value="<%= locals.oldData ? oldData.foto : null %>">
+                            </div>
+                            <div>
+                                <% if (locals.errors && errors.foto) { %>
+                                    <p style="color: red; text-align: end;">
+                                        <%= errors.foto.msg %>
+                                    </p>
+                                    <% } %>
+                            </div>
+                            <div class="register">
+                                <label for="usuario">Usuario</label>
+                                <input type="text" name="usuario" id="usuario"
+                                    value="<%= locals.oldData ? oldData.usuario : null %>">
+                            </div>
+                            <div>
+                                <% if (locals.errors && errors.usuario) { %>
+                                    <p style="color: red; text-align: end;">
+                                        <%= errors.usuario.msg %>
+                                    </p>
+                                    <% } %>
+                            </div>
+                            <div class="register">
+                                <label for="password">Password</label>
+                                <input type="password" name="password" id="password"
+                                    value="<%= locals.oldData ? oldData.password : null %>">
+                            </div>
+                            <div>
+                                <% if (locals.errors && errors.password) { %>
+                                    <p style="color: red; text-align: end;">
+                                        <%= errors.password.msg %>
+                                    </p>
+                                    <% } %>
+                            </div>
+                            <div class="register">
+                                <label for="password2">Confirmar Password</label>
+                                <input type="password" name="password2" id="password2"
+                                    value="<%= locals.oldData ? oldData.password2 : null %>">
+                            </div>
+                            <div>
+                                <% if (locals.errors && errors.password2) { %>
+                                    <p style="color: red; text-align: end;">
+                                        <%= errors.password2.msg %>
+                                    </p>
+                                    <% } %>
                             </div>
                         </div>
+
                         <div class="botones">
                             <button type="reset" value="Borrar">Borrar</button>
                             <button type="submit">Enviar</button>
                         </div>
+
                     </form>
 
                 </main>

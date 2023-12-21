@@ -22,15 +22,17 @@ app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, 'views'));
 app.use('/', mainRouter);
 
-app.set('users', path.join(__dirname, 'views', 'users'));
-app.use('/', userRouter);
+app.use('/user', userRouter);
 
-app.set('products', path.join(__dirname, 'views', 'products'));
 app.use('/products', productoRouter);
 
+app.use('/Carrito', carritoRouter);
+/*
+app.set('users', path.join(__dirname, 'views', 'users'));
 app.set('products', path.join(__dirname, 'views', 'products'));
-app.use('/', carritoRouter);
+app.set('products', path.join(__dirname, 'views', 'products'));
 
+*/
 /* PORT */
 const port = 3000;
 app.listen(port, () => console.log(`Servidor Ejecuntandose en http://localhost:${port}`))
