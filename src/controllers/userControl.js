@@ -14,6 +14,7 @@ const userControl = {
     },
     createRegister: (req, res) => {
         const registerNuevo = {
+            perfil: "cliente",
             id: Date.now(),
             ...req.body
         }

@@ -12,18 +12,6 @@
   "cantidad": "1"
  },
  {
-  "id": 4,
-  "nombre": "Plancha Phillips",
-  "descripcion": "Lorem ipsum dolor sit amet consectetur, adipisicing elit.",
-  "img": "plancha.jpg",
-  "categoria": "",
-  "oferta": "",
-  "precio": 36750,
-  "descuento": 20,
-  "especificaciones": "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium.",
-  "cantidad": "1"
- },
- {
   "id": 5,
   "nombre": "Microondas BGH",
   "descripcion": "Lorem ipsum dolor sit amet consectetur, adipisicing elit.",
@@ -32,6 +20,18 @@
   "oferta": "",
   "precio": "115770",
   "descuento": 5,
+  "especificaciones": "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium.",
+  "cantidad": "1"
+ },
+ {
+  "id": 2,
+  "nombre": "Aire Split BGH",
+  "descripcion": "Lorem ipsum dolor sit amet consectetur, adipisicing elit.",
+  "img": "aire.jpg",
+  "categoria": "Refrigeracion",
+  "oferta": "",
+  "precio": "690770",
+  "descuento": 20,
   "especificaciones": "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium.",
   "cantidad": "1"
  }
