@@ -5,7 +5,7 @@ El equipo se dividio en dos grupos para realizar el trabajo, se asignaron las ta
 
 EL dia 18/11/2023 el equipo se reunio y luego de algunas modificaciones se termino el trabajo asignado a cada equipo cumpliendo en tiempo y en forma los trabajos programados para la semana y asi terminar el spring propuesto.
      
-## SRING CUATRO
+## SPRING CUATRO
 El dia 25/11/2023 Se reunio el equipo para coordinar los trabajos asignados en el spring, se definio los campos para los archvos JSON de Productos y Usuarios y se dividio en dos grupos el trabajo de CRUD.
 Se creo tarjetas de tareas en el Tablero de Trello asignando las tareas anteriormente mencionadas.
 

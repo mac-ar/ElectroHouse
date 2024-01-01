@@ -8,11 +8,11 @@
         <div class="main-container">
             <%- include('../partials/header.ejs') %>
                 <main>
-
-                    <form action="/products/actualizarProducto/<%= editProducto.id %>?_method=PUT" method="POST"
+                    <%- include('../partials/aside-errors.ejs') %>
+                    <form action="/products/actualizarProducto/<%= locals.errors? idProd : editProducto.id %>?_method=PUT" method="POST"
                         enctype="multipart/form-data">
 
-                        <h2>Editar Producto <%= editProducto.nombre %>
+                        <h2>Editar Producto <%= locals.oldData? prodN : editProducto.nombre %>
                         </h2>
 
                         <div class="formulario">
@@ -26,14 +26,13 @@
                                 <label for="especificaciones">Especificaciones Tecnicas</label>
                             </div>
                             <div class="input">
-                                <input type="text" name="nombre" id="nombre" value="<%= editProducto.nombre %>"
-                                    disabled>
+                                <input type="text" name="nombre" id="nombre" value="<%= locals.oldData? prodN : editProducto.nombre %>">
                                 <input type="text" name="descripcion" id="descripcion"
-                                    value="<%= editProducto.descripcion %>">
+                                    value="<%= locals.oldData? oldData.descripcion : editProducto.descripcion %>">
                                 <input type="file" name="imagen" id="imagen">
                                 <div><select name="categoria" id="categoria">
-                                        <option value="<%= editProducto.categoria %>">
-                                            <%= editProducto.categoria %>
+                                        <option value="<%= locals.oldData? oldData.categoria : editProducto.categoria %>">
+                                            <%= locals.oldData? oldData.categoria : editProducto.categoria %>
                                         </option>
                                         <option value="Electrodomesticos">Electrodomesticos</option>
                                         <option value="Refrigeracion">Refrigeracion</option>
@@ -42,16 +41,17 @@
                                         <option value="Outlet">Outlet</option>
                                     </select></div>
                                 <div><select name="verIndex" id="verIndex">
-                                        <option value="<%= editProducto.verIndex %>">
-                                            <%= editProducto.verIndex %>
+                                        <option value="<%= locals.oldData? oldData.verIndex : editProducto.verIndex %>">
+                                            <%= locals.oldData? oldData.verIndex : editProducto.verIndex %>
                                         </option>
                                         <option value="Nuevo">Nuevo</option>
                                         <option value="Oferta">Oferta</option>
                                         <option value="OutLet">OutLet</option>
                                     </select></div>
                                 <input type="number" name="precio" id="precio" min="0" max="999999999" maxlength="9"
-                                    value="<%= editProducto.precio %>" required>
-                                <textarea name="especificaciones" id="especificaciones" cols="20" rows="5"><%= editProducto.especificaciones %></textarea>
+                                    value="<%= locals.oldData? oldData.precio : editProducto.precio %>">
+                                <textarea name="especificaciones" id="especificaciones" cols="20"
+                                    rows="5"><%= locals.oldData? oldData.especificaciones : editProducto.especificaciones %></textarea>
                             </div>
                         </div>
                         <div class="botones">

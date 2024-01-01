@@ -1,11 +1,10 @@
 const express = require('express');
-
 const router = express.Router();
 
 const carritoController = require('../controllers/carritoControl');
 
 
-router.get('/Carrito', carritoController.Carrito);
+router.get('/', carritoController.Carrito);
 //  Cargo producto en el carrito
 router.post('/createCarrito/:id', carritoController.storeCarrito);
 // Elimino producto del carrito

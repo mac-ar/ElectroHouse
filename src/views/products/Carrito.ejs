@@ -37,7 +37,8 @@
                                                     <% subProducto=descu * productos.cantidad%>
                                                         <p><b>SubTotal</b> $ <%=subProducto%>
                                                         </p>
-                                                        <form action="/borrarCarrito/<%= productos.id%>?_method=DELETE"
+                                                        <form
+                                                            action="/Carrito/borrarCarrito/<%= productos.id%>?_method=DELETE"
                                                             method="post">
                                                             <button type="submit"><i
                                                                     class="fa-regular fa-trash-can"></i></button>

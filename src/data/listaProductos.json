@@ -5,7 +5,7 @@
   "descripcion": "Lorem ipsum dolor sit amet consectetur, adipisicing elit.",
   "img": "heladera.jpg",
   "categoria": "Electrodomesticos",
-  "verIndex": "Nuevo",
+  "verIndex": "OutLet",
   "oferta": "",
   "precio": "390770",
   "descuento": 10,
@@ -118,5 +118,18 @@
   "precio": "77399",
   "descuento": 40,
   "especificaciones": "Lorem ipsum dolor sit amet consectetur, adipisicing elit."
+ },
+ {
+  "id": 66,
+  "nombre": "das",
+  "descripcion": "memememem",
+  "img": "img-1704147571366-depiladora.jpg",
+  "categoria": "Electrodomesticos",
+  "verIndex": "Nuevo",
+  "envio": "",
+  "oferta": "",
+  "precio": "5555",
+  "descuento": 40,
+  "especificaciones": "susususususu"
  }
 ]

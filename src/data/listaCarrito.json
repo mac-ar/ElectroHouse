@@ -1,38 +1,14 @@
 [
  {
-  "id": 1,
-  "nombre": "Heladera Electrolux",
-  "descripcion": "Lorem ipsum dolor sit amet consectetur, adipisicing elit.",
-  "img": "heladera.jpg",
-  "categoria": "",
-  "oferta": "",
-  "precio": 390770,
-  "descuento": 10,
-  "especificaciones": "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium.",
-  "cantidad": "1"
- },
- {
-  "id": 5,
-  "nombre": "Microondas BGH",
-  "descripcion": "Lorem ipsum dolor sit amet consectetur, adipisicing elit.",
-  "img": "micro.jpg",
+  "id": 8,
+  "nombre": "Lavarropa Drean",
+  "descripcion": "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium.",
+  "img": "lavarropa.jpg",
   "categoria": "Electrodomesticos",
   "oferta": "",
-  "precio": "115770",
-  "descuento": 5,
-  "especificaciones": "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium.",
-  "cantidad": "1"
- },
- {
-  "id": 2,
-  "nombre": "Aire Split BGH",
-  "descripcion": "Lorem ipsum dolor sit amet consectetur, adipisicing elit.",
-  "img": "aire.jpg",
-  "categoria": "Refrigeracion",
-  "oferta": "",
-  "precio": "690770",
-  "descuento": 20,
-  "especificaciones": "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium.",
-  "cantidad": "1"
+  "precio": "389999",
+  "descuento": 40,
+  "especificaciones": "Lorem ipsum dolor sit amet consectetur, adipisicing elit.",
+  "cantidad": "2"
  }
 ]
