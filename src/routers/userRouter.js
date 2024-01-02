@@ -56,7 +56,14 @@ const validations = [
         })
 ]
 
+const loginValidator = [
+    check('usuario').notEmpty().withMessage('Escribe un nombre de Usuario'),
+    check('password').notEmpty().withMessage('Ingrese una Contraseña').bail()
+]
+
+
 router.get('/Login', userController.login);
+router.post('/Login', loginValidator, userController.checkLogin);
 
 router.get('/Registro', userController.register);
 router.post('/Registro', uploadFile.single('foto'), validations, userController.createRegister);

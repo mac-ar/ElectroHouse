@@ -1,7 +1,8 @@
 const fs = require('fs');
 const path = require('path')
 const { validationResult } = require('express-validator');
-const bcryptjs = require('bcryptjs')
+const bcryptjs = require('bcryptjs');
+const session = require('express-session');
 
 const pathRegister = path.join(__dirname, '../data/listaClientes.json')
 const listaClientes = JSON.parse(fs.readFileSync(pathRegister, 'utf-8'))
@@ -11,6 +12,64 @@ const userControl = {
     login: (req, res) => {
         res.render('../views/users/Login')
     },
+    checkLogin: (req,res) => {
+
+        let {usuario, password} = req.body;
+        console.log(usuario,password);
+
+        const errorLogin = validationResult(req);
+
+        //-----
+
+     //   const getData = function() {
+      //          return JSON.parse(fs.readFileSync(this.listaClientes, 'utf-8'));
+       //      };
+
+     //   const findAll = function () {
+     //           return this.getData();
+     //        };
+
+     // getProductoDetalle: (req, res) => {
+     //   let prodDet = productJs.find(e => e.id == req.params.id)
+     //   res.render('products/ProductoDetalle', { prodDet })
+    //},
+
+      //  const userFound = function (usuario1) {
+        //        let allUsers = JSON.parse(fs.readFileSync(listaClientes, 'utf-8'));
+                const userFound = listaClientes.find(oneUser => oneUser.usuario == req.body.usuario);
+                
+   //         };
+
+
+        if (errorLogin.isEmpty()) {
+        
+             //--
+            
+
+             if (userFound && bcryptjs.compareSync(password, userFound.password)) {
+
+          //      req.session.userLogged = userFound.usuario;
+
+                console.log('Todo salió ok, estas logueado');
+
+                res.redirect('/')
+
+             } else {
+
+               // res.send('El password o email es incorrecto')
+               res.render('../views/users/Login')
+             }
+
+        } else {
+            return res.render('../views/users/Login.ejs', {
+                errors: errorLogin.mapped(),
+                oldData: req.body
+            }),
+            console.log(errorLogin)
+        }
+
+    },
+
     register: (req, res) => {
         res.render('../views/users/Registro')
     },

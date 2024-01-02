@@ -65,5 +65,15 @@
   "usuario": "alfon",
   "password": "$2a$10$kaiVt7R/.z90Png0b5Ss3.uT.YKWPYqHC629wycEecOOnmCxIJZyK",
   "password2": "$2a$10$HyR1jM5q/oqm/cmKoF4QuOX0DcFecdSyQusxrt5dYU4RU7TqS3Mhq"
+ },
+ {
+  "id": 1704155430553,
+  "nombre": "Constanza",
+  "apellido": "Fontenla",
+  "email": "mcf@gmail.com",
+  "img": "img-1704155430324.jpg",
+  "usuario": "mcf",
+  "password": "$2a$10$b3w5pTDubwMkJqP5k8AmhOIeun/KeGuUywJvjwVL88O5YgYHg0Id2",
+  "password2": "$2a$10$ylihw1PDwiZbUIr4V4y9HORxX8tE8DRdFSv8VqONS3PXA/nhhfgSG"
  }
 ]
