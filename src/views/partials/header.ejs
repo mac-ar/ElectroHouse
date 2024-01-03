@@ -26,31 +26,48 @@
             </div>
             <div class="nav-bar-user">
                 <ul class="menu-user">
-                    <li><a href="/user/Registro">
-                            <p>Registrate</p><i class="fa-regular fa-address-card"></i>
-                        </a></li>
-                    <li><a href="/user/Login">
-                            <p>Ingresar</p><i class="fa-regular fa-circle-user"></i>
-                        </a></li>
-                    <li><a href="/Carrito">
-                            <p>Carrito</p><i class="fa-solid fa-cart-shopping"></i>
-                        </a></li>
+                    <% if (locals.isLogged) { %>
+                        <li><a href="#">
+                                <p>
+                                    <%= locals.userLogged.usuario.toUpperCase() %>
+                                </p>
+                                <img src="/img/users/<%= locals.userLogged.img %>">
+                                <!-- width="50" style="border-radius: 100%;"> -->
+                            </a>
+                        </li>
+                        <li><a href="/Carrito">
+                                <p>Carrito</p><i class="fa-solid fa-cart-shopping"></i>
+                            </a></li>
+                        <li><a href="/user/logout">
+                                <p>Logout</p><i class="fa-solid fa-arrow-right-from-bracket"></i>
+                            </a></li>
+                        <% } else { %>
+                            <li><a href="/user/Registro">
+                                    <p>Registrate</p><i class="fa-regular fa-address-card"></i>
+                                </a></li>
+                            <li><a href="/user/Login">
+                                    <p>Ingresar</p><i class="fa-regular fa-circle-user"></i>
+                                </a></li>
+                            <% } %>
                 </ul>
             </div>
         </div>
         <!-- Barra de Menu -->
         <nav class="nav-main">
             <div class="container-ul">
-                <div class="home-burger"> <a href="/"><i class="fa-solid fa-house "></i></a> </div>
+                <div class="home-burger"> <a href="/"><i class="fa-solid fa-house "></i></a>
+                </div>
                 <ul class="menu">
                     <li><a href="/">Inicio</a></i></li>
-                    <li><a href="/agregarProducto">Electrodomesticos</a></li>
+                    <li><a href="#">Electrodomesticos</a></li>
                     <li><a href="">Refrigeracion</a></li>
                     <li><a href="">Calefaccion</a></li>
                     <li><a href="">Hogar</a></li>
                     <li><a href="">Outlet</a></li>
-                    <li><a href="/products">Productos</a></li>
-                    <li><a href="/products/agregarProducto">Agregar Productos</a></li>
+                    <% if (locals.isLogged) { %>
+                        <li><a href="/products">Productos</a></li>
+                        <li><a href="/products/agregarProducto">Agregar Productos</a></li>
+                        <% } %>
                 </ul>
             </div>
         </nav>

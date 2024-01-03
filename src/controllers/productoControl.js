@@ -1,3 +1,4 @@
+const { validationResult } = require('express-validator');
 const fs = require('fs');
 const path = require('path');
 
@@ -22,6 +23,10 @@ const productoController = {
     },
 
     putActualizarProducto: (req, res) => {
+
+        let errors = validationResult(req);                      
+
+        if (errors.isEmpty()) {        
         let pUpdate = productJs.find(e => e.id == req.params.id);
 
         pUpdate.nombre = req.body.nombre || pUpdate.nombre;
@@ -37,6 +42,9 @@ const productoController = {
 
         fs.writeFileSync(productFilePath, JSON.stringify(productJs, null, ' '))
         res.redirect('/products')
+        } else{
+            res.render('../views/products/editarProducto', { errors: errors.array(), oldData: req.body, idProd: req.params.id, prodN: req.body.nombre })
+        }
 
     },
     getAgregarProducto: (req, res) => {
@@ -44,6 +52,10 @@ const productoController = {
     },
 
     postGuardarProducto: (req, res) => {
+
+        let errors = validationResult(req);
+
+        if (errors.isEmpty()) {
         // Genero codigo para el Id
         let newNumber = productJs.filter(e => e.categoria == req.body.categoria).length + 1;
         let nRandom = Math.floor(Math.random() * 100);
@@ -67,14 +79,16 @@ const productoController = {
         //Escribo el archivo JS y convierto a JSON
         fs.writeFileSync(productFilePath, JSON.stringify(productJs, null, ' '))
         res.redirect('/')
+    } else {
+        res.render('../views/products/agregarProducto', { errors: errors.array(), oldData: req.body })
+    }
     },
 
     delEliminarProducto: (req, res) => {
 
         prodEliminar = productJs.find(e => e.id == req.params.id);
         productJs = productJs.filter(e => e.id != req.params.id);
-        console.log(prodEliminar);
-        console.log(productJs);
+        
 
         //Escribo el archivo JS y convierto a JSON
         fs.writeFileSync(productFilePath, JSON.stringify(productJs, null, ' '));

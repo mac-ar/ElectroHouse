@@ -2,10 +2,22 @@ const express = require('express');
 const app = express();
 const path = require('path');
 const methodOverride = require('method-override')
+const session = require('express-session')
+const cookies = require('cookie-parser');
+const validateUser = require('./middlewares/validateUser.js')
 
 app.use(express.urlencoded({ extended: true }))
 app.use(express.json())
 app.use(methodOverride('_method'))
+
+app.use(session({
+    secret: 'El Grupo 4',
+    resave: true,
+    saveUninitialized: false
+}))
+
+app.use(cookies());
+app.use(validateUser);
 
 app.use(express.static(path.join(__dirname, 'public')));
 

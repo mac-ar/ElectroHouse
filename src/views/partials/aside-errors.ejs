@@ -1,0 +1,9 @@
+<aside>
+    <% if (locals.errors) { %>
+        <% errors.forEach((error) => {%>
+            <div class="alert alert-warning" role="alert">
+                <i class="fa-solid fa-triangle-exclamation"></i>&nbsp; &nbsp;<%= error.msg %>
+            </div>
+            <% }); %>
+    <% } %>
+</aside>

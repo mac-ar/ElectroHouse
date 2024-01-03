@@ -1,69 +1,22 @@
 [
- {
-  "id": 1,
-  "nombre": "ROQUE",
-  "apellido": "PERALTA",
-  "email": "pitty4102@gmail.com",
-  "usuario": "pitty",
-  "password": "pitty"
- },
- {
-  "id": 1701638786282,
-  "nombre": "gonzalo",
-  "apellido": "peralta",
-  "email": "gonzi@sad",
-  "usuario": "gonzii",
-  "password": "2345",
-  "password2": "3456"
- },
- {
-  "id": 1703116195745,
-  "img": "img-1703116195688-.png",
-  "nombre": "dsfaasdfasdfsadf",
-  "apellido": "sadasdasd",
-  "email": "dsad@sfsd.com",
-  "usuario": "asdas",
-  "password": "1234",
-  "password2": "1234"
- },
- {
-  "id": 1703116718538,
-  "img": "img-1703116718207-.png",
-  "password": "12345",
-  "password2": "12345",
-  "nombre": "werwe",
-  "apellido": "ewrwe",
-  "email": "werew@dfs.com",
-  "usuario": "pitty"
- },
- {
-  "id": 1703127819113,
-  "nombre": "fsdf",
-  "apellido": "dsf",
-  "email": "dsf@fds.com",
-  "img": "img-1703127818806-.png",
-  "usuario": "qw",
-  "password": "$2a$10$nlqBCiP9ZD3ae13WpwyWl.rhdcXK448C0kY8b2zWXvs6NJSJsXzh.",
-  "password2": "$2a$10$T.3c0izAjoSezQyYSCUOJ.xv38pB/7gN3Am4Ufd7rQpxTllPCGtce"
- },
- {
-  "id": 1703128416263,
-  "nombre": "gor",
-  "apellido": "sadsa",
-  "email": "pekino@ds.com",
-  "img": "img-1703128415939-.png",
-  "usuario": "pekines",
-  "password": "$2a$10$MuiCnfycC2AeQ8hmkCL6iuFS3d0y6EJLAlDnMdy0NeQPRovIqxZpq",
-  "password2": "$2a$10$AqXfacFnbg5SPT1r.Y98r.jDEsnv.oh/kqRYrH7goiLDZPcXiYjpW"
- },
- {
-  "id": 1703128746106,
-  "nombre": "alfonso",
-  "apellido": "pera",
-  "email": "melli@e.com",
-  "img": "img-undefined-1703128.745784-.png",
-  "usuario": "alfon",
-  "password": "$2a$10$kaiVt7R/.z90Png0b5Ss3.uT.YKWPYqHC629wycEecOOnmCxIJZyK",
-  "password2": "$2a$10$HyR1jM5q/oqm/cmKoF4QuOX0DcFecdSyQusxrt5dYU4RU7TqS3Mhq"
- }
+    {
+        "id": 1704155430553,
+        "nombre": "Constanza",
+        "apellido": "Fontenla",
+        "email": "mcf@gmail.com",
+        "img": "img-1704155430324.jpg",
+        "usuario": "mcf",
+        "password": "$2a$10$b3w5pTDubwMkJqP5k8AmhOIeun/KeGuUywJvjwVL88O5YgYHg0Id2",
+        "password2": "$2a$10$ylihw1PDwiZbUIr4V4y9HORxX8tE8DRdFSv8VqONS3PXA/nhhfgSG"
+    },
+    {
+        "id": 1704229004562,
+        "nombre": "Roque",
+        "apellido": "Peralta",
+        "email": "pitty@yahoo.com",
+        "img": "administrator-avatar.png",
+        "usuario": "roque",
+        "password": "$2a$10$NzbCTzVtgialVGSWBw9OiOuX2iYPMQ4OA0XcR/4rFYtpLDGIvMDYO",
+        "password2": "$2a$10$jL5IOXtUlMl6ik8AYyObcuBJkBpzLznPeKjKQUzVwltr8vZT6ahhO"
+    }
 ]

@@ -2,54 +2,83 @@
 <html lang="en">
 
 
-<%- include('../partials/head.ejs', {Style: "../../CSS/Style.css" , myStyle: "../../CSS/agregarProducto.css" ,
+<%- include('../partials/head.ejs', {Style: "../CSS/Style.css" , myStyle: "../CSS/agregarProducto.css" ,
     title: "Producto Nuevo" }) %>
 
     <body>
         <div class="main-container">
             <%- include('../partials/header.ejs') %>
                 <main>
-                    <form action="/products/guardarProducto" method="post" enctype="multipart/form-data">
-                        <h2>Agregar Producto</h2>
-                        <div class="formulario">
-                            <div class="label">
-                                <label for="nombre">Nombre de Producto</label>
-                                <label for="descripcion">Descripcion del Producto</label>
-                                <label for="imagen">Subir Imagen del Producto</label>
-                                <label for="categoria">Categoria</label>
-                                <label for="verIndex">Tipo Oferta</label>
-                                <label for="precio">Precio del Producto</label>
-                                <label for="especificaciones">Especificaciones Tecnicas</label>
+                    <%- include('../partials/aside-errors.ejs') %>
+                        <form action="/products/guardarProducto" method="post" enctype="multipart/form-data">
+                            <h2>Agregar Producto</h2>
+                            <div class="formulario">
+                                <div class="label">
+                                    <label for="nombre">Nombre de Producto</label>
+                                    <label for="descripcion">Descripcion del Producto</label>
+                                    <label for="imagen">Subir Imagen del Producto</label>
+                                    <label for="categoria">Categoria</label>
+                                    <label for="verIndex">Agrupar Prod. en (Index)</label>
+                                    <label for="precio">Precio del Producto</label>
+                                    <label for="especificaciones">Especificaciones Tecnicas</label>
+                                </div>
+                                <div class="input">
+
+                                    <input type="text" name="nombre" id="nombre" maxlength="20"
+                                        value="<%= locals.oldData && oldData.nombre ? oldData.nombre : null %>">
+
+                                    <input type="text" name="descripcion" id="descripcion"
+                                        value="<%= locals.oldData && oldData.descripcion ? oldData.descripcion : null %>">
+
+                                    <input type="file" name="imagen" id="imagen">
+
+                                    <div><select name="categoria" id="categoria">
+                                            <% if (locals.oldData && oldData.categoria) { %>
+                                                <option
+                                                    value="<%= locals.oldData && oldData.categoria ? oldData.categoria : null %>">
+                                                    <%= locals.oldData && oldData.categoria ? oldData.categoria : null
+                                                        %>
+                                                </option>
+                                                <% } else{%>
+                                                    <option value="">Elige una Categoria</option>
+                                                    <% }%>                                                        
+                                                        <option value="Electrodomesticos">
+                                                            Electrodomesticos</option>
+                                                        <option value="Refrigeracion">Refrigeracion
+                                                        </option>
+                                                        <option value="Calefaccion">Calefaccion</option>
+                                                        <option value="Hogar">Hogar</option>
+                                                        <option value="OutLet">OutLet</option>
+                                        </select></div>
+
+                                    <div><select name="verIndex" id="verIndex">
+                                            <% if (locals.oldData && oldData.verIndex) { %>
+                                                <option
+                                                    value="<%= locals.oldData && oldData.verIndex ? oldData.verIndex : null %>">
+                                                    <%= locals.oldData && oldData.verIndex ? oldData.verIndex : null %>
+                                                </option>
+                                                <% }else {%>
+                                                    <option value="">Elige una Opcion...</option>
+                                                    <% }%>                                                       
+                                                        <option value="Nuevo">Nuevo</option>
+                                                        <option value="Oferta">Oferta</option>
+                                                        <option value="OutLet">OutLet</option>
+                                        </select>
+                                    </div>
+
+                                    <input type="number" name="precio" id="precio" min="0" max="999999999" maxlength="9"
+                                        value="<%= locals.oldData && oldData.precio ? oldData.precio : null %>">
+                                    <!-- <input type="text" name="especificaciones" id="especificaciones" required>-->
+
+                                    <textarea name="especificaciones" id="especificaciones" cols="20"
+                                        rows="5"><%=locals.oldData && oldData.especificaciones ? oldData.especificaciones : null %></textarea>
+                                </div>
                             </div>
-                            <div class="input">
-                                <input type="text" name="nombre" id="nombre" required>
-                                <input type="text" name="descripcion" id="descripcion" required>
-                                <input type="file" name="imagen" id="imagen" required>
-                                <div><select name="categoria" id="categoria">
-                                        <option value="">Elige una Categoria</option>
-                                        <option value="Electrodomesticos">Electrodomesticos</option>
-                                        <option value="Refrigeracion">Refrigeracion</option>
-                                        <option value="Calefaccion">Calefaccion</option>
-                                        <option value="Hogar">Hogar</option>
-                                        <option value="Outlet">Outlet</option>
-                                    </select></div>
-                                <div><select name="verIndex" id="verIndex">
-                                        <option value="">Elige una Oferta...</option>
-                                        <option value="Nuevo">Nuevo</option>
-                                        <option value="Oferta">Oferta</option>
-                                        <option value="OutLet">OutLet</option>
-                                    </select></div>
-                                <input type="number" name="precio" id="precio" min="0" max="999999999" maxlength="9"
-                                    required>
-                                <!-- <input type="text" name="especificaciones" id="especificaciones" required>-->
-                                <textarea name="especificaciones" id="especificaciones" cols="20" rows="5"></textarea>
+                            <div class="botones">
+                                <button type="reset" value="Borrar">Borrar</button>
+                                <button type="submit" value="Agregar">Agregar</button>
                             </div>
-                        </div>
-                        <div class="botones">
-                            <button type="reset" value="Borrar">Borrar</button>
-                            <button type="submit" value="Agregar">Agregar</button>
-                        </div>
-                    </form>
+                        </form>
                 </main>
 
                 <%- include('../partials/footer.ejs') %>

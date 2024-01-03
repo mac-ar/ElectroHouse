@@ -8,8 +8,8 @@ const indexController = {
     index: (req, res) => {
         const productJs = JSON.parse(fs.readFileSync(productFilePath), 'utf-8');
         let prodNuevo = productJs.filter(e => e.verIndex == "Nuevo");
-        let prodOferta = productJs.filter(e => e.verIndex == "Oferta"); 
-        res.render('index', {prodNuevo, prodOferta})
+        let prodOferta = productJs.filter(e => e.verIndex == "Oferta");
+        res.render('index', { prodNuevo, prodOferta })
     }
 }
 

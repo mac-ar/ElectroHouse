@@ -1,14 +1,1 @@
-[
- {
-  "id": 8,
-  "nombre": "Lavarropa Drean",
-  "descripcion": "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium.",
-  "img": "lavarropa.jpg",
-  "categoria": "Electrodomesticos",
-  "oferta": "",
-  "precio": "389999",
-  "descuento": 40,
-  "especificaciones": "Lorem ipsum dolor sit amet consectetur, adipisicing elit.",
-  "cantidad": "2"
- }
-]
+[]

@@ -2,8 +2,6 @@ const express = require('express');
 const router = express.Router();
 const path = require('path')
 const { check } = require('express-validator');
-//const bcrypt = require('bcryptjs')
-
 const multer = require('multer')
 
 const storage = multer.diskStorage({
@@ -39,7 +37,6 @@ const validations = [
                 throw new Error(`Las extensiones de archivo permitidas son ${acceptedExtensions.join(', ')}`);
             }
         }
-
         return true;
     }),
     check('usuario').notEmpty().withMessage('Escribe un nombre de Usuario'),
@@ -56,9 +53,18 @@ const validations = [
         })
 ]
 
+const loginValidations = [
+    check('usuario').notEmpty().withMessage('Escribe un nombre de Usuario'),
+    check('password').notEmpty().withMessage('Ingrese una Contraseña').bail()
+]
+
+
 router.get('/Login', userController.login);
+router.post('/Login', loginValidations, userController.checkLogin);
 
 router.get('/Registro', userController.register);
 router.post('/Registro', uploadFile.single('foto'), validations, userController.createRegister);
+// Logout
+router.get('/logout/', userController.logout);
 
 module.exports = router;

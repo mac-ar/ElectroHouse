@@ -33,6 +33,11 @@
     --bg-3000: #00939b;
 }
 
+.main-container{
+    width: 98%;
+    margin: auto;
+}
+
 .main {
     width: 90%;
     padding-bottom: 20px;
@@ -112,4 +117,22 @@ form .botones button:hover {
     background-color: var(--primary-100);
     color: var(--bg-100);
     cursor: pointer;
+}
+
+aside{
+    float: right;
+    width: 400px;
+    padding: 20px;
+    background-color: white;
+    margin-right: 10px;
+}
+
+.alert-warning{
+    border: solid 1px black;
+    padding: 10px;
+    margin-bottom: 10px;    
+    background-color: #FFCC00;
+    color: black;
+    font-size: 12px;
+    font-weight: bold;
 }

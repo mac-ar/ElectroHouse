@@ -1,7 +1,7 @@
 {
   "name": "electrohouse",
   "version": "1.0.0",
-  "description": "",
+  "description": "- Daniel Mora Sole: Estudiante de ing. en Informatica, recido en Santiago del Estero, tengo 51 años, \r trabajo en el Poder Judicial en el Area de Informatica. Tecnico de Hardware y Sofware, TI, redes y servidores. email: dmorasole@hotmail.com.\r - Marcelo Campos 👨‍🦱: Analista de Sistemas y Programador, trabajo en la Obra Social IOSEP en Dep. Informatica (Sistemas).\r - Roque Peralta: Ing en Computacion, reparo Pc tanto Software como tambien Hardware, trabajo en el Poder Judicial, tengo 45 años  \r - Leandro Loto:\r - Agustin Ingacio Miranda: Estudiante de C.P.N, tengo 28 años de edad, vivo en la ciudad de La Banda, Pcia. de Santigo del Estero.\r - Lourdes Natalia Castillo:\r - Maria Constanza Fontenla: Estudiante de ing. en agrimensura, 28 años, SDE capital",
   "main": "src/app.js",
   "scripts": {
     "start": "node src/app.js",
@@ -12,13 +12,15 @@
   "license": "ISC",
   "dependencies": {
     "bcryptjs": "^2.4.3",
+    "cookie-parser": "^1.4.6",
     "ejs": "^3.1.9",
     "express": "^4.18.2",
+    "express-session": "^1.17.3",
     "express-validator": "^7.0.1",
     "method-override": "^3.0.0",
     "multer": "^1.4.5-lts.1"
   },
   "devDependencies": {
-    "nodemon": "^3.0.1"
+    "nodemon": "^3.0.2"
   }
 }
