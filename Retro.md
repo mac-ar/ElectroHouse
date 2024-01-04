@@ -109,4 +109,33 @@ Hacer menos 🥀
 
 Dejar de hacer 🌩️
     
+    ---## SPRING CINCO
+
+Hacer más 🤙
+
+    Necesitamos hacer mas reuniones con el equipo.
+    Profundizar mas en los temas anteriormente vistos.
+    Evitar realizar los trabajos en los últimos días de entrega, perjudica el resultado del trabajo.
+   
+Empezar a hacer 🦈    
+    Realizar Weekly, asignar un dia fijo de cada semana para la reunion.
+    Investigar de diversas fuentes el material de estudio para mayor comprensión.
+    Realizar tareas del playground día a día, ser honestos con las dificultades.
+    No saltar videos de Playground.
+    
+
+Seguir haciendo 🔨⏩
+    
+    Utilizar el Trello.  
+    Cumplir con las entregas.
+    Respetar a cada compañero, mantener la honestidad entre nosotros cuando nos cueste una tarea.
+    
+
+Hacer menos 🥀
+
+    Faltar a las reuniones.
+    Quedar mudo ante las preguntas del grupo respecto a los Sprints.
+
+Dejar de hacer 🌩️
+    
     ---
