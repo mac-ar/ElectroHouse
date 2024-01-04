@@ -1,4 +1,4 @@
-## Spring UNO
+## Sprint UNO
 🗃️ Sprint 1 🗃️
 
 Hacer más 🤙
@@ -29,7 +29,7 @@ asi tambien como es muy necesario oraganizarce en las tareas y los tiempos en qu
 Cuando todos hacen una parte en tiempo y forma se puede logar el objetivo.
 
 
-## SPRING DOS
+## SPRINT DOS
 
 Hacer más 🤙
 
@@ -56,7 +56,7 @@ Dejar de hacer 🌩️
     
     Posponer tarea asignadas hasta la proximidad de fechas limites.
 
-## SPRING TRES
+## SPRINT TRES
 
 Hacer más 🤙
 
@@ -83,7 +83,7 @@ Dejar de hacer 🌩️
     
     Posponer tarea asignadas hasta la proximidad de fechas limites.
     
-## SPRING CUATRO
+## SPRINT CUATRO
 
 Hacer más 🤙
 
@@ -109,7 +109,7 @@ Hacer menos 🥀
 
 Dejar de hacer 🌩️
     
-    ---## SPRING CINCO
+## SPRINT CINCO
 
 Hacer más 🤙
 
