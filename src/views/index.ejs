@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<%- include('./partials/head.ejs', {Style: "../CSS/Style.css", myStyle: "../CSS/index.css" , title: "Inicio" }) %>
+<%- include('./partials/head.ejs', {Style: "../CSS/Style.css" , myStyle: "../CSS/index.css" , title: "Inicio" }) %>
 
     <body>
         <!-- Contenedo Principal del Body  -->
@@ -16,67 +16,85 @@
                     <h3 class="titulares">Mira nuestros nuevos productos!!</h3>
 
                     <section class="section-product">
-                        <% prodNuevo.forEach(product => { %>
+                        <% prodNuevo.forEach(product=> { %>
                             <article class="articles">
-                                <a href="../products/ProductoDetalle/<%= product.id %>">
-                                    <div>
-                                        <img src="/img/product/<%= product.img %>" alt="Imagen Heladera">
-                                    </div>
-                                    <div class="items_description">
-                                        <i class="fa-solid fa-truck-fast bg-icon"></i>
-                                        <div class="container-price">
-                                            <p class="precio">$<%= product.precio %> </p>
-                                            <p class="descuento"><%= product.descuento %>% OFF</p>
-                                        </div>
-                                        <div class="pay">
-                                            <img class="cuota" src="/img/banners/cuotas-sin-interes.png"
-                                                alt="logo-intereses">
-                                            <img class="credit-card" src="/img/banners/visa-santander.png" alt="Card Visa">
-                                        </div>
-                                        <div class="prod-descripcion">
-                                            <b>Ver <%= product.nombre %></b>
-                                        </div>
-                                    </div>
-                                </a>
-                            </article>
-                        <% }) %>      
-                        </section>
-    
-                        <!-- SECCION DE OFERTAS -->
-                        <div class="banner-oferta">
-                            <img src="/img/banners/heladeras-cybermonday.jpg" alt="banner coccion cybermonday">
-                        </div>
-    
-                        <h3 class="titulares">Un CyberMonday de Ofertas !!!</h3>
-    
-                        <section class="section-product">
-    
-                            <% prodOferta.forEach(product => { %>
-                                <article class="articles">
+                                <% if (locals.isLogged) { %>
                                     <a href="../products/ProductoDetalle/<%= product.id %>">
-                                        <div>
-                                            <img src="/img/product/<%= product.img %>" alt="Imagen Heladera">
-                                        </div>
-                                        <div class="items_description">
-                                            <i class="fa-solid fa-truck-fast bg-icon"></i>
-                                            <div class="container-price">
-                                                <p class="precio">$<%= product.precio %> </p>
-                                                <p class="descuento"><%= product.descuento %>% OFF</p>
-                                            </div>
-                                            <div class="pay">
-                                                <img class="cuota" src="/img/banners/cuotas-sin-interes.png"
-                                                    alt="logo-intereses">
-                                                <img class="credit-card" src="/img/banners/visa-santander.png" alt="Card Visa">
-                                            </div>
-                                            <div class="prod-descripcion">
-                                                <b>Ver <%= product.nombre %></b>
-                                            </div>
-                                        </div>
-                                    </a>
-                                </article>
-        
-                            <% }) %>                
-        
+                                        <% } else { %>
+                                            <a href="/user/Login">
+                                                <% } %>
+                                                    <div>
+                                                        <img src="/img/product/<%= product.img %>"
+                                                            alt="Imagen Heladera">
+                                                    </div>
+                                                    <div class="items_description">
+                                                        <i class="fa-solid fa-truck-fast bg-icon"></i>
+                                                        <div class="container-price">
+                                                            <p class="precio">$<%= product.precio %>
+                                                            </p>
+                                                            <p class="descuento">
+                                                                <%= product.descuento %>% OFF
+                                                            </p>
+                                                        </div>
+                                                        <div class="pay">
+                                                            <img class="cuota" src="/img/banners/cuotas-sin-interes.png"
+                                                                alt="logo-intereses">
+                                                            <img class="credit-card"
+                                                                src="/img/banners/visa-santander.png" alt="Card Visa">
+                                                        </div>
+                                                        <div class="prod-descripcion">
+                                                            <b>Ver <%= product.nombre %></b>
+                                                        </div>
+                                                    </div>
+                                            </a>
+                            </article>
+                            <% }) %>
+                    </section>
+
+                    <!-- SECCION DE OFERTAS -->
+                    <div class="banner-oferta">
+                        <img src="/img/banners/heladeras-cybermonday.jpg" alt="banner coccion cybermonday">
+                    </div>
+
+                    <h3 class="titulares">Un CyberMonday de Ofertas !!!</h3>
+
+                    <section class="section-product">
+
+                        <% prodOferta.forEach(product=> { %>
+                            <article class="articles">
+                                <% if (locals.isLogged) { %>
+                                    <a href="../products/ProductoDetalle/<%= product.id %>"></a>
+                                    <% } else { %>
+                                        <a href="/user/Login">
+                                            <% } %>
+
+                                                <div>
+                                                    <img src="/img/product/<%= product.img %>" alt="Imagen Heladera">
+                                                </div>
+                                                <div class="items_description">
+                                                    <i class="fa-solid fa-truck-fast bg-icon"></i>
+                                                    <div class="container-price">
+                                                        <p class="precio">$<%= product.precio %>
+                                                        </p>
+                                                        <p class="descuento">
+                                                            <%= product.descuento %>% OFF
+                                                        </p>
+                                                    </div>
+                                                    <div class="pay">
+                                                        <img class="cuota" src="/img/banners/cuotas-sin-interes.png"
+                                                            alt="logo-intereses">
+                                                        <img class="credit-card" src="/img/banners/visa-santander.png"
+                                                            alt="Card Visa">
+                                                    </div>
+                                                    <div class="prod-descripcion">
+                                                        <b>Ver <%= product.nombre %></b>
+                                                    </div>
+                                                </div>
+                                        </a>
+                            </article>
+
+                            <% }) %>
+
                     </section>
 
                 </main>

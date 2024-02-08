@@ -39,6 +39,7 @@ header {
     font-size: 12px;
 }
 
+
 header ul {
     list-style-type: none;
 }
@@ -165,6 +166,43 @@ body {
     margin-left: 5px;
     background-color: #00bac2;
     border-radius: 100%;
+}
+
+/* ****************************** */
+
+.menu-user .menu-user-ul {
+    float: left;
+}
+
+.menu-user .menu-user-ul a .dropdown {
+    display: inline-block;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+}
+
+.menu-user .menu-user-ul a img {
+    margin-right: 10px;
+}
+
+.menu-user .dropdown {
+    display: none;
+    position: absolute;
+    background-color: var(--bg-logo-header);
+    min-width: 100px;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+}
+
+.menu-user .dropdown a p {
+    color: black;
+    text-decoration: none;
+    display: inline-block;
+    text-align: left;
+}
+
+.menu-user .menu-user-ul:hover .dropdown {
+    display: block;
 }
 
 /* MENU */

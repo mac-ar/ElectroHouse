@@ -41,16 +41,8 @@ const validations = [
     }),
     check('usuario').notEmpty().withMessage('Escribe un nombre de Usuario'),
     check('password').notEmpty().withMessage('Ingrese una Contraseña').bail(),
-    check('password2').notEmpty().withMessage('Ingrese una Contraseña').bail()
-        .custom((value, { req }) => {
-            let pass = req.body.password;
-            let pass2 = req.body.password2;
-            //console.log(`pass  ${pass}  pass2  ${pass2}`);
-            if (pass !== pass2) {
-                throw new Error('Debe ingrasar la misma contraseña');
-            }
-            return true;
-        })
+
+    check('perfil').notEmpty().withMessage('Debes Elegir un tipo de Usuario')
 ]
 
 const loginValidations = [
@@ -58,10 +50,15 @@ const loginValidations = [
     check('password').notEmpty().withMessage('Ingrese una Contraseña').bail()
 ]
 
-
+//Login
 router.get('/Login', userController.login);
 router.post('/Login', loginValidations, userController.checkLogin);
-
+// mi perfil
+router.get('/Perfil/:id', userController.perfil);
+//Ediar Perfil
+router.get('/EditarPerfil/:id', userController.getEditarPerfil);
+router.put('/ActualizarPerfil/:id', uploadFile.single('foto'), validations, userController.editarPerfil);
+// Registro
 router.get('/Registro', userController.register);
 router.post('/Registro', uploadFile.single('foto'), validations, userController.createRegister);
 // Logout

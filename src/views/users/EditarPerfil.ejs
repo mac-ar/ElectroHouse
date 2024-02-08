@@ -2,23 +2,24 @@
 <html lang="en">
 
 
-<%- include('../partials/head.ejs', {Style: "../CSS/Style.css" ,myStyle: "../CSS/registro.css" , title: "Registro" }) %>
+<%- include('../partials/head.ejs', {Style: "../../CSS/Style.css" ,myStyle: "../../CSS/editarPerfil.css" ,
+    title: "Editar Perfil" }) %>
 
     <body>
         <div class="main-body-container">
             <%- include('../partials/header.ejs') %>
 
-                <!-- MAIN -->
+                <!-- MAIN locals.userLogged.id-->
                 <main>
-                    <form class="form-create" action="/user/Registro" method="POST" enctype="multipart/form-data">
-
-                        <h2>Formulario Registración</h2>
+                    <form action="/user/ActualizarPerfil/<%=locals.errors? idUser : userFound.id %>?_method=PUT"
+                        method="POST" enctype="multipart/form-data">
+                        <h2>Mi Perfil - Editar</h2>
 
                         <div class="formulario">
                             <div class="register">
                                 <label for="nombre">Nombre</label>
                                 <input type="text" name="nombre" id="nombre"
-                                    value="<%= locals.oldData ? oldData.nombre : null %>">
+                                    value="<%= locals.oldData? userN : userFound.nombre %>">
 
                             </div>
                             <div>
@@ -31,7 +32,7 @@
                             <div class="register">
                                 <label for="apellido">Apellido</label>
                                 <input type="text" name="apellido" id="apellido"
-                                    value="<%= locals.oldData ? oldData.apellido : null %>">
+                                    value="<%=locals.oldData? oldData.apellido : userFound.apellido %>">
                             </div>
                             <div>
                                 <% if (locals.errors && errors.apellido) { %>
@@ -43,7 +44,7 @@
                             <div class="register">
                                 <label for="email">E-Mail</label>
                                 <input type="email" name="email" id="email"
-                                    value="<%= locals.oldData ? oldData.email : null %>">
+                                    value="<%=locals.oldData? oldData.email : userFound.email %>">
                             </div>
                             <div>
                                 <% if (locals.errors && errors.email) { %>
@@ -54,8 +55,7 @@
                             </div>
                             <div class="register">
                                 <label for="foto">Foto de Perfil</label>
-                                <input type="file" name="foto" id="foto"
-                                    value="<%= locals.oldData ? oldData.foto : null %>">
+                                <input type="file" name="foto" id="foto">
                             </div>
                             <div>
                                 <% if (locals.errors && errors.foto) { %>
@@ -67,7 +67,7 @@
                             <div class="register">
                                 <label for="usuario">Usuario</label>
                                 <input type="text" name="usuario" id="usuario"
-                                    value="<%= locals.oldData ? oldData.usuario : null %>">
+                                    value="<%=locals.oldData? oldData.usuario : userFound.usuario %>">
                             </div>
                             <div>
                                 <% if (locals.errors && errors.usuario) { %>
@@ -79,7 +79,7 @@
                             <div class="register">
                                 <label for="password">Password</label>
                                 <input type="password" name="password" id="password"
-                                    value="<%= locals.oldData ? oldData.password : null %>">
+                                    value="<%=locals.oldData? oldData.password : userFound.password %>">
                             </div>
                             <div>
                                 <% if (locals.errors && errors.password) { %>
@@ -88,29 +88,33 @@
                                     </p>
                                     <% } %>
                             </div>
-
                             <div class="register">
-                                <input type="radio" id="administrador" name="perfil" value="1">
-                                <label for="administrador">Administrador</label>
-                                <input type="radio" id="cliente" name="perfil" value="2">
-                                <label for="cliente">Cliente</label>
+
+                                <% if (locals.oldData? oldData.perfil_id=='1' :userFound.perfil_id=='1' ) { %>
+                                    <label for="administrador">Administrador</label>
+                                    <input type="radio" id="administrador" name="perfil" value="1" checked>
+                                    <label for="cliente">Cliente</label>
+                                    <input type="radio" id="cliente" name="perfil" value="2">
+                                    <% } else { %>
+                                        <label for="administrador">Administrador</label>
+                                        <input type="radio" id="administrador" name="perfil" value="1">
+                                        <label for="cliente">Cliente</label>
+                                        <input type="radio" id="cliente" name="perfil" value="2" checked>
+                                        <% } %>
                             </div>
                             <div>
-                                <% if (locals.errors && errors.perfil) { %>
+                                <% if (locals.errors && errors.perfil_id) { %>
                                     <p style="color: red; text-align: end;">
-                                        <%= errors.perfil.msg %>
+                                        <%= errors.perfil_id.msg %>
                                     </p>
                                     <% } %>
                             </div>
-                        </div>
 
-                        <div class="botones">
-                            <button type="reset" value="Borrar">Borrar</button>
-                            <button type="submit">Enviar</button>
-                        </div>
-
+                            <div class="botones">
+                                <button type="reset">Borrar</button>
+                                <button type="submit">Actualizar</button>
+                            </div>
                     </form>
-
                 </main>
 
                 <%- include('../partials/footer.ejs') %>

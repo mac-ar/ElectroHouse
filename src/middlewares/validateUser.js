@@ -7,7 +7,7 @@ function validateUser(req, res, next) {
     res.locals.isLogged = false
 
     let userInCookie = req.cookies.user;
-    let userFromCookie = listaClientes.find(oneUser => oneUser.usuario == userInCookie);;
+    let userFromCookie = listaClientes.find(oneUser => oneUser.usuario == userInCookie);
 
     if (userFromCookie) {
         req.session.userLogged = userFromCookie;
