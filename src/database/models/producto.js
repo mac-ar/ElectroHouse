@@ -42,7 +42,7 @@ module.exports = (sequelize, DataTypes) => {
         }
     }
     let config = {
-        tableName: 'producto',
+        tableName: 'productos',
         timestamp: true,
         paranoid: true
     }

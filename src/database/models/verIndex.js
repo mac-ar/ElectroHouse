@@ -21,7 +21,7 @@ module.exports = (sequelize, DataTypes) => {
         }
     }
     let config = {
-        tableName: 'verIndex',
+        tableName: 'verindex',
         timestamp: true,
         paranoid: true
     }
@@ -31,7 +31,8 @@ module.exports = (sequelize, DataTypes) => {
     //Asociacion 
     VerIndex.associate = (models) => {
         VerIndex.hasMany(models.Productos, {
-            as: 'productos'
+            as: 'productos',
+            foreignKey: 'verIndex_id'
         })
     }
 

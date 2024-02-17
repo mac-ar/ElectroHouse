@@ -21,9 +21,11 @@ app.use(validateUser);
 
 app.use(express.static(path.join(__dirname, 'public')));
 
-const mainRouter = require('./routers/indexRouter');
+//const mainRouter = require('./routers/indexRouter');
+const mainRouter = require('./routers/indexRouters');
 const productoRouter = require('./routers/productoRouter');
-const userRouter = require('./routers/userRouter.js');
+//const userRouter = require('./routers/userRouter.js');
+const userRouter = require('./routers/userRouters.js');
 const carritoRouter = require('./routers/carritoRouter.js');
 
 app.use(express.static(path.join(__dirname, 'public')));

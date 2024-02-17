@@ -13,6 +13,9 @@ module.exports = (sequelize, DataTypes) => {
         precioUnitario: {
             type: DataTypes.FLOAT
         },
+        descuento: {
+            type: DataTypes.INTEGER
+        },
         createdAt: {
             type: DataTypes.DATE
         },

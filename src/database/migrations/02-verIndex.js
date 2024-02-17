@@ -1,6 +1,6 @@
 module.exports = {
     up: (queryInterface, Sequelize) => {
-        return queryInterface.createTable('verIndex', {
+        return queryInterface.createTable('verindex', {
             id: {
                 type: Sequelize.INTEGER,
                 autoIncrement: true,
@@ -22,6 +22,6 @@ module.exports = {
         });
     },
     down: (queryInterface, Sequelize) => {
-        return queryInterface.dropTable('verIndex');
+        return queryInterface.dropTable('verindex');
     }
 };

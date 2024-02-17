@@ -21,6 +21,9 @@ module.exports = {
             precioUnitario: {
                 type: Sequelize.FLOAT,
             },
+            descuento: {
+                type: Sequelize.INTEGER
+            },
             createdAt: {
                 type: Sequelize.DATE
             },
