@@ -19,37 +19,30 @@
                         <% prodNuevo.forEach(product=> { %>
                             <% if (product.verIndex_id===1){ %>
                                 <article class="articles">
-                                    <% if (locals.isLogged) { %>
-                                        <a href="../products/ProductoDetalle/<%= product.id %>">
-                                            <% } else { %>
-                                                <a href="/user/Login">
-                                                    <% } %>
-                                                        <div>
-                                                            <img src="/img/product/<%= product.img %>"
-                                                                alt="Imagen Heladera">
-                                                        </div>
-                                                        <div class="items_description">
-                                                            <i class="fa-solid fa-truck-fast bg-icon"></i>
-                                                            <div class="container-price">
-                                                                <p class="precio">$<%= product.precio %>
-                                                                </p>
-                                                                <p class="descuento">
-                                                                    <%= product.descuento %>% OFF
-                                                                </p>
-                                                            </div>
-                                                            <div class="pay">
-                                                                <img class="cuota"
-                                                                    src="/img/banners/cuotas-sin-interes.png"
-                                                                    alt="logo-intereses">
-                                                                <img class="credit-card"
-                                                                    src="/img/banners/visa-santander.png"
-                                                                    alt="Card Visa">
-                                                            </div>
-                                                            <div class="prod-descripcion">
-                                                                <b>Ver <%= product.nombre %></b>
-                                                            </div>
-                                                        </div>
-                                                </a>
+                                    <a href="../products/ProductoDetalle/<%= product.id %>">
+                                        <div>
+                                            <img src="/img/product/<%= product.img %>" alt="Imagen Heladera">
+                                        </div>
+                                        <div class="items_description">
+                                            <i class="fa-solid fa-truck-fast bg-icon"></i>
+                                            <div class="container-price">
+                                                <p class="precio">$<%= product.precio %>
+                                                </p>
+                                                <p class="descuento">
+                                                    <%= product.descuento %>% OFF
+                                                </p>
+                                            </div>
+                                            <div class="pay">
+                                                <img class="cuota" src="/img/banners/cuotas-sin-interes.png"
+                                                    alt="logo-intereses">
+                                                <img class="credit-card" src="/img/banners/visa-santander.png"
+                                                    alt="Card Visa">
+                                            </div>
+                                            <div class="prod-descripcion">
+                                                <b>Ver <%= product.nombre %></b>
+                                            </div>
+                                        </div>
+                                    </a>
                                 </article>
                                 <% } %>
                                     <% }) %>
@@ -67,36 +60,30 @@
                         <% prodNuevo.forEach(product=> { %>
                             <% if (product.verIndex_id===2){ %>
                                 <article class="articles">
-                                    <% if (locals.isLogged) { %>
-                                        <a href="../products/ProductoDetalle/<%= product.id %>"></a>
-                                        <% } else { %>
-                                            <a href="/user/Login">
-                                                <% } %>
-
-                                                    <div>
-                                                        <img src="/img/product/<%= product.img %>"
-                                                            alt="Imagen Heladera">
-                                                    </div>
-                                                    <div class="items_description">
-                                                        <i class="fa-solid fa-truck-fast bg-icon"></i>
-                                                        <div class="container-price">
-                                                            <p class="precio">$<%= product.precio %>
-                                                            </p>
-                                                            <p class="descuento">
-                                                                <%= product.descuento %>% OFF
-                                                            </p>
-                                                        </div>
-                                                        <div class="pay">
-                                                            <img class="cuota" src="/img/banners/cuotas-sin-interes.png"
-                                                                alt="logo-intereses">
-                                                            <img class="credit-card"
-                                                                src="/img/banners/visa-santander.png" alt="Card Visa">
-                                                        </div>
-                                                        <div class="prod-descripcion">
-                                                            <b>Ver <%= product.nombre %></b>
-                                                        </div>
-                                                    </div>
-                                            </a>
+                                    <a href="../products/ProductoDetalle/<%= product.id %>"></a>
+                                    <div>
+                                        <img src="/img/product/<%= product.img %>" alt="Imagen Heladera">
+                                    </div>
+                                    <div class="items_description">
+                                        <i class="fa-solid fa-truck-fast bg-icon"></i>
+                                        <div class="container-price">
+                                            <p class="precio">$<%= product.precio %>
+                                            </p>
+                                            <p class="descuento">
+                                                <%= product.descuento %>% OFF
+                                            </p>
+                                        </div>
+                                        <div class="pay">
+                                            <img class="cuota" src="/img/banners/cuotas-sin-interes.png"
+                                                alt="logo-intereses">
+                                            <img class="credit-card" src="/img/banners/visa-santander.png"
+                                                alt="Card Visa">
+                                        </div>
+                                        <div class="prod-descripcion">
+                                            <b>Ver <%= product.nombre %></b>
+                                        </div>
+                                    </div>
+                                    </a>
                                 </article>
                                 <% } %>
                                     <% }) %>

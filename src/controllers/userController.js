@@ -4,6 +4,7 @@ const { validationResult } = require('express-validator');
 const bcryptjs = require('bcryptjs');
 
 const pathUser = path.join(__dirname, '../public/img/users/')
+const fs = require('fs');
 
 const userControl = {
     login: async (req, res) => {
@@ -109,8 +110,6 @@ const userControl = {
     editarPerfil: async (req, res) => {
         const { nombre, apellido, foto, email, usuario, password, perfil } = req.body;
         const { id } = req.params;
-
-
 
         try {
 
