@@ -15,21 +15,20 @@
             <div class="logoEH">
                 <a href="/"><img src="/img/ico/logoEHV.png" alt="Logo"></a>
             </div>
-            <div class="search-bar">
-                <div>
-                    <input type="text" placeholder="Buscar Productos, marcas..." name="buscar">
-                </div>
-                <div>
-                    <button type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
-                </div>
+            <form action="/products/buscarProducto/" method="get">
+                <div class="search-bar">
+                    <div>
+                        <input type="search" placeholder="Buscar Productos, marcas..." name="buscar">
+                    </div>
+                    <div>
+                        <button type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
+                    </div>
 
-            </div>
+                </div>
+            </form>
             <div class="nav-bar-user">
                 <ul class="menu-user">
                     <% if (locals.isLogged) { %>
-                        <!--  <li class="menu-user-li">
-                            <ul>
-                        <li class="menu-user-ul">-->
                         <li class="menu-user-ul">
                             <a href="#">
                                 <img src="/img/users/<%= locals.userLogged.img %>">
@@ -57,9 +56,6 @@
                                 <p>Carrito</p><i class="fa-solid fa-cart-shopping"></i>
                             </a>
                         </li>
-                        <!--  </ul>
-                        </li>-->
-
                         <% } else { %>
                             <li><a href="/user/Registro">
                                     <p>Registrate</p><i class="fa-regular fa-address-card"></i>
@@ -82,9 +78,12 @@
                     <li><a href="#">Refrigeracion</a></li>
                     <li><a href="#">Calefaccion</a></li>
                     <li><a href="#">Hogar</a></li>
-                    <li><a href="#">Outlet</a></li>
+                    <li><a href="/products/menu/1">Nuevo</a></li>
+                    <li><a href="/products/menu/2">Oferta</a></li>
+                    <li><a href="/products/menu/3">Outlet</a></li>
+                    <li><a href="/products">Productos</a></li>
                     <% if (locals.isLogged) { %>
-                        <li><a href="/products">Productos</a></li>
+
                         <li><a href="/products/agregarProducto">Agregar Productos</a></li>
                         <% } %>
                 </ul>

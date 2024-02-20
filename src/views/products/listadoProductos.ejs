@@ -34,18 +34,22 @@
                                         <%= product.nombre %>
                                     </td>
                                     <td>
-                                        <%= product.categoria %>
+                                        <%= product.verIndex.nombre %>
                                     </td>
                                     <td>
                                         <div class="botones">
                                             <a href="../products/ProductoDetalle/<%= product.id %>"><input type="button"
                                                     value="Ver" class="btnVer"></a>
-                                            <a href="../products/editarProducto/<%= product.id %>"><input type="button"
-                                                    value="Editar" class="btnEditar"></a>
-                                            <form action="../products/eliminarProducto/<%= product.id %>?_method=DELETE"
-                                                method="post">
-                                                <input type="submit" value="Eliminar" class="btnEliminar">
-                                            </form>
+                                            <% if (locals.isLogged) { %>
+                                                <a href="../products/editarProducto/<%= product.id %>"><input
+                                                        type="button" value="Editar" class="btnEditar"></a>
+                                                <form
+                                                    action="../products/eliminarProducto/<%= product.id %>?_method=DELETE"
+                                                    method="post">
+                                                    <input type="submit" value="Eliminar" class="btnEliminar">
+
+                                                </form>
+                                                <% } %>
                                         </div>
                                     </td>
                                 </tr>

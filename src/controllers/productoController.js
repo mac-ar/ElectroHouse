@@ -4,11 +4,50 @@ const { validationResult } = require('express-validator')
 
 const pathProduct = path.join(__dirname, '../public/img/product/')
 const fs = require('fs');
-const productoController = {
+const Sequelize = require('sequelize')
+const Op = Sequelize.Op;
 
+const productoController = {
     getListadoProductos: async (req, res) => {
         try {
-            const productJs = await db.Productos.findAll()
+            const productJs = await db.Productos.findAll({ include: "verIndex" })
+            res.render('products/listadoProductos', { productJs })
+        } catch (error) {
+            console.log(error);
+        }
+
+    },
+    getBuscarProducto: async (req, res) => {
+
+        try {
+            const productJs = await db.Productos.findAll({
+                where: {
+                    nombre: { [Op.like]: `%${req.query.buscar}%` },
+                },
+                order: [["precio", "ASC"]],
+                include: "verIndex"
+
+            });
+            //res.json(productJs);
+            res.render('products/listadoProductos', { productJs })
+        } catch (error) {
+            console.log(error);
+        }
+
+    },
+    getMenu: async (req, res) => {
+        let index = req.params.index
+
+        try {
+            const productJs = await db.Productos.findAll({
+                where: {
+                    verIndex_id: req.params.index,
+                },
+                order: [["id", "ASC"]],
+                include: "verIndex"
+
+            });
+            //res.json(productJs);
             res.render('products/listadoProductos', { productJs })
         } catch (error) {
             console.log(error);
@@ -34,7 +73,6 @@ const productoController = {
             console.log(error);
         }
     },
-
     putActualizarProducto: async (req, res) => {
 
         let errors = validationResult(req);
@@ -79,14 +117,6 @@ const productoController = {
             console.log(error);
         }
     },
-    // getAgregarProducto: async (req, res) => {
-    //     try {
-    //         res.render('../views/products/agregarProducto')
-    //     } catch (error) {
-    //         console.log(error);
-    //     }
-
-    // },
     getAgregarProducto: async (req, res) => {
         try {
             const index = await db.VerIndex.findAll()
@@ -140,13 +170,12 @@ const productoController = {
             console.log(error);
         }
     },
-
     delEliminarProducto: async (req, res) => {
 
         const prodEliminar = await db.Productos.findByPk(req.params.id)
 
         try {
-            await Productos.destroy({ where: { id: req.params.id } });
+            await db.Productos.destroy({ where: { id: req.params.id } });
             //Elimino Imagen
             fs.unlinkSync(path.join(__dirname, '../public/img/product', prodEliminar.img));
             res.redirect('/products')
@@ -154,7 +183,6 @@ const productoController = {
             console.log(error);
         }
     }
-
 }
 
 module.exports = productoController;

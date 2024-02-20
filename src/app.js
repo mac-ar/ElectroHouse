@@ -42,12 +42,7 @@ app.use('/user', userRouter);
 app.use('/products', productoRouter);
 
 app.use('/Carrito', carritoRouter);
-/*
-app.set('users', path.join(__dirname, 'views', 'users'));
-app.set('products', path.join(__dirname, 'views', 'products'));
-app.set('products', path.join(__dirname, 'views', 'products'));
 
-*/
 /* PORT */
 const port = 3000;
 app.listen(port, () => console.log(`Servidor Ejecuntandose en http://localhost:${port}`))
