@@ -1,13 +1,16 @@
 const fs = require('fs');
 const path = require('path')
 
-const pathProductos = path.join(__dirname, '../data/listaProductos.json')
-const listaProductos = JSON.parse(fs.readFileSync(pathProductos, 'utf-8'))
+const productFilePath = path.join(__dirname, '../data/listaProductos.json');
+const productJs = JSON.parse(fs.readFileSync(productFilePath, 'utf-8'))
 
-const indexControl = {
+const indexController = {
     index: (req, res) => {
-        res.render('index', { listaProductos })
+        const productJs = JSON.parse(fs.readFileSync(productFilePath), 'utf-8');
+        let prodNuevo = productJs.filter(e => e.verIndex == "Nuevo");
+        let prodOferta = productJs.filter(e => e.verIndex == "Oferta");
+        res.render('index', { prodNuevo, prodOferta })
     }
 }
 
-module.exports = indexControl
+module.exports = indexController;

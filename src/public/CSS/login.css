@@ -30,12 +30,13 @@
     --text-2000: #2c2c2c;
     --bg-1000: #04C4CC;
     --bg-2000: #00bac2;
-    --bg-3000: #00939b;;
+    --bg-3000: #00939b;
+    ;
 }
 
 form {
     width: 450px;
-    height: 300px;
+    height: auto;
     border: 1.5px solid var(--bg-300);
     border-radius: 5%;
     margin: 20px auto;
@@ -44,46 +45,49 @@ form {
 
 form h2 {
     text-align: center;
-    margin: 10px;
+    margin: 20px;
 }
 
 form .login {
     width: 90%;
     margin: 0 auto;
     display: flex;
+    flex-direction: column;
 }
 
-form .login .label {
-    width: 40%;
-    margin: 20px auto;
+form .login .register {
+    width: 100%;
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
+}
+
+form .login .register label {
+    width: 40%;
+    height: 20px;
+    margin: 12px auto;
     text-align: end;
     padding-right: 10px;
 }
 
-form .login .label label {
-    margin-bottom: 15px;
-    height: 20px;
-}
-
-form .login .input {
+form .login .register input {
     width: 60%;
-    margin: 20px auto;
-    display: flex;
-    flex-direction: column;
+    margin: 10px auto;
+    height: 20px;
     text-align: start;
     padding-left: 10px;
 }
 
-form .login .input input {
-    margin-bottom: 15px;
-    height: 20px;
+form .remember {
+    width: 90%;
+    margin: 0 auto;
+    margin-top: 10px;
+    text-align: center;
 }
 
 form .olvido {
     width: 90%;
     margin: 0 auto;
+    margin-top: 20px;
     display: flex;
     flex-direction: column;
     text-align: center;

@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<%- include('../partials/head.ejs', {Style: "../../CSS/Style.css" , myStyle: "../../CSS/producto.css" ,
+    title: "Detalle de la Compra" }) %>
+
+    <body>
+        <div class="main-body-container">
+
+            <%- include('../partials/header.ejs') %>
+
+                <main>
+                    <h1>DETALLE DE LA COMPRA</h1>
+
+                    <section class="info-del-producto">
+                        <div class="producto_precio">
+                            <% carrito.forEach(product=> { %>
+                                <p class="nombre">
+                                    <%=product.nombre%>
+                                </p>
+                                <p class="precio">$ <%=product.precio%>
+                                </p>
+                                <p class="subtotal">$ <%=product.subtotal%>
+                                </p>
+                                <p class="cantidad">
+                                    <%=product.cantidad%>
+                                </p>
+                                <hr>
+                                <% }) %>
+
+                                    <ul class="tarjetas" type='circle'>
+                                        <li type='disc'>Mastercard hasta 3 cuotas sin interés</li>
+                                        <li type='disc'>Visa Santander Río hasta 6 cuotas sin interés</li>
+                                        <li type='disc'>Naranja X 1 solo pago</li>
+                                        <li type='disc'>Otras tarjetas plan Z</li>
+
+                                    </ul>
+
+
+                        </div>
+
+                        <div class="contenedor-producto">
+                            <h2 class="modelo-producto">
+
+                            </h2>
+                            <div class="sucursal">
+                                <p>Confirmar sucursal más cercana para retiro o envío:</p>
+                            </div>
+                            <br>
+                            <br>
+                            <br>
+                            <form action="/Carrito/historialCarrito" method="POST">
+                                <div class="form-CP">
+                                    <label for="codigo postal" name="codpostal">Código postal</label>
+                                    <input type="text" id="codigo-postal" name="codpostal" value="G4200"></input>
+                                    <button class="bt-buscar" type="submit">Buscar</button>
+                                </div>
+                                <p>Sucursal: Santiago Del Estero </p>
+                                <br>
+                                <br>
+                                <button class="agregar" type="submit" onclick=" alert('Gracias Por Su Compra !!!') /* myFunction() */">PAGAR</button>                                
+                            </form>
+                        </div>
+                    </section>
+
+                    <section class="contenedor-detalle">
+                        <div class="detalles">
+                            <h3>Especificaciones técnicas</h3>
+                            <p>
+                                <%=carrito.especificaciones%>
+                            </p>
+                        </div>
+                        <div class="detalles">
+                            <h3>Descripción</h3>
+                            <p>
+                                <%=carrito.descripcion%>
+                            </p>
+                        </div>
+                        <div class="detalles">
+                            <h3>Productos relacionados</h3>
+                            <p>Heladera 2</p>
+                            <p>Heladera 3</p>
+                            <p>Heladera 4</p>
+                        </div>
+                    </section>
+                </main>
+
+                <!--  nuevo pie-->
+                <%- include('../partials/footer.ejs') %>
+
+        </div>
+    </body>
+
+    <script>
+        function myFunction() {
+          alert('Gracias Por Su Compra !!!');
+        }
+    </script>
+
+</html>

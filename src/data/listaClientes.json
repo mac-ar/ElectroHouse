@@ -1,28 +1,32 @@
 [
- {
-  "id": 1,
-  "nombre": "ROQUE",
-  "apellido": "PERALTA",
-  "email": "pitty4102@gmail.com",
-  "usuario": "pitty",
-  "password": "pitty"
- },
- {
-  "id": 1701541373175,
-  "nombre": "bmjg",
-  "apellido": "plxhwir",
-  "email": "deudjc@kjcdh",
-  "usuario": "pitty",
-  "password": "12345",
-  "password2": "56789"
- },
- {
-  "id": 1701638786282,
-  "nombre": "gonzalo",
-  "apellido": "peralta",
-  "email": "gonzi@sad",
-  "usuario": "gonzii",
-  "password": "2345",
-  "password2": "3456"
- }
+    {
+        "id": 1,
+        "nombre": "Constanza",
+        "apellido": "Fontenla",
+        "email": "mcf@gmail.com",
+        "img": "img-1707508174101.jpg",
+        "usuario": "mcf",
+        "password": "$2a$10$b3w5pTDubwMkJqP5k8AmhOIeun/KeGuUywJvjwVL88O5YgYHg0Id2",
+        "perfil_id": "1"
+    },
+    {
+        "id": 2,
+        "nombre": "roque",
+        "apellido": "peralta",
+        "email": "pitty@gmail.com",
+        "img": "img-1706661461910.jpg",
+        "usuario": "pitty",
+        "password": "$2a$10$pnj2Ke6OtyprfHzfY2ENHe0nMjWYSa6GdHuDvVohjxjMn84ZvYEbG",
+        "perfil_id": "1"
+    },
+    {
+        "id": 3,
+        "nombre": "roque",
+        "apellido": "fdsfsdfs",
+        "email": "dfsfsd@xcvxc.com",
+        "img": "img-1706130093820.png",
+        "usuario": "roque",
+        "password": "$2a$10$pnj2Ke6OtyprfHzfY2ENHe0nMjWYSa6GdHuDvVohjxjMn84ZvYEbG",
+        "perfil_id": "2"
+    }
 ]

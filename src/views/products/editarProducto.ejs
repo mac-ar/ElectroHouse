@@ -1,52 +1,67 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<%- include('../partials/head.ejs', {Style: "CSS/Style.css" ,myStyle: "CSS/agregarProducto.css" ,
+<%- include('../partials/head.ejs', {Style: "../../CSS/Style.css" ,myStyle: "../../CSS/agregarProducto.css" ,
     title: "Editar Producto" }) %>
 
     <body>
         <div class="main-container">
             <%- include('../partials/header.ejs') %>
                 <main>
+                    <%- include('../partials/aside-errors.ejs') %>
+                        <form
+                            action="/products/actualizarProducto/<%= locals.errors? idProd : editProducto.id %>?_method=PUT"
+                            method="POST" enctype="multipart/form-data">
 
-                    <form action="/editarProducto/<%= pToEdit.id %>?_method=PUT" method="POST"
-                        enctype="multipart/form-data">
+                            <h2>Editar Producto <%= locals.oldData? prodN : editProducto.nombre %>
+                            </h2>
 
-                        <h2>Editar Producto <%= pToEdit.nombre %>
-                        </h2>
-
-                        <div class="formulario">
-                            <div class="label">
-                                <label for="nombre">Nombre de Producto</label>
-                                <label for="descripcion">Descripcion del Producto</label>
-                                <label for="imagen">Subir Imagen del Producto</label>
-                                <label for="categoria">Categoria</label>
-                                <label for="precio">Precio del Producto</label>
-                                <label for="especificaciones">Especificaciones Tecnicas</label>
+                            <div class="formulario">
+                                <div class="label">
+                                    <label for="nombre">Nombre de Producto</label>
+                                    <label for="descripcion">Descripcion del Producto</label>
+                                    <label for="imagen">Subir Imagen del Producto</label>
+                                    <label for="categoria">Categoria</label>
+                                    <label for="verIndex">Tipo Oferta</label>
+                                    <label for="precio">Precio del Producto</label>
+                                    <label for="especificaciones">Especificaciones Tecnicas</label>
+                                </div>
+                                <div class="input">
+                                    <input type="text" name="nombre" id="nombre"
+                                        value="<%= locals.oldData? prodN : editProducto.nombre %>">
+                                    <input type="text" name="descripcion" id="descripcion"
+                                        value="<%= locals.oldData? oldData.descripcion : editProducto.descripcion %>">
+                                    <input type="file" name="imagen" id="imagen">
+                                    <div><select name="categoria" id="categoria">
+                                            <option
+                                                value="<%= locals.oldData? oldData.categoria : editProducto.categoria %>">
+                                                <%= locals.oldData? oldData.categoria : editProducto.categoria %>
+                                            </option>
+                                            <option value="Electrodomesticos">Electrodomesticos</option>
+                                            <option value="Refrigeracion">Refrigeracion</option>
+                                            <option value="Calefaccion">Calefaccion</option>
+                                            <option value="Hogar">Hogar</option>
+                                            <option value="Outlet">Outlet</option>
+                                        </select></div>
+                                    <div><select name="verIndex" id="verIndex">
+                                            <option value="">Elige una Opcion...</option>
+                                            <% index.forEach(product=> { %>
+                                                <option value="<%= product.id %>">
+                                                    <%= product.nombre %>
+                                                </option>
+                                                <% } )%>
+                                        </select></div>
+                                    <input type="number" name="precio" id="precio" min="0" max="999999999" maxlength="9"
+                                        value="<%= locals.oldData? oldData.precio : editProducto.precio %>">
+                                    <textarea name="especificaciones" id="especificaciones" cols="20"
+                                        rows="5"><%= locals.oldData? oldData.especificaciones : editProducto.especificaciones %></textarea>
+                                </div>
                             </div>
-                            <div class="input">
-                                <input type="text" name="nombre" id="nombre" value="<%= pToEdit.nombre %>" disabled>
-                                <input type="text" name="descripcion" id="descripcion"
-                                    value="<%= pToEdit.descripcion %>" required>
-                                <input type="file" name="imagen" id="imagen" required>
-                                <div><select name="categoria" id="categoria">
-                                        <option value="Valor01">Valor01</option>
-                                        <option value="Valor02">Valor02</option>
-                                        <option value="Valor03">Valor03</option>
-                                        <option value="Valor04">Valor04</option>
-                                    </select></div>
-                                <input type="number" name="precio" id="precio" min="0" max="999999999" maxlength="9"
-                                    value="<%= pToEdit.precio %>" required>
-                                <textarea name="especificaciones" id="especificaciones" cols="20" rows="5">
-                                    <%= pToEdit.especificaciones %>
-                                </textarea>
+                            <div class="botones">
+                                <button type="reset" value="Borrar">Borrar</button>
+                                <button type="submit" value="Guardar">Guardar</button>
                             </div>
-                        </div>
-                        <div class="botones">
-                            <button type="reset" value="Borrar">Borrar</button>
-                            <button type="submit" value="Guardar">Guardar</button>
-                        </div>
-                    </form>
+                        </form>
 
                 </main>
                 <%- include('../partials/footer.ejs') %>

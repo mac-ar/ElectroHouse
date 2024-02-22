@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<%- include('../partials/head.ejs', {Style: "../CSS/Style.css" , myStyle: "../CSS/producto.css" ,
+<%- include('../partials/head.ejs', {Style: "../../CSS/Style.css" , myStyle: "../../CSS/producto.css" ,
     title: "Detalle de producto" }) %>
 
     <body>
@@ -14,8 +14,8 @@
 
                     <section class="info-del-producto">
                         <div class="producto_precio">
-                            <img src="/img/product/<%=producto.img%>" alt="imagen del producto" class="img-producto">
-                            <p class="precio">$<%=producto.precio%>
+                            <img src="/img/product/<%=prodDet.img%>" alt="imagen del producto" class="img-producto">
+                            <p class="precio">$<%=prodDet.precio%>
                             </p>
                             <br>
 
@@ -26,14 +26,17 @@
                                 <li type='disc'>Otras tarjetas plan Z</li>
 
                             </ul>
-                            <% if(producto.oferta=='true' ){%>
-                                <h2>OFERTA</h2>
+                            <% if(prodDet.oferta=='true' ){%>
                                 <%}%>
+                                    <h2>
+                                        <%=prodDet.verIndex%>
+                                    </h2>
+
                         </div>
 
                         <div class="contenedor-producto">
                             <h2 class="modelo-producto">
-                                <%=producto.nombre%>
+                                <%=prodDet.nombre%>
                             </h2>
                             <div class="sucursal">
                                 <p>Confirmar sucursal más cercana para retiro o envío:</p>
@@ -41,7 +44,7 @@
                             <br>
                             <br>
                             <br>
-                            <form action="/createCarrito/<%=producto.id%>" method="POST">
+                            <form action="/Carrito/createCarrito/<%=prodDet.id%>" method="POST">
                                 <div class="form-CP">
                                     <label for="codigo postal" name="codpostal">Código postal</label>
                                     <input type="text" id="codigo-postal" name="codpostal" value="G4200"></input>
@@ -53,8 +56,15 @@
                                 <div>
                                     <input type="number" name="cantidad" id="cantidad" value="1">
                                 </div>
-                                <button class="agregar" type="submit">Agregar al carrito de compras / Comprar
-                                    ahora</button>
+                                <% if (locals.isLogged) { %>
+                                    <button class="agregar" type="submit">Agregar al carrito de compras / Comprar
+                                        ahora</button>
+                                    <% } else { %>
+                                        <button class="agregar"><a href="/user/Login">Login</a></button>
+
+                                        <% } %>
+
+
                             </form>
                         </div>
                     </section>
@@ -62,24 +72,14 @@
                     <section class="contenedor-detalle">
                         <div class="detalles">
                             <h3>Especificaciones técnicas</h3>
-                            <!--<p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Iusto fugit pariatur vel nam,
-                                cum voluptate, obcaecati tempora inventore mollitia minus aperiam unde dolorum laborum?
-                                Quos aperiam illum natus, tempora hic sed nesciunt repellat laudantium deleniti voluptas
-                                voluptatum molestias dolorum sint eaque iure iste cum maiores assumenda. Praesentium
-                                neque qui corrupti!</p>-->
                             <p>
-                                <%=producto.especificaciones%>
+                                <%=prodDet.especificaciones%>
                             </p>
                         </div>
                         <div class="detalles">
                             <h3>Descripción</h3>
-                            <!--<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Id blanditiis dolorum,
-                                laudantium repudiandae tenetur hic, mollitia illum voluptatem nam nemo eaque cumque odit
-                                facere quos quam? Sequi cum omnis in voluptate, quis sunt harum culpa porro vitae
-                                impedit alias repudiandae distinctio amet recusandae sapiente? Nihil maxime incidunt
-                                debitis ducimus maiores?</p>-->
                             <p>
-                                <%=producto.descripcion%>
+                                <%=prodDet.descripcion%>
                             </p>
                         </div>
                         <div class="detalles">

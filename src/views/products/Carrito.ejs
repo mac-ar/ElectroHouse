@@ -16,50 +16,70 @@
                         <section class="articulos">
                             <% var total=0 %>
                                 <% var subTotal=0 %>
+                                    <% var id=0 %>
+                                        <% var cantidad=0 %>
 
-                                    <% listaCarrito.forEach(productos=> { %>
-                                        <% var descu=0 %>
-                                            <article class="containerArt">
-                                                <img src="/img/product/<%= productos.img%>" alt="" width="150px"
-                                                    height="150px">
-                                                <label for="number">
-                                                    <%= productos.nombre%>
-                                                </label>
-                                                <input type="number" name="cantidad" id="cantidad" value="1" min="1"
-                                                    max="5">
+                                            <% listaCarrito.forEach(productos=> { %>
+                                                <% var descu=0 %>
+                                                    <% id=productos.id %>
+                                                        <% cantidad=productos.cantidad %>
+                                                            <article class="containerArt">
+                                                                <img src="/img/product/<%= productos.img%>" alt=""
+                                                                    width="150px" height="150px">
+                                                                <label for="number">
+                                                                    <%= productos.nombre%>
+                                                                </label>
+                                                                <p><b>Cantidad</b>
+                                                                    <%= productos.cantidad%>
+                                                                </p>
+                                                                <p>$ <%= productos.precio%>
+                                                                </p>
+                                                                <% descu=productos.precio - (((productos.precio *
+                                                                    productos.descuento ) )/ 100) %>
+                                                                    <% subProducto=descu * productos.cantidad%>
+                                                                        <p><b>SubTotal</b> $ <%=subProducto%>
+                                                                        </p>
+                                                                        <form
+                                                                            action="/Carrito/borrarCarrito/<%= productos.id%>?_method=DELETE"
+                                                                            method="post">
+                                                                            <button type="submit"><i
+                                                                                    class="fa-regular fa-trash-can"></i></button>
+                                                                        </form>
 
-                                                <p>$ <%= productos.precio%>
-                                                </p>
-                                                <form action="/borrarCarrito/<%= productos.id%>?_method=DELETE"
-                                                    method="post">
-                                                    <button type="submit"><i
-                                                            class="fa-regular fa-trash-can"></i></button>
-                                                </form>
-                                                <% descu=productos.precio - (((productos.precio * productos.descuento )
-                                                    )/ 100) %>
-                                                    <% subTotal=subTotal + productos.precio %>
-                                                        <% total=total + descu %>
-                                            </article>
-                                            <% }) %>
+                                                                        <% subTotal=subTotal + (productos.precio *
+                                                                            productos.cantidad)%>
+                                                                            <% total=total + subProducto %>
+                                                            </article>
+                                                            <% }) %>
                         </section>
 
                         <section class="carrito">
-                            <label for="subtotal">
-                                <div>
-                                    <p>SubTotal:</p>
-                                    <p>$ <%= subTotal %>
-                                    </p>
+                            <form action="/Carrito/compraCarrito" method="GET">
+                                <label for="subtotal">
+                                    <div>
+                                        <p>SubTotal:</p>
+                                        <p>$ <%= subTotal %>
+                                        </p>
+                                    </div>
+                                    <div>
+                                        <p>TOTAL $</p>
+                                        <input class="total" type="text" name="total" id="total" value="<%= total %>"
+                                            disabled>
+                                        <input class="disabl" type="text" name="cantidad" id="cantidad"
+                                            value="<%= cantidad %>" disabled>
+                                        <input class="disabl" type="text" name="id" id="id" value="<%= id %>" disabled>
+                                    </div>
+                                </label>
+                                <div class="botones">
+                                    <% if (listaCarrito.length != 0) { %>
+                                        <button type="submit">Finalizar Compra</button>
+                                    <% } %>
+                                    
+                                    <a href="/products"><button type="submit">Seguir Comprando</button></a>
+                                    <!--    <button type="submit">Seguir Comprando</button>
+                                 <a><input type="submit" value="Finalizar Compra"></a>-->
                                 </div>
-                                <div>
-                                    <p>TOTAL</p>
-                                    <p class="total">$ <%= total %>
-                                    </p>
-                                </div>
-                            </label>
-                            <div class="botones">
-                                <a href="/"><input type="submit" value="Finalizar Compra"></a>
-                                <a href="/"><input type="submit" value="Seguir Comprando"></a>
-                            </div>
+                            </form>
                         </section>
                     </div>
                 </main>

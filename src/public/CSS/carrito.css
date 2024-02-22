@@ -65,7 +65,7 @@ main .container .articulos .containerArt img {
 }
 
 main .container .articulos .containerArt label {
-    width: 40%;
+    width: 30%;
 }
 
 main .container .articulos .containerArt input {
@@ -73,7 +73,7 @@ main .container .articulos .containerArt input {
 }
 
 main .container .articulos .containerArt p {
-    width: 10%;
+    width: 20%;
     margin: 0px 5px;
 }
 
@@ -83,7 +83,7 @@ main .container .articulos .containerArt a {
 
 main .container .carrito {
     width: 30%;
-    height: 200px;
+    height: auto;
     margin-top: 50px;
     border-top: 1px;
     border-left: 1px;
@@ -114,6 +114,12 @@ main .container .carrito label div p {
 main .container .carrito label div .total {
     margin-left: 5px;
     font-size: 25px;
+    width: 100px;
+}
+
+main .container .carrito label div .disabl {
+    display: none;
+    width: 10px;
 }
 
 main .container .carrito .botones {
@@ -122,11 +128,7 @@ main .container .carrito .botones {
     margin-top: 40px;
 }
 
-main .container .carrito .botones a {
-    text-decoration: none;
-}
-
-main .container .carrito .botones input {
+main .container .carrito .botones button {
     width: 90%;
     margin: 5px auto;
     background-color: var(--accent-100);
@@ -136,8 +138,27 @@ main .container .carrito .botones input {
     align-items: center;
 }
 
-main .container .carrito .botones input:hover {
+main .container .carrito .botones button:hover {
     background-color: var(--primary-100);
     color: var(--bg-100);
+    cursor: pointer;
+}
+
+main .container .carrito .botones a {
+    text-decoration: none;
+    /* width: 90%;
+    margin: 5px auto;
+  background-color: var(--accent-100);
+    color: var(--bg-300);
+    display: flex;
+    flex-direction: column;
+    align-items: center;*/
+}
+
+main .container .carrito .botones a:hover {
+    background-color: var(--primary-100);
+    color: var(--bg-100);
+    width: 90%;
+    margin: 5px auto;
     cursor: pointer;
 }
