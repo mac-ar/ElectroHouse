@@ -9,3 +9,5 @@ const indexControl = {
         res.render('index', { listaProductos })
     }
 }
+
+module.exports = indexControl
