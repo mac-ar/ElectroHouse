@@ -2,25 +2,21 @@
  {
   "id": 3,
   "nombre": "Licuadora Liliana",
-  "descripcion": "Lorem ipsum dolor sit amet consectetur, adipisicing elit.",
+  "usuario": 1,
   "img": "licuadora.jpg",
-  "categoria": "Electrodomesticos",
-  "oferta": "",
-  "precio": "69770",
+  "precio": 69770,
   "descuento": 10,
-  "especificaciones": "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium.",
-  "cantidad": "1"
+  "subtotal": 62793,
+  "cantidad": 1
  },
  {
-  "id": 2,
-  "nombre": "Aire Split BGH",
-  "descripcion": "Lorem ipsum dolor sit amet consectetur, adipisicing elit.",
-  "img": "aire.jpg",
-  "categoria": "Refrigeracion",
-  "oferta": "",
-  "precio": "690770",
-  "descuento": 20,
-  "especificaciones": "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium.",
-  "cantidad": "1"
+  "id": 1,
+  "nombre": "Heladera Electrolux",
+  "usuario": 1,
+  "img": "heladera.jpg",
+  "precio": 390770,
+  "descuento": 10,
+  "subtotal": 351693,
+  "cantidad": 1
  }
 ]

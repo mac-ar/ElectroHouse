@@ -27,7 +27,8 @@ const mainRouter = require('./routers/indexRouters');
 const productoRouter = require('./routers/productoRouters');
 //const userRouter = require('./routers/userRouter.js');
 const userRouter = require('./routers/userRouters.js');
-const carritoRouter = require('./routers/carritoRouter.js');
+//const carritoRouter = require('./routers/carritoRouter.js');
+const carritoRouter = require('./routers/carritoRouters.js');
 
 app.use(express.static(path.join(__dirname, 'public')));
 
