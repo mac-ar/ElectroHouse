@@ -15,10 +15,8 @@ const productoController = {
         } catch (error) {
             console.log(error);
         }
-
     },
     getBuscarProducto: async (req, res) => {
-
         try {
             const productJs = await db.Productos.findAll({
                 where: {
@@ -26,19 +24,15 @@ const productoController = {
                 },
                 order: [["precio", "ASC"]],
                 include: "verIndex"
-
             });
             //res.json(productJs);
             res.render('products/listadoProductos', { productJs })
         } catch (error) {
             console.log(error);
         }
-
     },
     getMenu: async (req, res) => {
-        let index = req.params.index
-
-        try {
+         try {
             const productJs = await db.Productos.findAll({
                 where: {
                     verIndex_id: req.params.index,
@@ -52,7 +46,6 @@ const productoController = {
         } catch (error) {
             console.log(error);
         }
-
     },
     getProductoDetalle: async (req, res) => {
         try {
@@ -61,7 +54,6 @@ const productoController = {
         } catch (error) {
             console.log(error);
         }
-
     },
     getEditarProducto: async (req, res) => {
         try {
@@ -74,7 +66,6 @@ const productoController = {
         }
     },
     putActualizarProducto: async (req, res) => {
-
         let errors = validationResult(req);
         try {
             if (errors.isEmpty()) {
@@ -125,15 +116,11 @@ const productoController = {
         } catch (error) {
             console.log(error);
         }
-
-
     },
     postGuardarProducto: async (req, res) => {
         let errors = validationResult(req);
-
         try {
             if (errors.isEmpty()) {
-
                 //Genero un nuevo Producto
                 const newProduct = {
                     nombre: req.body.nombre,
@@ -171,9 +158,7 @@ const productoController = {
         }
     },
     delEliminarProducto: async (req, res) => {
-
         const prodEliminar = await db.Productos.findByPk(req.params.id)
-
         try {
             await db.Productos.destroy({ where: { id: req.params.id } });
             //Elimino Imagen

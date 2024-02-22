@@ -54,7 +54,7 @@
                         </section>
 
                         <section class="carrito">
-                            <form action="/Carrito/compraCarrito/<%= id %>" method="GET">
+                            <form action="/Carrito/compraCarrito" method="GET">
                                 <label for="subtotal">
                                     <div>
                                         <p>SubTotal:</p>
@@ -71,7 +71,10 @@
                                     </div>
                                 </label>
                                 <div class="botones">
-                                    <button type="submit">Finalizar Compra</button>
+                                    <% if (listaCarrito.length != 0) { %>
+                                        <button type="submit">Finalizar Compra</button>
+                                    <% } %>
+                                    
                                     <a href="/products"><button type="submit">Seguir Comprando</button></a>
                                     <!--    <button type="submit">Seguir Comprando</button>
                                  <a><input type="submit" value="Finalizar Compra"></a>-->

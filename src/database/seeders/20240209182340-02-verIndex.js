@@ -11,13 +11,13 @@ module.exports = {
       deletedAt: null
     },
     {
-      nombre: 'OUTLET',
+      nombre: 'OFERTA',
       createdAt: new Date(),
       updatedAt: null,
       deletedAt: null
     },
     {
-      nombre: 'OFERTA',
+      nombre: 'OUTLET',
       createdAt: new Date(),
       updatedAt: null,
       deletedAt: null
