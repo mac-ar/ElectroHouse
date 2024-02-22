@@ -129,13 +129,19 @@ body {
     text-align: center;
     font-size: 20px;
 }
-
+.search-bar i:hover {
+    color: #ccf6ff;
+}
 /* Boton Buscar */
 .search-bar button {
     border: solid 1px #00bac2;
     background-color: #ccf6ff;
     width: 42px;
     height: 42px;
+}
+.search-bar button:hover{
+    border: solid 1px #ccf6ff;
+    background-color: #00bac2;
 }
 
 /* BARRA DE NAV USER */
