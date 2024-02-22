@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 09-02-2024 a las 20:43:28
+-- Tiempo de generación: 22-02-2024 a las 18:50:37
 -- Versión del servidor: 10.4.32-MariaDB
 -- Versión de PHP: 8.2.12
 
@@ -44,7 +44,7 @@ CREATE TABLE `cabeceracompras` (
 --
 
 INSERT INTO `cabeceracompras` (`id`, `usuario_id`, `cantidadTotal`, `precioTotal`, `fechaCompra`, `cerrado`, `createdAt`, `updatedAt`, `deletedAt`) VALUES
-(1, 1, 1, 351693, '2024-02-09 19:38:27', 1, '2024-02-09 19:38:27', NULL, NULL);
+(1, 1, 1, 351693, '2024-02-22 17:50:25', 1, '2024-02-22 17:50:25', NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -53,6 +53,7 @@ INSERT INTO `cabeceracompras` (`id`, `usuario_id`, `cantidadTotal`, `precioTotal
 --
 
 CREATE TABLE `detallecompras` (
+  `id` int(11) NOT NULL,
   `idCabeceraCompra` int(11) DEFAULT NULL,
   `producto_id` int(11) DEFAULT NULL,
   `cantidad` int(11) DEFAULT NULL,
@@ -67,8 +68,8 @@ CREATE TABLE `detallecompras` (
 -- Volcado de datos para la tabla `detallecompras`
 --
 
-INSERT INTO `detallecompras` (`idCabeceraCompra`, `producto_id`, `cantidad`, `precioUnitario`, `descuento`, `createdAt`, `updatedAt`, `deletedAt`) VALUES
-(1, 1, 1, 390770, 10, '2024-02-09 19:38:27', NULL, NULL);
+INSERT INTO `detallecompras` (`id`, `idCabeceraCompra`, `producto_id`, `cantidad`, `precioUnitario`, `descuento`, `createdAt`, `updatedAt`, `deletedAt`) VALUES
+(1, 1, 1, 1, 390770, 10, '2024-02-22 17:50:25', NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -89,8 +90,8 @@ CREATE TABLE `perfiles` (
 --
 
 INSERT INTO `perfiles` (`id`, `nombre`, `createdAt`, `updatedAt`, `deletedAt`) VALUES
-(1, 'ADMINISTRADOR', '2024-02-09 19:38:27', NULL, NULL),
-(2, 'CLIENTE', '2024-02-09 19:38:27', NULL, NULL);
+(1, 'ADMINISTRADOR', '2024-02-22 17:50:25', NULL, NULL),
+(2, 'CLIENTE', '2024-02-22 17:50:25', NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -117,16 +118,16 @@ CREATE TABLE `productos` (
 --
 
 INSERT INTO `productos` (`id`, `nombre`, `descripcion`, `especificaciones`, `img`, `precio`, `descuento`, `verIndex_id`, `createdAt`, `updatedAt`, `deletedAt`) VALUES
-(1, 'Heladera Electrolux', 'Lorem ipsum dolor sit amet consectetur, adipisicing elit.', 'Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium.', 'heladera.jpg', 390770, 10, 1, '2024-02-09 19:38:27', NULL, NULL),
-(2, 'Aire Split BGH', 'Lorem ipsum dolor sit amet consectetur, adipisicing elit.', 'Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium.', 'aire.jpg', 690770, 20, 1, '2024-02-09 19:38:27', NULL, NULL),
-(3, 'Licuadora Liliana', 'Lorem ipsum dolor sit amet consectetur, adipisicing elit.', 'Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium.', 'licuadora.jpg', 69770, 10, 1, '2024-02-09 19:38:27', NULL, NULL),
-(4, 'Plancha Phillips', 'Lorem ipsum dolor sit amet consectetur, adipisicing elit.', 'Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium.', 'plancha.jpg', 36750, 20, 1, '2024-02-09 19:38:27', NULL, NULL),
-(5, 'Microondas BGH', 'Lorem ipsum dolor sit amet consectetur, adipisicing elit.', 'Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium.', 'micro.jpg', 115770, 5, 1, '2024-02-09 19:38:27', NULL, NULL),
-(6, 'Estufa Gamma', 'Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium.', 'Lorem ipsum dolor sit amet consectetur, adipisicing elit.', 'estufa.jpg', 25530, 40, 2, '2024-02-09 19:38:27', NULL, NULL),
-(7, 'Cafetera Express', 'Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium.', 'Lorem ipsum dolor sit amet consectetur, adipisicing elit.', 'cafetera.jpg', 116290, 40, 2, '2024-02-09 19:38:27', NULL, NULL),
-(8, 'Lavarropa Drean', 'Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium.', 'Lorem ipsum dolor sit amet consectetur, adipisicing elit.', 'lavarropa.jpg', 389999, 40, 2, '2024-02-09 19:38:27', NULL, NULL),
-(9, 'Aspiradora', 'Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium.', 'Lorem ipsum dolor sit amet consectetur, adipisicing elit.', 'aspiradora.jpg', 85490, 40, 2, '2024-02-09 19:38:27', NULL, NULL),
-(10, 'Batidora', 'Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium.', 'Lorem ipsum dolor sit amet consectetur, adipisicing elit.', 'batidora.jpg', 77399, 40, 2, '2024-02-09 19:38:27', NULL, NULL);
+(1, 'Heladera Electrolux', 'Lorem ipsum dolor sit amet consectetur, adipisicing elit.', 'Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium.', 'heladera.jpg', 390770, 10, 1, '2024-02-22 17:50:25', NULL, NULL),
+(2, 'Aire Split BGH', 'Lorem ipsum dolor sit amet consectetur, adipisicing elit.', 'Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium.', 'aire.jpg', 690770, 20, 1, '2024-02-22 17:50:25', NULL, NULL),
+(3, 'Licuadora Liliana', 'Lorem ipsum dolor sit amet consectetur, adipisicing elit.', 'Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium.', 'licuadora.jpg', 69770, 10, 1, '2024-02-22 17:50:25', NULL, NULL),
+(4, 'Plancha Phillips', 'Lorem ipsum dolor sit amet consectetur, adipisicing elit.', 'Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium.', 'plancha.jpg', 36750, 20, 1, '2024-02-22 17:50:25', NULL, NULL),
+(5, 'Microondas BGH', 'Lorem ipsum dolor sit amet consectetur, adipisicing elit.', 'Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium.', 'micro.jpg', 115770, 5, 1, '2024-02-22 17:50:25', NULL, NULL),
+(6, 'Estufa Gamma', 'Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium.', 'Lorem ipsum dolor sit amet consectetur, adipisicing elit.', 'estufa.jpg', 25530, 40, 2, '2024-02-22 17:50:25', NULL, NULL),
+(7, 'Cafetera Express', 'Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium.', 'Lorem ipsum dolor sit amet consectetur, adipisicing elit.', 'cafetera.jpg', 116290, 40, 2, '2024-02-22 17:50:25', NULL, NULL),
+(8, 'Lavarropa Drean', 'Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium.', 'Lorem ipsum dolor sit amet consectetur, adipisicing elit.', 'lavarropa.jpg', 389999, 40, 2, '2024-02-22 17:50:25', NULL, NULL),
+(9, 'Aspiradora', 'Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium.', 'Lorem ipsum dolor sit amet consectetur, adipisicing elit.', 'aspiradora.jpg', 85490, 40, 2, '2024-02-22 17:50:25', NULL, NULL),
+(10, 'Batidora', 'Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium.', 'Lorem ipsum dolor sit amet consectetur, adipisicing elit.', 'batidora.jpg', 77399, 40, 2, '2024-02-22 17:50:25', NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -175,7 +176,7 @@ CREATE TABLE `usuarios` (
 --
 
 INSERT INTO `usuarios` (`id`, `nombre`, `apellido`, `email`, `img`, `usuario`, `password`, `perfil_id`, `createdAt`, `updatedAt`, `deletedAt`) VALUES
-(1, 'Constanza', 'Fontenla', 'mcf@gmail.com', 'img-1704155430324.jpg', 'mcf', '$2a$10$b3w5pTDubwMkJqP5k8AmhOIeun/KeGuUywJvjwVL88O5YgYHg0Id2', 1, '2024-02-09 19:38:27', NULL, NULL);
+(1, 'Constanza', 'Fontenla', 'mcf@gmail.com', 'img-1704155430324.jpg', 'mcf', '$2a$10$b3w5pTDubwMkJqP5k8AmhOIeun/KeGuUywJvjwVL88O5YgYHg0Id2', 1, '2024-02-22 17:50:25', NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -196,9 +197,9 @@ CREATE TABLE `verindex` (
 --
 
 INSERT INTO `verindex` (`id`, `nombre`, `createdAt`, `updatedAt`, `deletedAt`) VALUES
-(1, 'NUEVO', '2024-02-09 19:38:27', NULL, NULL),
-(2, 'OFERTA', '2024-02-09 19:38:27', NULL, NULL),
-(3, 'OUTLET', '2024-02-09 19:38:27', NULL, NULL);
+(1, 'NUEVO', '2024-02-22 17:50:25', NULL, NULL),
+(2, 'OFERTA', '2024-02-22 17:50:25', NULL, NULL),
+(3, 'OUTLET', '2024-02-22 17:50:25', NULL, NULL);
 
 --
 -- Índices para tablas volcadas
@@ -215,6 +216,7 @@ ALTER TABLE `cabeceracompras`
 -- Indices de la tabla `detallecompras`
 --
 ALTER TABLE `detallecompras`
+  ADD PRIMARY KEY (`id`),
   ADD KEY `idCabeceraCompra` (`idCabeceraCompra`),
   ADD KEY `producto_id` (`producto_id`);
 
@@ -261,6 +263,12 @@ ALTER TABLE `verindex`
 -- AUTO_INCREMENT de la tabla `cabeceracompras`
 --
 ALTER TABLE `cabeceracompras`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
+-- AUTO_INCREMENT de la tabla `detallecompras`
+--
+ALTER TABLE `detallecompras`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
