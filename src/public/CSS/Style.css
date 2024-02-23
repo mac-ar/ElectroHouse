@@ -130,6 +130,11 @@ body {
     font-size: 20px;
 }
 
+.search-bar i:hover {
+    color: #ccf6ff;
+    cursor: pointer;
+}
+
 /* Boton Buscar */
 .search-bar button {
     border: solid 1px #00bac2;
@@ -138,6 +143,11 @@ body {
     height: 42px;
 }
 
+.search-bar button:hover {
+    border: solid 1px #ccf6ff;
+    background-color: #00bac2;
+    cursor: pointer;
+}
 /* BARRA DE NAV USER */
 
 .menu-user {
