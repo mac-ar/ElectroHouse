@@ -14,27 +14,35 @@
 
                     <section class="info-del-producto">
                         <div class="producto_precio">
-                            <% carrito.forEach(product=> { %>
-                                <p class="nombre">
-                                    <%=product.nombre%>
-                                </p>
-                                <p class="precio">$ <%=product.precio%>
-                                </p>
-                                <p class="subtotal">$ <%=product.subtotal%>
-                                </p>
-                                <p class="cantidad">
-                                    <%=product.cantidad%>
-                                </p>
-                                <hr>
-                                <% }) %>
+                            <% var total=0 %>
+                                <% carrito.forEach(product=> { %>
+                                    <img src="/img/product/<%= product.img%>" alt="" width="150px" height="150px">
+                                    <p>
+                                        <span> <b>Producto: </b></span>
+                                        <%=product.nombre%>
+                                    </p>
+                                    <p>
+                                        <span> <strong>Precio: </strong></span>
+                                        $ <%=product.precio%>
+                                    </p>
+                                    <p>
+                                        <span> <strong>Cantidad: </strong></span>
+                                        <%=product.cantidad%>
+                                    </p>
+                                    <p class="precio">
+                                        <strong>SUBTOTAL </strong>$ <%=product.subtotal%>
+                                    </p>
+                                    <% total=total + product.subtotal%>
+                                        <hr>
+                                        <% }) %>
+                                            <br><br>
+                                            <ul class="tarjetas" type='circle'>
+                                                <li type='disc'>Mastercard hasta 3 cuotas sin interés</li>
+                                                <li type='disc'>Visa Santander Río hasta 6 cuotas sin interés</li>
+                                                <li type='disc'>Naranja X 1 solo pago</li>
+                                                <li type='disc'>Otras tarjetas plan Z</li>
 
-                                    <ul class="tarjetas" type='circle'>
-                                        <li type='disc'>Mastercard hasta 3 cuotas sin interés</li>
-                                        <li type='disc'>Visa Santander Río hasta 6 cuotas sin interés</li>
-                                        <li type='disc'>Naranja X 1 solo pago</li>
-                                        <li type='disc'>Otras tarjetas plan Z</li>
-
-                                    </ul>
+                                            </ul>
 
 
                         </div>
@@ -58,31 +66,17 @@
                                 <p>Sucursal: Santiago Del Estero </p>
                                 <br>
                                 <br>
-                                <button class="agregar" type="submit" onclick=" alert('Gracias Por Su Compra !!!') /* myFunction() */">PAGAR</button>                                
+                                <p class="precioTotal">
+                                    TOTAL A PAGAR <span class="total">
+                                        <strong>$ <%=total%></strong></span>
+                                </p>
+
+                                <button class="agregar" type="submit"
+                                    onclick=" alert('Gracias Por Su Compra !!!') /* myFunction() */">PAGAR</button>
                             </form>
                         </div>
                     </section>
 
-                    <section class="contenedor-detalle">
-                        <div class="detalles">
-                            <h3>Especificaciones técnicas</h3>
-                            <p>
-                                <%=carrito.especificaciones%>
-                            </p>
-                        </div>
-                        <div class="detalles">
-                            <h3>Descripción</h3>
-                            <p>
-                                <%=carrito.descripcion%>
-                            </p>
-                        </div>
-                        <div class="detalles">
-                            <h3>Productos relacionados</h3>
-                            <p>Heladera 2</p>
-                            <p>Heladera 3</p>
-                            <p>Heladera 4</p>
-                        </div>
-                    </section>
                 </main>
 
                 <!--  nuevo pie-->
@@ -93,7 +87,7 @@
 
     <script>
         function myFunction() {
-          alert('Gracias Por Su Compra !!!');
+            alert('Gracias Por Su Compra !!!');
         }
     </script>
 

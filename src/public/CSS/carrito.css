@@ -146,19 +146,10 @@ main .container .carrito .botones button:hover {
 
 main .container .carrito .botones a {
     text-decoration: none;
-    /* width: 90%;
-    margin: 5px auto;
-  background-color: var(--accent-100);
-    color: var(--bg-300);
-    display: flex;
-    flex-direction: column;
-    align-items: center;*/
 }
 
 main .container .carrito .botones a:hover {
     background-color: var(--primary-100);
     color: var(--bg-100);
-    width: 90%;
-    margin: 5px auto;
     cursor: pointer;
 }

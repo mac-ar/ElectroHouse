@@ -15,10 +15,10 @@
                     <section class="info-del-producto">
                         <div class="producto_precio">
                             <img src="/img/product/<%=prodDet.img%>" alt="imagen del producto" class="img-producto">
-                            <p class="precio">$<%=prodDet.precio%>
+                            <p class="precio">Precio $ <%=prodDet.precio%>
                             </p>
                             <br>
-
+                            <hr>
                             <ul class="tarjetas" type='circle'>
                                 <li type='disc'>Mastercard hasta 3 cuotas sin interés</li>
                                 <li type='disc'>Visa Santander Río hasta 6 cuotas sin interés</li>
@@ -26,39 +26,38 @@
                                 <li type='disc'>Otras tarjetas plan Z</li>
 
                             </ul>
-                            <% if(prodDet.oferta=='true' ){%>
-                                <%}%>
-                                    <h2>
-                                        <%=prodDet.verIndex%>
-                                    </h2>
+
+                            <h2>
+                                <%=prodDet.verIndex.nombre%>
+                            </h2>
 
                         </div>
 
                         <div class="contenedor-producto">
+                            <h2 class="modelo-producto">Producto</h2>
                             <h2 class="modelo-producto">
                                 <%=prodDet.nombre%>
                             </h2>
-                            <div class="sucursal">
+                            <!-- <div class="sucursal">
                                 <p>Confirmar sucursal más cercana para retiro o envío:</p>
-                            </div>
+                            </div> -->
                             <br>
                             <br>
                             <br>
                             <form action="/Carrito/createCarrito/<%=prodDet.id%>" method="POST">
-                                <div class="form-CP">
+                                <!--  <div class="form-CP">
                                     <label for="codigo postal" name="codpostal">Código postal</label>
                                     <input type="text" id="codigo-postal" name="codpostal" value="G4200"></input>
                                     <button class="bt-buscar" type="submit">Buscar</button>
                                 </div>
-                                <p>Sucursal: Santiago Del Estero </p>
+                                <p>Sucursal: Santiago Del Estero </p> -->
                                 <br>
                                 <br>
-                                <div>
+                                <div><span><b>Cantidad: </b></span>
                                     <input type="number" name="cantidad" id="cantidad" value="1">
                                 </div>
                                 <% if (locals.isLogged) { %>
-                                    <button class="agregar" type="submit">Agregar al carrito de compras / Comprar
-                                        ahora</button>
+                                    <button class="agregar" type="submit">Agregar al carrito de Compras </button>
                                     <% } else { %>
                                         <button class="agregar"><a href="/user/Login">Login</a></button>
 
