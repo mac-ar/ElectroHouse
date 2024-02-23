@@ -32,7 +32,7 @@ const productoController = {
         }
     },
     getMenu: async (req, res) => {
-         try {
+        try {
             const productJs = await db.Productos.findAll({
                 where: {
                     verIndex_id: req.params.index,
@@ -49,7 +49,7 @@ const productoController = {
     },
     getProductoDetalle: async (req, res) => {
         try {
-            const prodDet = await db.Productos.findByPk(req.params.id)
+            const prodDet = await db.Productos.findByPk(req.params.id, { include: "verIndex" })
             res.render('products/ProductoDetalle', { prodDet })
         } catch (error) {
             console.log(error);

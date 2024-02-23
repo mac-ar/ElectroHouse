@@ -148,6 +148,12 @@ body {
     background-color: #00bac2;
     cursor: pointer;
 }
+
+.search-bar button:hover {
+    border: solid 1px #ccf6ff;
+    background-color: #00bac2;
+    cursor: pointer;
+}
 /* BARRA DE NAV USER */
 
 .menu-user {

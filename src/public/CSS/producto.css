@@ -139,11 +139,23 @@ h1 {
 }
 
 .agregar {
-    margin-top: 20px;
+    margin: 20px 0px;
+    margin-left: 50px;
     text-align: center;
     border-top: 1.5px solid var(--Negro);
     width: 150px;
+    height: 40px;
     border-radius: 5px;
+}
+
+.precioTotal {
+    width: 370px;
+    text-align: center;
+    font-family: Verdana;
+}
+
+.total {
+    font-size: 20px;
 }
 
 .agregar a {
@@ -169,12 +181,36 @@ h1 {
 }
 
 @keyframes example {
-    0%   {color:red; left:0px; top:0px;}
-    25%   {color:yellow; left:100px; top:0px;}
-    50%  {color:red; left:200px; top:0px;}
-    75%  {color:yellow; left:100px; top:0px;}
-    100% {color:red; left:0px; top:0px;}
-  }
+    0% {
+        color: red;
+        left: 0px;
+        top: 0px;
+    }
+
+    25% {
+        color: yellow;
+        left: 100px;
+        top: 0px;
+    }
+
+    50% {
+        color: red;
+        left: 200px;
+        top: 0px;
+    }
+
+    75% {
+        color: yellow;
+        left: 100px;
+        top: 0px;
+    }
+
+    100% {
+        color: red;
+        left: 0px;
+        top: 0px;
+    }
+}
 
 @media(min-width:600px) {
     .info-del-producto {

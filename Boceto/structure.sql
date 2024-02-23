@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 09-02-2024 a las 20:36:18
+-- Tiempo de generación: 22-02-2024 a las 18:50:00
 -- Versión del servidor: 10.4.32-MariaDB
 -- Versión de PHP: 8.2.12
 
@@ -46,6 +46,7 @@ CREATE TABLE `cabeceracompras` (
 --
 
 CREATE TABLE `detallecompras` (
+  `id` int(11) NOT NULL,
   `idCabeceraCompra` int(11) DEFAULT NULL,
   `producto_id` int(11) DEFAULT NULL,
   `cantidad` int(11) DEFAULT NULL,
@@ -161,6 +162,7 @@ ALTER TABLE `cabeceracompras`
 -- Indices de la tabla `detallecompras`
 --
 ALTER TABLE `detallecompras`
+  ADD PRIMARY KEY (`id`),
   ADD KEY `idCabeceraCompra` (`idCabeceraCompra`),
   ADD KEY `producto_id` (`producto_id`);
 
@@ -207,6 +209,12 @@ ALTER TABLE `verindex`
 -- AUTO_INCREMENT de la tabla `cabeceracompras`
 --
 ALTER TABLE `cabeceracompras`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT de la tabla `detallecompras`
+--
+ALTER TABLE `detallecompras`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --

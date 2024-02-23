@@ -55,6 +55,8 @@ router.get('/Login', userController.login);
 router.post('/Login', loginValidations, userController.checkLogin);
 // mi perfil detalle
 router.get('/Perfil/:id', userController.perfil);
+// mis compras
+router.get('/Compras/:id', userController.compras);
 //Ediar Perfil
 router.get('/EditarPerfil/:id', userController.getEditarPerfil);
 router.put('/ActualizarPerfil/:id', uploadFile.single('foto'), validations, userController.editarPerfil);
