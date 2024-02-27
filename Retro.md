@@ -140,7 +140,8 @@ Dejar de hacer 🌩️
     
     ---
 
-    🗃️ Sprint SEIS 🗃️
+## Sprint SEIS
+🗃️ Sprint 6 🗃️
 
 Hacer más 🤙
 
