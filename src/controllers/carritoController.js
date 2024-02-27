@@ -71,7 +71,7 @@ const carritoController = {
             let cantidad = carrito.length
             const cabecera = {
                 usuario_id: req.session.userLogged.id,
-                fecha: new Date(),
+                fechaCompra: new Date(),
                 precioTotal: total,
                 cerrado: 1,
                 cantidadTotal: cantidad

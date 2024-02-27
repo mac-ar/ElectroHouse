@@ -20,8 +20,7 @@ const userControl = {
         try {
             let { usuario, password } = req.body;
             const errorLogin = validationResult(req);
-            //const userFound = listaClientes.find(oneUser => oneUser.usuario == usuario);
-
+            
             let userFound = await db.Usuarios.findOne({
                 where: {
                     usuario: req.body.usuario
@@ -80,14 +79,33 @@ const userControl = {
                     id: req.params.id
                 }
             })
-            // let id = req.params.id;
-            // const userFound = listaClientes.find(oneUser => oneUser.id == id);
-            // console.log(userFound);
             res.render('../views/users/MiPerfil', { userFound })
         } catch (error) {
             console.log(error);
         }
 
+    },
+    compras: async (req,res) =>{
+        let id = req.session.userLogged.id
+        let producto = db.Productos.findAll();
+        let usuario = db.Usuarios.findByPk(id);
+        let carrito = db.CabeceraCompras.findAll({
+            where: {
+                usuario_id: id,
+            },
+            include: "usuario"
+            });
+        let detalle = db.DetalleCompras.findAll({
+            include: "producto"
+        },{
+            include: "cabeceraCompra"
+        });
+        
+        try {
+
+        } catch (error) {
+            console.log(error);
+        }
     },
     getEditarPerfil: async (req, res) => {
         // let usuario = req.cookies.user;
