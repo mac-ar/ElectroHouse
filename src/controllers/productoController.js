@@ -77,7 +77,7 @@ const productoController = {
                 pUpdate.envio = req.body.envio || pUpdate.envio;
                 pUpdate.verIndex_id = req.body.verIndex || pUpdate.verIndex_id;
                 pUpdate.oferta = req.body.oferta || pUpdate.oferta;
-                pUpdate.precio = req.body.precio || pUpdate.precio;
+                pUpdate.precio = parseFloat(req.body.precio) || pUpdate.precio;
                 pUpdate.descuento = req.body.descuento || pUpdate.descuento;
                 pUpdate.especificaciones = req.body.especificaciones || pUpdate.especificaciones;
                 pUpdate.img = req.file?.filename || pUpdate.img;
@@ -89,7 +89,7 @@ const productoController = {
                     envio: req.body.envio,
                     verIndex_id: req.body.verIndex,
                     oferta: req.body.oferta,
-                    precio: req.body.precio,
+                    precio: parseFloat(req.body.precio),
                     descuento: req.body.descuento,
                     especificaciones: req.body.especificaciones,
                     img: req.file?.filename

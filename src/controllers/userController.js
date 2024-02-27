@@ -20,7 +20,7 @@ const userControl = {
         try {
             let { usuario, password } = req.body;
             const errorLogin = validationResult(req);
-            
+
             let userFound = await db.Usuarios.findOne({
                 where: {
                     usuario: req.body.usuario
@@ -85,23 +85,33 @@ const userControl = {
         }
 
     },
-    compras: async (req,res) =>{
+    compras: async (req, res) => {
         let id = req.session.userLogged.id
-        let producto = db.Productos.findAll();
-        let usuario = db.Usuarios.findByPk(id);
-        let carrito = db.CabeceraCompras.findAll({
-            where: {
-                usuario_id: id,
-            },
-            include: "usuario"
-            });
-        let detalle = db.DetalleCompras.findAll({
-            include: "producto"
-        },{
-            include: "cabeceraCompra"
-        });
-        
+        let producto = await db.Productos.findAll();
+        let usuario = await db.Usuarios.findByPk(id);
+
         try {
+            let carrito = await db.CabeceraCompras.findAll({
+                where: {
+                    usuario_id: id,
+                },
+                include: [{
+                    model: db.DetalleCompras,
+                    as: "detalleCompra",
+                    attributes: ['id', 'cantidad'],
+                    required: false,
+                    include: [
+                        {
+                            model: db.Productos,
+                            as: "producto",
+                            attributes: ['id', 'nombre', 'img', 'precio'],
+                            required: false
+                        }
+                    ]
+                }]
+            });
+            //res.json(carrito)
+            res.render('../views/users/MisCompras', { carrito })
 
         } catch (error) {
             console.log(error);
