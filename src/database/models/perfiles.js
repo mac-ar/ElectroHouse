@@ -31,7 +31,7 @@ module.exports = (sequelize, DataTypes) => {
     //Asociacion 
     Perfil.associate = (models) => {
         Perfil.hasMany(models.Usuarios, {
-            as: 'usuarios',
+            as: 'usuario',
             foreignKey: 'perfil_id'
         })
     }

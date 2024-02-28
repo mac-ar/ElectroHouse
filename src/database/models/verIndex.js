@@ -31,7 +31,7 @@ module.exports = (sequelize, DataTypes) => {
     //Asociacion 
     VerIndex.associate = (models) => {
         VerIndex.hasMany(models.Productos, {
-            as: 'productos',
+            as: 'producto',
             foreignKey: 'verIndex_id'
         })
     }

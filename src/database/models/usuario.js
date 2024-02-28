@@ -60,14 +60,9 @@ module.exports = (sequelize, DataTypes) => {
             foreignKey: 'perfil_id'
         });
 
-        /*  Usuario.belongsToMany(models.Productos, {
-             as: 'productosCarrito',
-             through: 'cabeceraCompra',
-             foreignKey: 'usuario_id'
-         }); */
-
         Usuario.hasMany(models.CabeceraCompras, {
-            as: 'cabeceraCompra'
+            as: 'cabeceraCompra',
+            foreignKey: 'usuario_id'
         });
     }
 

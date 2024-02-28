@@ -55,15 +55,10 @@ module.exports = (sequelize, DataTypes) => {
             as: 'verIndex',
             foreignKey: 'verIndex_id'
         });
-
-        // Producto.belongsToMany(models.Usuarios, {
-        //     as: 'usuariosCarrito',
-        //     through: 'carritos',
-        //     foreignKey: 'producto_id'
-        // });
-
+        
         Producto.hasMany(models.DetalleCompras, {
-            as: 'detalleCompra'
+            as: 'detalleCompra',
+            foreignKey: 'producto_id'
         })
     }
     return Producto

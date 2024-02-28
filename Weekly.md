@@ -23,3 +23,10 @@ Hubo inconvenientes con el último punto, pero gracias a la atención de los com
 Un aspecto positivo a destacar es que cada parte se ejecutó en diferentes días, lo que llevó a una armonía en los commit de GitHub.
 
 El 02/01/2024 se dió por finalizado el Sprint 5.
+
+## SPRINT SEIS
+El dia 02/01/2024 el equipo se reunió para reflexionar sobre los temas aque se desarrollarán, lo que entendía cada uno, sus dudas para evacuar, y al ser un tema un poco complicado respecto a los anteriores, hicimos reuniones previas para resolver ejercicios de PlayGround. Días más adelante, analizamos las tareas, y decidimos que todas se harían en conjunto por la dificultad que presentaban.
+
+Hubo inconvenientes con la base de datos, pero gracias a la atención y esfuerzo de los compañeros se solucionó el problema.
+
+Un aspecto positivo a destacar es que cada parte se ejecutó en diferentes días no muy separados, lo que llevó a una armonía en los commit de GitHub.

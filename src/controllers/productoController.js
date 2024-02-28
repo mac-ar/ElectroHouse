@@ -15,10 +15,8 @@ const productoController = {
         } catch (error) {
             console.log(error);
         }
-
     },
     getBuscarProducto: async (req, res) => {
-
         try {
             const productJs = await db.Productos.findAll({
                 where: {
@@ -26,18 +24,14 @@ const productoController = {
                 },
                 order: [["precio", "ASC"]],
                 include: "verIndex"
-
             });
             //res.json(productJs);
             res.render('products/listadoProductos', { productJs })
         } catch (error) {
             console.log(error);
         }
-
     },
     getMenu: async (req, res) => {
-        let index = req.params.index
-
         try {
             const productJs = await db.Productos.findAll({
                 where: {
@@ -52,16 +46,14 @@ const productoController = {
         } catch (error) {
             console.log(error);
         }
-
     },
     getProductoDetalle: async (req, res) => {
         try {
-            const prodDet = await db.Productos.findByPk(req.params.id)
+            const prodDet = await db.Productos.findByPk(req.params.id, { include: "verIndex" })
             res.render('products/ProductoDetalle', { prodDet })
         } catch (error) {
             console.log(error);
         }
-
     },
     getEditarProducto: async (req, res) => {
         try {
@@ -74,7 +66,6 @@ const productoController = {
         }
     },
     putActualizarProducto: async (req, res) => {
-
         let errors = validationResult(req);
         try {
             if (errors.isEmpty()) {
@@ -86,7 +77,7 @@ const productoController = {
                 pUpdate.envio = req.body.envio || pUpdate.envio;
                 pUpdate.verIndex_id = req.body.verIndex || pUpdate.verIndex_id;
                 pUpdate.oferta = req.body.oferta || pUpdate.oferta;
-                pUpdate.precio = req.body.precio || pUpdate.precio;
+                pUpdate.precio = parseFloat(req.body.precio) || pUpdate.precio;
                 pUpdate.descuento = req.body.descuento || pUpdate.descuento;
                 pUpdate.especificaciones = req.body.especificaciones || pUpdate.especificaciones;
                 pUpdate.img = req.file?.filename || pUpdate.img;
@@ -98,7 +89,7 @@ const productoController = {
                     envio: req.body.envio,
                     verIndex_id: req.body.verIndex,
                     oferta: req.body.oferta,
-                    precio: req.body.precio,
+                    precio: parseFloat(req.body.precio),
                     descuento: req.body.descuento,
                     especificaciones: req.body.especificaciones,
                     img: req.file?.filename
@@ -125,15 +116,11 @@ const productoController = {
         } catch (error) {
             console.log(error);
         }
-
-
     },
     postGuardarProducto: async (req, res) => {
         let errors = validationResult(req);
-
         try {
             if (errors.isEmpty()) {
-
                 //Genero un nuevo Producto
                 const newProduct = {
                     nombre: req.body.nombre,
@@ -171,9 +158,7 @@ const productoController = {
         }
     },
     delEliminarProducto: async (req, res) => {
-
         const prodEliminar = await db.Productos.findByPk(req.params.id)
-
         try {
             await db.Productos.destroy({ where: { id: req.params.id } });
             //Elimino Imagen

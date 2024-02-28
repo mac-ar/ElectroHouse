@@ -139,3 +139,33 @@ Hacer menos 🥀
 Dejar de hacer 🌩️
     
     ---
+
+## Sprint SEIS
+🗃️ Sprint 6 🗃️
+
+Hacer más 🤙
+
+Necesitamos mantener mas reuniones con el equipo
+
+Empezar a hacer 🦈
+
+Tener en cuenta las responsabilidades que nos asignamos.
+Profundizar conocimientos en herramientas como GitHub, etc
+
+Seguir haciendo 🔨⏩
+
+Utilizar el Trello  
+Cumplir con las entregas
+Comunicación fluida y honesta
+Avisar sobre las fechas de viaje o imposibilidad de trabajar en el proyecto con antelación para organizarnos mejor
+
+Hacer menos 🥀
+
+NO dejar para ultimo momento.
+Dudas sin resolver con los profesores en las clases
+
+Dejar de hacer 🌩️
+
+--
+
+Principales conclusiones: Se valora al máximo la honestidad del grupo al avisar con tiempo fechas de viaje, de ésta manera, se intensifica la actividad en ciertos dias y se respeta la ausencia de un miembro de trabajo en otros, así como se aprecía la voluntad de trabajar de los compañeros a pesar de no disponer de computadora por momentos.

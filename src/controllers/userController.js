@@ -20,7 +20,6 @@ const userControl = {
         try {
             let { usuario, password } = req.body;
             const errorLogin = validationResult(req);
-            //const userFound = listaClientes.find(oneUser => oneUser.usuario == usuario);
 
             let userFound = await db.Usuarios.findOne({
                 where: {
@@ -80,14 +79,43 @@ const userControl = {
                     id: req.params.id
                 }
             })
-            // let id = req.params.id;
-            // const userFound = listaClientes.find(oneUser => oneUser.id == id);
-            // console.log(userFound);
             res.render('../views/users/MiPerfil', { userFound })
         } catch (error) {
             console.log(error);
         }
 
+    },
+    compras: async (req, res) => {
+        let id = req.session.userLogged.id
+        let producto = await db.Productos.findAll();
+        let usuario = await db.Usuarios.findByPk(id);
+
+        try {
+            let carrito = await db.CabeceraCompras.findAll({
+                where: {
+                    usuario_id: id,
+                },
+                include: [{
+                    model: db.DetalleCompras,
+                    as: "detalleCompra",
+                    attributes: ['id', 'cantidad'],
+                    required: false,
+                    include: [
+                        {
+                            model: db.Productos,
+                            as: "producto",
+                            attributes: ['id', 'nombre', 'img', 'precio'],
+                            required: false
+                        }
+                    ]
+                }]
+            });
+            //res.json(carrito)
+            res.render('../views/users/MisCompras', { carrito })
+
+        } catch (error) {
+            console.log(error);
+        }
     },
     getEditarPerfil: async (req, res) => {
         // let usuario = req.cookies.user;

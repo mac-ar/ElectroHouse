@@ -32,7 +32,7 @@ module.exports = (sequelize, DataTypes) => {
         }
     }
     let config = {
-        tableName: 'cabeceraCompra',
+        tableName: 'cabeceraCompras',
         timestamp: true,
         paranoid: true
     }
@@ -47,7 +47,8 @@ module.exports = (sequelize, DataTypes) => {
         });
 
         Carrito.hasMany(models.DetalleCompras, {
-            as: 'detalleCompra'
+            as: 'detalleCompra',
+            foreignKey: 'idCabeceraCompra'
         })
     }
 

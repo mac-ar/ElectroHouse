@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<%- include('../partials/head.ejs', {Style: "../../CSS/Style.css" ,myStyle: "../../CSS/miscompras.css" ,
+    title: "Mis Compras" }) %>
+
+    <body>
+        <%- include('../partials/header.ejs') %>
+            <main>
+
+                <table>
+                    <thead>
+
+                        <tr>
+                            <th>ID-Compra</th>
+                            <th>Imagen</th>
+                            <th>Producto</th>
+                            <th>Cantidad</th>
+                            <th>Fecha Compra</th>
+                            <th>Precio Unitario</th>
+                            <th>Total</th>
+
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <% var carri=0 %>
+                            <% carrito.forEach(product=> { %>
+
+                                <% for( let index=0; index <product.detalleCompra.length; index++ ) { %>
+
+                                    <tr>
+                                        <% if (carri !=product.id) { %>
+                                            <td>
+                                                <%= product.id %>
+                                                    <% carri=product.id %>
+                                            </td>
+                                            <% } else { %>
+                                                <td>
+
+                                                </td>
+                                                <% } %>
+                                                    <td>
+                                                        <img src="/img/product/<%= product.detalleCompra[index].producto.img %>"
+                                                            alt="Imagen <%= product.detalleCompra[index].producto.img %>">
+                                                    </td>
+                                                    <td>
+                                                        <%= product.detalleCompra[index].producto.nombre %>
+                                                    </td>
+                                                    <td>
+                                                        <%= product.detalleCompra[index].cantidad %>
+                                                    </td>
+                                                    <td>
+                                                        <%= product.fechaCompra %>
+                                                    </td>
+                                                    <td>
+                                                        <%= product.detalleCompra[index].producto.precio %>
+                                                    </td>
+                                                    <% if ((index+1)==product.detalleCompra.length) { %>
+                                                        <td>
+                                                            Total $ <%= product.precioTotal %>
+                                                        </td>
+                                                        <% } else { %>
+                                                            <td>
+
+                                                            </td>
+                                                            <% } %>
+
+                                    </tr>
+
+                                    <% } %>
+
+                                        <% }) %>
+                    </tbody>
+                </table>
+
+            </main>
+            <%- include('../partials/footer.ejs') %>
+
+    </body>
+
+</html>
