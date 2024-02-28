@@ -88,15 +88,17 @@
                                     </p>
                                     <% } %>
                             </div>
+
                             <div class="register">
-                                <label for="password2">Confirmar Password</label>
-                                <input type="password" name="password2" id="password2"
-                                    value="<%= locals.oldData ? oldData.password2 : null %>">
+                                <input type="radio" id="administrador" name="perfil" value="1">
+                                <label for="administrador">Administrador</label>
+                                <input type="radio" id="cliente" name="perfil" value="2">
+                                <label for="cliente">Cliente</label>
                             </div>
                             <div>
-                                <% if (locals.errors && errors.password2) { %>
+                                <% if (locals.errors && errors.perfil) { %>
                                     <p style="color: red; text-align: end;">
-                                        <%= errors.password2.msg %>
+                                        <%= errors.perfil.msg %>
                                     </p>
                                     <% } %>
                             </div>

@@ -41,7 +41,7 @@
                                                 </option>
                                                 <% } else{%>
                                                     <option value="">Elige una Categoria</option>
-                                                    <% }%>                                                        
+                                                    <% }%>
                                                         <option value="Electrodomesticos">
                                                             Electrodomesticos</option>
                                                         <option value="Refrigeracion">Refrigeracion
@@ -59,10 +59,13 @@
                                                 </option>
                                                 <% }else {%>
                                                     <option value="">Elige una Opcion...</option>
-                                                    <% }%>                                                       
-                                                        <option value="Nuevo">Nuevo</option>
-                                                        <option value="Oferta">Oferta</option>
-                                                        <option value="OutLet">OutLet</option>
+                                                    <% }%>
+                                                        <% index.forEach(product=> { %>
+                                                            <option value="<%= product.id %>">
+                                                                <%= product.nombre %>
+                                                            </option>
+                                                            <% } )%>
+
                                         </select>
                                     </div>
 

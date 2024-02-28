@@ -1,0 +1,36 @@
+configurar el .sequelizerc
+crear carpetas y lugar donde se guardan y nombre de archivos
+
+To install the Sequelize CLI:
+npm install --save-dev sequelize-cli
+
+You will need to execute init command:
+npx sequelize-cli init
+
+Configuration JSON:
+config/config.json  por config.js
+agregar module.exports = { }
+
+Creating the first Model: si no se creo
+npx sequelize-cli model:generate --name User --attributes firstName:string,lastName:string,email:string
+
+Creating DataBase:
+npx sequelize-cli db:create
+(toma el nombre de "database": del Config.js)
+
+Running Migrations
+npx sequelize-cli db:migrate
+
+(Undoing Migrations)
+npx sequelize-cli db:migrate:undo (:all todo la migracion)
+
+(Creating the first Seed)
+npx sequelize-cli seed:generate --name demo-user
+(se creo la semilla demo-user.js en la carpeta /seeders.
+Luego debemos modificar el archivo, incluyendo los datos)
+
+Running Seeds
+npx sequelize-cli db:seed:all
+
+(Undoing Seeds)
+npx sequelize-cli db:seed:undo:all

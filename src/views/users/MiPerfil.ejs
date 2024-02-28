@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+<%- include('../partials/head.ejs', {Style: "../../CSS/Style.css" ,myStyle: "../../CSS/perfil.css" , title: "Mi Perfil"
+    }) %>
+
+    <body>
+        <div class="main-body-container">
+            <%- include('../partials/header.ejs') %>
+
+                <!-- MAIN -->
+                <main>
+                    <div class="form">
+                        <h2>Mi Perfil </h2>
+
+                        <div class="img">
+                            <img src="/img/users/<%= userFound.img %>" alt="">
+                        </div>
+
+                        <div class="formulario">
+                            <div class="register">
+                                <label for="nombre">Nombre</label>
+                                <p>
+                                    <strong>
+                                        <%= userFound.nombre %>
+                                    </strong>
+                                </p>
+
+                            </div>
+
+                            <div class="register">
+                                <label for="apellido">Apellido</label>
+                                <p>
+                                    <strong>
+                                        <%= userFound.apellido %>
+                                    </strong>
+                                </p>
+                            </div>
+
+                            <div class="register">
+                                <label for="email">E-Mail</label>
+                                <p>
+                                    <strong>
+                                        <%= userFound.email %>
+                                    </strong>
+                                </p>
+                            </div>
+
+                            <div class="register">
+                                <label for="foto">AVATAR</label>
+                                <p>
+                                    <strong>
+                                        <%= userFound.img %>
+                                    </strong>
+                                </p>
+                            </div>
+                            <div class="register">
+                                <label for="usuario">Usuario</label>
+                                <p>
+                                    <strong>
+                                        <%= userFound.usuario %>
+                                    </strong>
+                                </p>
+                            </div>
+                            <div class="register">
+                                <label for="password">Password</label>
+                                <p>
+                                    <strong>
+                                        *******
+                                    </strong>
+                                </p>
+                            </div>
+
+                            <div class="register">
+                                <label for="administrador">Perfil</label>
+                                <% if (userFound.perfil_id=='1' ) { %>
+                                    <p>
+                                        <strong>
+                                            Administrador
+                                        </strong>
+                                    </p>
+                                    <% } else { %>
+                                        <p>
+                                            <strong>
+                                                Cliente
+                                            </strong>
+                                        </p>
+                                        <% } %>
+                            </div>
+
+                            <div class="botones">
+                                <button type="reset">Borrar</button>
+                                <form action="/user/EditarPerfil/<%= locals.userLogged.id %>" method="get">
+                                    <button type="submit">Editar</button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </main>
+
+                <%- include('../partials/footer.ejs') %>
+
+        </div>
+    </body>
+
+</html>

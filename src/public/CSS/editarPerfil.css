@@ -1,0 +1,116 @@
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+:root {
+    --primary-100: #0066CC;
+    --primary-200: #5c93ff;
+    --primary-300: #ccf6ff;
+    --accent-100: #66CCFF;
+    --accent-200: #006d9b;
+    --text-100: #333333;
+    --text-200: #5c5c5c;
+    --bg-100: #ecf5ff;
+    --bg-200: #e2ebf5;
+    --bg-300: #343131;
+    /* Header */
+    --bg-bar-service: #e2ebec;
+    --bg-logo-header: #04c4cc;
+    /* Fuente Barra de Servicios */
+    --font-bar-service: #767676;
+
+    --primary-1000: #FFFFFF;
+    --primary-2000: #e0e0e0;
+    --primary-3000: #9b9b9b;
+    --accent-1000: #FFCC00;
+    --accent-2000: #916e00;
+    --text-1000: #000000;
+    --text-2000: #2c2c2c;
+    --bg-1000: #04C4CC;
+    --bg-2000: #00bac2;
+    --bg-3000: #00939b;
+}
+
+
+
+form {
+    width: 450px;
+    height: auto;
+    border: 1.5px solid var(--bg-300);
+    border-radius: 5%;
+    margin: 20px auto;
+    box-shadow: 7px 13px 37px var(--text-100);
+}
+
+form h2 {
+    text-align: center;
+    margin: 20px;
+}
+
+form .formulario {
+    width: 90%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    /* text-align: center;*/
+}
+
+form .formulario .register {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+}
+
+form .formulario .register label {
+    width: 30%;
+    height: 20px;
+    margin: 10px auto;
+    padding-right: 10px;
+    text-align: end;
+}
+
+form .formulario .register input {
+    width: 50%;
+    height: 20px;
+    margin: 10px auto;
+    padding-right: 10px;
+    text-align: end;
+}
+
+form .botones {
+    width: 70%;
+    margin: 30px auto;
+    text-align: center;
+}
+
+form .botones button {
+    width: 100px;
+    height: 30px;
+    background-color: var(--accent-100);
+    color: var(--bg-300);
+}
+
+form .botones button:hover {
+    background-color: var(--primary-100);
+    color: var(--bg-100);
+    cursor: pointer;
+}
+
+form .botones a {
+    text-decoration: none;
+}
+
+form .botones a .button {
+    width: 100px;
+    height: 30px;
+    background-color: var(--accent-100);
+    color: var(--bg-300);
+}
+
+form .botones a .button:hover {
+    background-color: var(--primary-100);
+    color: var(--bg-100);
+    cursor: pointer;
+}
