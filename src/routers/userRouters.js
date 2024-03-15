@@ -32,7 +32,7 @@ const validations = [
             throw new Error('Debe ingrasar un foto de Perfil');
         } else {
             let fileExtension = path.extname(file.originalname);
-            console.log(fileExtension);
+            //console.log(fileExtension);
             if (!acceptedExtensions.includes(fileExtension)) {
                 throw new Error(`Las extensiones de archivo permitidas son ${acceptedExtensions.join(', ')}`);
             }
