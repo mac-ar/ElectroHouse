@@ -37,7 +37,6 @@ aside {
     float: right;
     width: 400px;
     padding: 20px;
-    /*     background-color: white; */
     margin-right: 10px;
 }
 
@@ -49,9 +48,11 @@ aside {
     color: black;
     font-size: 12px;
     font-weight: bold;
+    display: flex;
+    flex-direction: row;
 }
 
-aside .errores ul li {
+aside p {
     color: red;
 }
 

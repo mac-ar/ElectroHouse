@@ -19,8 +19,10 @@ const userController = require('../controllers/userController');
 const uploadFile = multer({ storage });
 
 const validations = [
-    check('nombre').notEmpty().withMessage('Escribe un Nombre'),
-    check('apellido').notEmpty().withMessage('Escribe un Apellido'),
+    check('nombre').notEmpty().withMessage('Escribe un Nombre')
+        .isLength({ min: 5 }).withMessage('Debe tener al menos 5 caracteres'),
+    check('apellido').notEmpty().withMessage('Escribe un Apellido')
+        .isLength({ min: 5 }).withMessage('Debe tener al menos 5 caracteres'),
     check('email').notEmpty().withMessage('Escribe un Email').bail()
         .isEmail().withMessage('Escribe un Email valido'),
     //check('foto').notEmpty().withMessage('Ingrese una foto de perfil'),

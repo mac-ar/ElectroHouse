@@ -6,30 +6,27 @@
     <body>
         <div class="main-body-container">
             <%- include('../partials/header.ejs') %>
+                <aside></aside>
 
                 <!-- MAIN -->
                 <main>
-                    <form action="/user/Login" method="POST">
+                    <form class="form-create" action="/user/Login" method="POST">
                         <h2>Formulario LOGIN</h2>
 
                         <div class="login">
                             <div class="register">
                                 <label for="usuario">Usuario</label>
                                 <input type="text" name="usuario" id="usuario"
-                                    value="<%= locals.oldData ? oldData.usuario : null %>">
-
+                                    value="<%= locals.oldData ? oldData.usuario : null %>" autocomplete="off">
                                 <% if (locals.errors && errors.usuario) { %>
                                     <p style=" color: red; text-align: end;">
                                         <%= errors.usuario.msg %>
                                     </p>
                                     <% } %>
-
                             </div>
-
                             <div class="register">
                                 <label for="password">Contraseña</label>
                                 <input type="password" name="password" id="password">
-
                                 <% if (locals.errors && errors.password) { %>
                                     <p style="color: red; text-align: end;">
                                         <%= errors.password.msg %>
@@ -58,6 +55,7 @@
 
                 <%- include('../partials/footer.ejs') %>
         </div>
+        <script src="../JS/Login.js"> </script>
     </body>
 
 </html>

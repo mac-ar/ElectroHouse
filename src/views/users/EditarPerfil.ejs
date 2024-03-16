@@ -8,10 +8,11 @@
     <body>
         <div class="main-body-container">
             <%- include('../partials/header.ejs') %>
-
+                <aside></aside>
                 <!-- MAIN locals.userLogged.id-->
                 <main>
-                    <form action="/user/ActualizarPerfil/<%=locals.errors? idUser : userFound.id %>?_method=PUT"
+                    <form class="form-create"
+                        action="/user/ActualizarPerfil/<%=locals.errors? idUser : userFound.id %>?_method=PUT"
                         method="POST" enctype="multipart/form-data">
                         <h2>Mi Perfil - Editar</h2>
 
@@ -120,6 +121,7 @@
                 <%- include('../partials/footer.ejs') %>
 
         </div>
+        <script src="../../JS/Registro.js"> </script>
     </body>
 
 </html>
