@@ -120,6 +120,7 @@ const productoController = {
     postGuardarProducto: async (req, res) => {
         let errors = validationResult(req);
         try {
+            const index = await db.VerIndex.findAll()
             if (errors.isEmpty()) {
                 //Genero un nuevo Producto
                 const newProduct = {
@@ -150,7 +151,7 @@ const productoController = {
                         console.log(`removed   ${deleteFile}`);
                     }
                 });
-                res.render('../views/products/agregarProducto', { errors: errors.array(), oldData: req.body })
+                res.render('../views/products/agregarProducto', { errors: errors.array(), oldData: req.body, index: index })
             }
 
         } catch (error) {
