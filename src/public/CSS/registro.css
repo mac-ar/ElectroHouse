@@ -33,6 +33,29 @@
     --bg-3000: #00939b;
 }
 
+aside {
+    float: right;
+    width: 400px;
+    padding: 20px;
+    margin-right: 10px;
+}
+
+.alert-warning {
+    border: solid 1px black;
+    padding: 10px;
+    margin-bottom: 10px;
+    background-color: #FFCC00;
+    color: black;
+    font-size: 12px;
+    font-weight: bold;
+    display: flex;
+    flex-direction: row;
+}
+
+aside p {
+    color: red;
+}
+
 main form {
     width: 450px;
     height: auto;

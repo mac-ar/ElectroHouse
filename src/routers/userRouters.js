@@ -19,8 +19,10 @@ const userController = require('../controllers/userController');
 const uploadFile = multer({ storage });
 
 const validations = [
-    check('nombre').notEmpty().withMessage('Escribe un Nombre'),
-    check('apellido').notEmpty().withMessage('Escribe un Apellido'),
+    check('nombre').notEmpty().withMessage('Escribe un Nombre')
+        .isLength({ min: 5 }).withMessage('Debe tener al menos 5 caracteres'),
+    check('apellido').notEmpty().withMessage('Escribe un Apellido')
+        .isLength({ min: 5 }).withMessage('Debe tener al menos 5 caracteres'),
     check('email').notEmpty().withMessage('Escribe un Email').bail()
         .isEmail().withMessage('Escribe un Email valido'),
     //check('foto').notEmpty().withMessage('Ingrese una foto de perfil'),
@@ -32,7 +34,7 @@ const validations = [
             throw new Error('Debe ingrasar un foto de Perfil');
         } else {
             let fileExtension = path.extname(file.originalname);
-            console.log(fileExtension);
+            //console.log(fileExtension);
             if (!acceptedExtensions.includes(fileExtension)) {
                 throw new Error(`Las extensiones de archivo permitidas son ${acceptedExtensions.join(', ')}`);
             }

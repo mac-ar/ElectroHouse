@@ -33,9 +33,30 @@
     --bg-3000: #00939b;
 }
 
+aside {
+    float: right;
+    width: 400px;
+    padding: 20px;
+    margin-right: 10px;
+}
 
+.alert-warning {
+    border: solid 1px black;
+    padding: 10px;
+    margin-bottom: 10px;
+    background-color: #FFCC00;
+    color: black;
+    font-size: 12px;
+    font-weight: bold;
+    display: flex;
+    flex-direction: row;
+}
 
-form {
+aside p {
+    color: red;
+}
+
+main form {
     width: 450px;
     height: auto;
     border: 1.5px solid var(--bg-300);
@@ -44,12 +65,12 @@ form {
     box-shadow: 7px 13px 37px var(--text-100);
 }
 
-form h2 {
+main form h2 {
     text-align: center;
     margin: 20px;
 }
 
-form .formulario {
+main form .formulario {
     width: 90%;
     margin: 0 auto;
     display: flex;
@@ -57,13 +78,13 @@ form .formulario {
     /* text-align: center;*/
 }
 
-form .formulario .register {
+main form .formulario .register {
     width: 100%;
     display: flex;
     flex-direction: row;
 }
 
-form .formulario .register label {
+main form .formulario .register label {
     width: 30%;
     height: 20px;
     margin: 10px auto;
@@ -71,7 +92,7 @@ form .formulario .register label {
     text-align: end;
 }
 
-form .formulario .register input {
+main form .formulario .register input {
     width: 50%;
     height: 20px;
     margin: 10px auto;
@@ -79,37 +100,37 @@ form .formulario .register input {
     text-align: end;
 }
 
-form .botones {
+main form .botones {
     width: 70%;
     margin: 30px auto;
     text-align: center;
 }
 
-form .botones button {
+main form .botones button {
     width: 100px;
     height: 30px;
     background-color: var(--accent-100);
     color: var(--bg-300);
 }
 
-form .botones button:hover {
+main form .botones button:hover {
     background-color: var(--primary-100);
     color: var(--bg-100);
     cursor: pointer;
 }
 
-form .botones a {
+main form .botones a {
     text-decoration: none;
 }
 
-form .botones a .button {
+main form .botones a .button {
     width: 100px;
     height: 30px;
     background-color: var(--accent-100);
     color: var(--bg-300);
 }
 
-form .botones a .button:hover {
+main form .botones a .button:hover {
     background-color: var(--primary-100);
     color: var(--bg-100);
     cursor: pointer;
