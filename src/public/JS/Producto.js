@@ -1,46 +1,50 @@
-//window.addEventListener("load", function () {
-let formulario = this.document.querySelector('.form-create')
+window.addEventListener('load', function(){
+    let formulario = this.document.querySelector('#frmAddProduct');
+    let btnSubmit = document.querySelector('#btnSubmit');
+    let inputNombre = this.document.querySelector('#nombre');
+    let inputdescripcion = this.document.querySelector('#descripcion');
+    let inputimagen = this.document.querySelector('#imagen');
+    let inputcategoria = this.document.querySelector('#categoria');
+    let inputverIndex = this.document.querySelector('#verIndex');
+    let inputprecio = this.document.querySelector('#precio');
+    let inputespecificaciones = this.document.querySelector('#especificaciones');   
+    let errores = []; 
 
-formulario.addEventListener('submit', function (e) {
-    let errores = [];
+    btnSubmit.addEventListener('click', function(e) {
+        e.preventDefault(); 
+        
+        let longitudNombre = inputNombre.value.length
+        let longitudDescrip = inputdescripcion.value.length
+        let imgExt = inputimagen.value.slice(-4)
 
-    let campoNombre = document.querySelector("#nombre");
-    if (campoNombre.value == "") {
-        errores.push("El campo nombre está vacío");
-    } else {
-        let nombrelen = campoNombre.length
-        if (nombrelen < 5) {
-            errores.push("El campo debe tener al menos 5 caracteres");
+        if(inputNombre.value == ''){           
+            errores.push('El nombre del Producto no debe ser vacio')
+        }else if (longitudNombre < 3){
+            errores.push('El nombre debe tener al menos 5 caracteres')
         }
-    };
 
-    let campoDescripcion = document.querySelector("#descripcion");
-    if (campoDescripcion.value == "") {
-        errores.push("La Descripcion no debe estár vacío");
-    } else {
-        let descripcionlen = campoDescripcion.length
-        if (descripcionlen < 2) {
-            errores.push("El campo Descripcion debe tener al menos 20 caracteres");
+        if(inputdescripcion.value == ''){
+            errores.push('La descripcion no debe ser vacia')
+        }else if( longitudDescrip < 20){
+            errores.push('La descripcion debe tener al menos 20 caracteres')
+        }       
+       
+        if(imgExt != '.jpg' && imgExt != '.jpeg' && imgExt != '.png' && imgExt != '.gif'){
+            errores.push('La imagen no tiene la extension correcta debe ser JPG JPEG PNG GIF')            
         }
-    };
 
-    let campoFoto = document.querySelector("#foto");
-    if (campoFoto.value == "") {
-        errores.push("El campo FOTO no debe estár vacío");
-    }/* else{ if(){}};*/
+        let longitudArray = errores.length
 
-    let num = errores.length
-    if (num > 0) {
-        e.preventDefault()
-        let ulErrores = document.querySelector("aside");
-
-        errores.forEach(error => {
-            ulErrores.innerHTML += ` <div class="alert alert-warning" role="alert">
-                              <i class="fa-solid fa-triangle-exclamation">  
-                              </i>&nbsp; &nbsp;<p>${error}</p>
-                          </div>`;
-        })
-
-    }
+        if(longitudArray > 0){
+            e.preventDefault();            
+            let asideFront = document.querySelector('.aside-front'); 
+            errores.forEach((error) => {
+                asideFront.innerHTML += `<div class="alert alert-warning" role="alert">
+                <i class="fa-solid fa-triangle-exclamation"></i>&nbsp; &nbsp; ${error} </div> `
+             })            
+        }else 
+        {formulario.submit();}
+        
+    })
+    
 })
-//})

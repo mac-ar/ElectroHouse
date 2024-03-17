@@ -10,8 +10,9 @@
             <%- include('../partials/header.ejs') %>
                 <!-- <aside></aside> -->
                 <main>
-                    <%- include('../partials/aside-errors.ejs') %>
-                        <form action="/products/guardarProducto" method="post" enctype="multipart/form-data">
+                    <%- include('../partials/aside-errors-back.ejs') %>
+                    <%- include('../partials/aside-errors-front.ejs') %>
+                        <form action="/products/guardarProducto" method="post" enctype="multipart/form-data" id="frmAddProduct">
                             <h2>Agregar Producto</h2>
                             <div class="formulario">
                                 <div class="label">
@@ -80,7 +81,7 @@
                             </div>
                             <div class="botones">
                                 <button type="reset" value="Borrar">Borrar</button>
-                                <button type="submit" value="Agregar">Agregar</button>
+                                <button type="submit" value="Agregar" id="btnSubmit" >Agregar</button>
                             </div>
                         </form>
                 </main>
@@ -89,6 +90,7 @@
 
         </div>
         <script src="../JS/Producto.js"> </script>
+
     </body>
 
 </html>

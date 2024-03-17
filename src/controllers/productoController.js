@@ -68,6 +68,7 @@ const productoController = {
     putActualizarProducto: async (req, res) => {
         let errors = validationResult(req);
         try {
+            const index = await db.VerIndex.findAll()
             if (errors.isEmpty()) {
                 const pUpdate = await db.Productos.findByPk(req.params.id);
 
@@ -101,7 +102,7 @@ const productoController = {
 
                 res.redirect('/products')
             } else {
-                res.render('../views/products/editarProducto', { errors: errors.array(), oldData: req.body, idProd: req.params.id, prodN: req.body.nombre })
+                res.render('../views/products/editarProducto', { errors: errors.array(), oldData: req.body, idProd: req.params.id, prodN: req.body.nombre, index: index })
             }
 
         } catch (error) {

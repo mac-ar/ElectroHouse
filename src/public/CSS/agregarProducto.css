@@ -44,7 +44,13 @@
 }
  */
 
-aside {
+ .aside-back{
+    float: left;
+    width: 400px;
+    padding: 20px;
+    margin-right: 10px;
+}
+.aside-front{
     float: right;
     width: 400px;
     padding: 20px;
