@@ -169,3 +169,54 @@ Dejar de hacer 🌩️
 --
 
 Principales conclusiones: Se valora al máximo la honestidad del grupo al avisar con tiempo fechas de viaje, de ésta manera, se intensifica la actividad en ciertos dias y se respeta la ausencia de un miembro de trabajo en otros, así como se aprecía la voluntad de trabajar de los compañeros a pesar de no disponer de computadora por momentos.
+--
+## Sprint SIETE
+🗃️ Sprint 7 🗃️
+
+Hacer más 🤙
+
+Necesitamos mantener mas reuniones con el equipo
+
+Empezar a hacer 🦈
+
+Profundizar conocimientos en herramientas como GitHub, etc así como reconocer el origen de los errores de consola
+
+Seguir haciendo 🔨⏩
+
+Utilizar el Trello  
+Cumplir con las entregas
+Comunicación fluida y honesta
+Avisar sobre las fechas de imposibilidad de trabajar en el proyecto con antelación para organizarnos mejor
+
+Hacer menos 🥀
+
+NO dejar para ultimo momento.
+Dudas sin resolver con los profesores en las clases
+
+Dejar de hacer 🌩️
+
+--
+## Sprint OCHO
+🗃️ Sprint 8 🗃️
+
+Hacer más 🤙
+
+Necesitamos mantener mas reuniones con el equipo
+
+Empezar a hacer 🦈
+
+Profundizar conocimientos en herramientas como GitHub, etc y elementos que forman parte de React
+
+Seguir haciendo 🔨⏩
+
+Utilizar el Trello  
+Cumplir con las entregas
+Comunicación fluida y honesta
+
+Hacer menos 🥀
+
+Evitar saltar al ejercicio antes de revisar la teoría por completo
+
+Dejar de hacer 🌩️
+
+--
