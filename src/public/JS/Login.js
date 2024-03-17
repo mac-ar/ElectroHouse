@@ -1,31 +1,31 @@
-//window.addEventListener("load", function () {
-let formulario = this.document.querySelector('.form-create')
+window.addEventListener("load", function () {
+    let formulario = this.document.querySelector('.form-create')
+    let btnSubmit = document.querySelector('#btnSubmit');
+    let campoUsuario = document.querySelector("#usuario");
+    let campoContraseña = document.querySelector("#password");
 
-formulario.addEventListener('submit', function (e) {
     let errores = [];
 
-    let campoUsuario = document.querySelector("#usuario");
-    if (campoUsuario.value == "") {
-        errores.push("El campo Usuario no debe estár vacío");
-    };
+    btnSubmit.addEventListener('click', function (e) {
+        e.preventDefault();
 
-    let campoContraseña = document.querySelector("#password");
-    if (campoContraseña.value == "") {
-        errores.push("El campo Contraseña no debe estár vacío");
-    };
+        if (campoUsuario.value == "") {
+            errores.push("El campo Usuario no debe estár vacío");
+        };
+        if (campoContraseña.value == "") {
+            errores.push("El campo Contraseña no debe estár vacío");
+        };
 
-    let num = errores.length
-    if (num > 0) {
-        e.preventDefault()
-        let ulErrores = document.querySelector("aside");
-
-        errores.forEach(error => {
-            ulErrores.innerHTML += ` <div class="alert alert-warning" role="alert">
+        let num = errores.length
+        if (num > 0) {
+            e.preventDefault()
+            let ulErrores = document.querySelector("aside");
+            errores.forEach(error => {
+                ulErrores.innerHTML += ` <div class="alert alert-warning" role="alert">
                               <i class="fa-solid fa-triangle-exclamation">  
                               </i>&nbsp; &nbsp;<p>${error}</p>
                           </div>`;
-        })
-
-    }
+            })
+        } else { formulario.submit(); }
+    })
 })
-//})

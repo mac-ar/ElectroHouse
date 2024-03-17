@@ -68,7 +68,6 @@ const productoController = {
     putActualizarProducto: async (req, res) => {
         let errors = validationResult(req);
         try {
-            const index = await db.VerIndex.findAll()
             if (errors.isEmpty()) {
                 const pUpdate = await db.Productos.findByPk(req.params.id);
 
@@ -102,7 +101,20 @@ const productoController = {
 
                 res.redirect('/products')
             } else {
-                res.render('../views/products/editarProducto', { errors: errors.array(), oldData: req.body, idProd: req.params.id, prodN: req.body.nombre, index: index })
+                const deleteFile = req.file?.filename
+                //  console.log(errorLogin);
+                fs.unlink(pathProduct + deleteFile, function (err) {
+                    if (err && err.code == 'ENOENT') {
+                        // file doens't exist
+                        console.log("File doesn't exist, won't remove it.   ");
+                    } else if (err) {
+                        // other errors, e.g. maybe we don't have enough permission
+                        console.log("Error occurred while trying to remove file");
+                    } else {
+                        console.log(`removed   ${deleteFile}`);
+                    }
+                });
+                res.render('../views/products/editarProducto', { errors: errors.array(), oldData: req.body, idProd: req.params.id, prodN: req.body.nombre })
             }
 
         } catch (error) {

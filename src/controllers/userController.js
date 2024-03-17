@@ -13,9 +13,7 @@ const userControl = {
         } catch (error) {
             console.log(error);
         }
-
     },
-
     checkLogin: async (req, res) => {
         try {
             let { usuario, password } = req.body;
@@ -42,7 +40,6 @@ const userControl = {
                         if (req.body.remember_user) {
                             res.cookie('user', usuario, { maxAge: (1000 * 60) * 60 })
                         }
-                        // console.log('Todo salió ok, estas logueado');
                         res.redirect('/')
                     } else {
                         return res.render('../views/users/Login.ejs', {
@@ -118,10 +115,6 @@ const userControl = {
         }
     },
     getEditarPerfil: async (req, res) => {
-        // let usuario = req.cookies.user;
-        // let id = req.params.id;
-        //  const userFound = listaClientes.find(oneUser => oneUser.id == id);
-        // console.log(userFound);
         try {
             let userFound = await db.Usuarios.findOne({
                 where: {
@@ -132,15 +125,12 @@ const userControl = {
         } catch (error) {
             console.log(error);
         }
-
     },
-
     editarPerfil: async (req, res) => {
         const { nombre, apellido, foto, email, usuario, password, perfil } = req.body;
         const { id } = req.params;
 
         try {
-
             const errorLogin = validationResult(req);
 
             if (!errorLogin.isEmpty()) {
@@ -165,21 +155,16 @@ const userControl = {
                     userN: req.body.nombre
                 })
             } else {
-                // let UsUpdate = listaClientes.find(e => e.id == req.params.id);
                 let UsUpdate = await db.Usuarios.findOne({
                     where: {
                         id: req.params.id
                     }
-                    //  where: { id }
                 })
 
-                //console.log(UsUpdate);
-                //console.log(req.params.id);
                 let pass = ' ';
                 if (req.body.password != UsUpdate.password) {
                     pass = bcryptjs.hashSync(req.body.password, 10);
                     UsUpdate.password = pass;
-                    // password = pass;
                 } else {
                     UsUpdate.password = UsUpdate.password
                     pass = UsUpdate.password
@@ -214,16 +199,13 @@ const userControl = {
             console.log(error);
         }
     },
-
     register: async (req, res) => {
         try {
             res.render('../views/users/Registro')
         } catch (error) {
             console.log(error);
         }
-
     },
-
     createRegister: async (req, res) => {
         try {
             const resulValidation = validationResult(req);
@@ -250,7 +232,6 @@ const userControl = {
                 let pass = bcryptjs.hashSync(req.body.password, 10);
 
                 const registerNuevo = {
-                    // id: Date.now(),
                     nombre: req.body.nombre,
                     apellido: req.body.apellido,
                     email: req.body.email,
@@ -259,7 +240,6 @@ const userControl = {
                     password: pass,
                     perfil_id: req.body.perfil
                 }
-
                 await db.Usuarios.create(registerNuevo)
                 res.render('../views/users/Login')
             }
@@ -267,7 +247,6 @@ const userControl = {
             console.log(error);
         }
     },
-
     logout: (req, res) => {
         try {
             res.clearCookie('user');
@@ -276,8 +255,7 @@ const userControl = {
         } catch (error) {
             console.log(error);
         }
-
     }
-}
+};
 
 module.exports = userControl;
