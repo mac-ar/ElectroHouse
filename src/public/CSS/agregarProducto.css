@@ -33,7 +33,7 @@
     --bg-3000: #00939b;
 }
 
-.main-container{
+/* .main-container {
     width: 98%;
     margin: auto;
 }
@@ -42,28 +42,58 @@
     width: 90%;
     padding-bottom: 20px;
 }
+ */
 
-form {
+ .aside-back{
+    float: left;
+    width: 400px;
+    padding: 20px;
+    margin-right: 10px;
+}
+.aside-front{
+    float: right;
+    width: 400px;
+    padding: 20px;
+    margin-right: 10px;
+}
+
+.alert-warning {
+    border: solid 1px black;
+    padding: 10px;
+    margin-bottom: 10px;
+    background-color: #FFCC00;
+    color: black;
+    font-size: 12px;
+    font-weight: bold;
+    display: flex;
+    flex-direction: row;
+}
+
+aside p {
+    color: red;
+}
+
+main form {
     width: 450px;
-    /*  height: 440px;*/
+    height: auto;
     border: 1.5px solid var(--bg-300);
     border-radius: 5%;
     margin: 20px auto;
     box-shadow: 7px 13px 37px var(--text-100);
 }
 
-form h2 {
+main form h2 {
     text-align: center;
     margin: 10px;
 }
 
-form .formulario {
+main form .formulario {
     width: 90%;
     margin: 0 auto;
     display: flex;
 }
 
-form .formulario .label {
+main form .formulario .label {
     width: 40%;
     margin: 20px auto;
     display: flex;
@@ -72,12 +102,12 @@ form .formulario .label {
     padding-right: 10px;
 }
 
-form .formulario .label label {
+main form .formulario .label label {
     margin-bottom: 15px;
     height: 20px;
 }
 
-form .formulario .input {
+main form .formulario .input {
     width: 60%;
     margin: 20px auto;
     display: flex;
@@ -86,53 +116,35 @@ form .formulario .input {
     padding-left: 10px;
 }
 
-form .formulario .input input {
+main form .formulario .input input {
     margin-bottom: 15px;
     height: 20px;
 }
 
-form .formulario .input select {
+main form .formulario .input select {
     margin-bottom: 15px;
     height: 20px;
 }
 
-form .formulario .input textarea {
+main form .formulario .input textarea {
     resize: none;
 }
 
-form .botones {
+main form .botones {
     width: 70%;
     margin: 10px auto;
     text-align: center;
 }
 
-form .botones button {
+main form .botones button {
     width: 100px;
     height: 30px;
     background-color: var(--accent-100);
     color: var(--bg-300);
 }
 
-form .botones button:hover {
+main form .botones button:hover {
     background-color: var(--primary-100);
     color: var(--bg-100);
     cursor: pointer;
-}
-
-aside{
-    float: right;
-    width: 400px;
-    padding: 20px;
-    background-color: white;
-    margin-right: 10px;
-}
-
-.alert-warning{
-    border: solid 1px black;
-    padding: 10px;
-    margin-bottom: 10px;    
-    background-color: #FFCC00;
-    color: black;
-    font-size: 12px;
-    font-weight: bold;
 }

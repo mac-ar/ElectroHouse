@@ -28,9 +28,9 @@ const carritoController = {
                 nombre: listaProductos.nombre,
                 usuario: req.session.userLogged.id,
                 img: listaProductos.img,
-                precio: listaProductos.precio,
+                precio: parseFloat(listaProductos.precio),
                 descuento: listaProductos.descuento,
-                subtotal: listaProductos.precio - ((listaProductos.precio * listaProductos.descuento) / 100),
+                subtotal: parseFloat(listaProductos.precio - ((listaProductos.precio * listaProductos.descuento) / 100)),
                 cantidad: cantidad
             }
             // Agrego nuevo producto al carrito
@@ -81,7 +81,7 @@ const carritoController = {
             let detalle = [];
             for (let index = 0; index < carrito.length; index++) {
                 let deta = {
-                   // id: null,
+                    // id: null,
                     idCabeceraCompra: cabera_id.id,
                     cantidad: carrito[index].cantidad,
                     producto_id: carrito[index].id,

@@ -77,7 +77,7 @@ const productoController = {
                 pUpdate.envio = req.body.envio || pUpdate.envio;
                 pUpdate.verIndex_id = req.body.verIndex || pUpdate.verIndex_id;
                 pUpdate.oferta = req.body.oferta || pUpdate.oferta;
-                pUpdate.precio = req.body.precio || pUpdate.precio;
+                pUpdate.precio = parseFloat(req.body.precio) || pUpdate.precio;
                 pUpdate.descuento = req.body.descuento || pUpdate.descuento;
                 pUpdate.especificaciones = req.body.especificaciones || pUpdate.especificaciones;
                 pUpdate.img = req.file?.filename || pUpdate.img;
@@ -89,7 +89,7 @@ const productoController = {
                     envio: req.body.envio,
                     verIndex_id: req.body.verIndex,
                     oferta: req.body.oferta,
-                    precio: req.body.precio,
+                    precio: parseFloat(req.body.precio),
                     descuento: req.body.descuento,
                     especificaciones: req.body.especificaciones,
                     img: req.file?.filename
@@ -101,6 +101,19 @@ const productoController = {
 
                 res.redirect('/products')
             } else {
+                const deleteFile = req.file?.filename
+                //  console.log(errorLogin);
+                fs.unlink(pathProduct + deleteFile, function (err) {
+                    if (err && err.code == 'ENOENT') {
+                        // file doens't exist
+                        console.log("File doesn't exist, won't remove it.   ");
+                    } else if (err) {
+                        // other errors, e.g. maybe we don't have enough permission
+                        console.log("Error occurred while trying to remove file");
+                    } else {
+                        console.log(`removed   ${deleteFile}`);
+                    }
+                });
                 res.render('../views/products/editarProducto', { errors: errors.array(), oldData: req.body, idProd: req.params.id, prodN: req.body.nombre })
             }
 
@@ -120,6 +133,7 @@ const productoController = {
     postGuardarProducto: async (req, res) => {
         let errors = validationResult(req);
         try {
+            const index = await db.VerIndex.findAll()
             if (errors.isEmpty()) {
                 //Genero un nuevo Producto
                 const newProduct = {
@@ -150,7 +164,7 @@ const productoController = {
                         console.log(`removed   ${deleteFile}`);
                     }
                 });
-                res.render('../views/products/agregarProducto', { errors: errors.array(), oldData: req.body })
+                res.render('../views/products/agregarProducto', { errors: errors.array(), oldData: req.body, index: index })
             }
 
         } catch (error) {

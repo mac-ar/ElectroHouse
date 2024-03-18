@@ -8,10 +8,12 @@
         <div class="main-container">
             <%- include('../partials/header.ejs') %>
                 <main>
-                    <%- include('../partials/aside-errors.ejs') %>
+                    <%- include('../partials/aside-errors-back.ejs') %>
+                    <%- include('../partials/aside-errors-front.ejs') %>
                         <form
                             action="/products/actualizarProducto/<%= locals.errors? idProd : editProducto.id %>?_method=PUT"
-                            method="POST" enctype="multipart/form-data">
+                            method="POST" enctype="multipart/form-data" 
+                            id="frmAddProduct">
 
                             <h2>Editar Producto <%= locals.oldData? prodN : editProducto.nombre %>
                             </h2>
@@ -33,23 +35,38 @@
                                         value="<%= locals.oldData? oldData.descripcion : editProducto.descripcion %>">
                                     <input type="file" name="imagen" id="imagen">
                                     <div><select name="categoria" id="categoria">
+                                        <% if (locals.oldData && oldData.categoria) { %>
                                             <option
-                                                value="<%= locals.oldData? oldData.categoria : editProducto.categoria %>">
-                                                <%= locals.oldData? oldData.categoria : editProducto.categoria %>
+                                                value="<%= locals.oldData && oldData.categoria ? oldData.categoria : null %>">
+                                                <%= locals.oldData && oldData.categoria ? oldData.categoria : null
+                                                    %>
                                             </option>
-                                            <option value="Electrodomesticos">Electrodomesticos</option>
-                                            <option value="Refrigeracion">Refrigeracion</option>
-                                            <option value="Calefaccion">Calefaccion</option>
-                                            <option value="Hogar">Hogar</option>
-                                            <option value="Outlet">Outlet</option>
+                                            <% } else{%>
+                                                <option value="">Elige una Categoria</option>
+                                                <% }%>
+                                                    <option value="Electrodomesticos">
+                                                        Electrodomesticos</option>
+                                                    <option value="Refrigeracion">Refrigeracion
+                                                    </option>
+                                                    <option value="Calefaccion">Calefaccion</option>
+                                                    <option value="Hogar">Hogar</option>
+                                                    <option value="OutLet">OutLet</option>
                                         </select></div>
                                     <div><select name="verIndex" id="verIndex">
-                                            <option value="">Elige una Opcion...</option>
-                                            <% index.forEach(product=> { %>
-                                                <option value="<%= product.id %>">
-                                                    <%= product.nombre %>
-                                                </option>
-                                                <% } )%>
+                                        <% if (locals.oldData && oldData.verIndex) { %>
+                                            <option
+                                                value="<%= locals.oldData && oldData.verIndex ? oldData.verIndex : null %>">
+                                                <%= locals.oldData && oldData.verIndex ? oldData.verIndex : null %>
+                                            </option>
+                                            <% }else {%>
+                                                <option value="">Elige una Opcion...</option>
+                                                <% }%>
+                                                    <% index.forEach(product=> { %>
+                                                        <option value="<%= product.id %>">
+                                                            <%= product.nombre %>
+                                                        </option>
+                                                        <% } )%>
+
                                         </select></div>
                                     <input type="number" name="precio" id="precio" min="0" max="999999999" maxlength="9"
                                         value="<%= locals.oldData? oldData.precio : editProducto.precio %>">
@@ -59,14 +76,14 @@
                             </div>
                             <div class="botones">
                                 <button type="reset" value="Borrar">Borrar</button>
-                                <button type="submit" value="Guardar">Guardar</button>
+                                <button type="submit" value="Guardar" id="btnSubmit">Guardar</button>
                             </div>
                         </form>
 
                 </main>
                 <%- include('../partials/footer.ejs') %>
-
         </div>
+        <script src="../../JS/Producto.js"> </script>
     </body>
 
 </html>

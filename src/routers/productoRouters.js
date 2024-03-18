@@ -22,6 +22,7 @@ router.put('/actualizarProducto/:id', upload.single('imagen'), validateProducts,
 /* Agregar Producto */
 router.get('/agregarProducto', productoControl.getAgregarProducto);
 router.post('/guardarProducto', upload.single('imagen'), validateProducts, productoControl.postGuardarProducto)
+//router.post('/guardarProducto', upload.single('imagen'), productoControl.postGuardarProducto)
 
 /* Eliminar Producto */
 router.delete('/eliminarProducto/:id', productoControl.delEliminarProducto)

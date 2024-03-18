@@ -139,8 +139,8 @@ body {
 .search-bar button {
     border: solid 1px #00bac2;
     background-color: #ccf6ff;
-    width: 42px;
-    height: 42px;
+   /*  width: 42px;
+    height: 42px; */
 }
 
 .search-bar button:hover {
@@ -149,11 +149,7 @@ body {
     cursor: pointer;
 }
 
-.search-bar button:hover {
-    border: solid 1px #ccf6ff;
-    background-color: #00bac2;
-    cursor: pointer;
-}
+
 /* BARRA DE NAV USER */
 
 .menu-user {
