@@ -6,6 +6,6 @@ const userApiController = require('../../controllers/API/userApiController');
 
 router.get('/', userApiController.list);
 //Detalle de un ambum en base a un artista indicado
-router.get('/:id', userApiController.detail);
+router.get('/detail/:id', userApiController.detail);
 
 module.exports = router;

@@ -1,5 +1,6 @@
 const path = require('path');
 const db = require('../../database/models');
+const URL_SERVER = "http://localhost:3000"
 
 const userAPIController = {
     list: async (req, res) => {
@@ -13,13 +14,17 @@ const userAPIController = {
                 }],
             })
             //  const {id, nombre, email} = usuarios
+            usuarios.forEach(element => {
+                element.setDataValue('detail', `http://localhost:3000/api/users/detail/${element.id}`)
+            });
             const result = {
                 meta: {
                     count: usuarios.length,
                     status: 200,
-                    detail: 'http://localhost:3000/api/users/detail/:id'
+                    // detail: 'http://localhost:3000/api/users/detail/:id'
                 },
-                data: { usuarios }//, detail: `http://localhost:3000/api/users/detail/${usuarios.id}` }
+
+                data: usuarios //, detail: `http://localhost:3000/api/users/detail/${usuarios.id}` }
                 /*detalle: `http://localhost:3000/api/users/detail/${usuarios.id}`
                 } */
             }
@@ -48,7 +53,7 @@ const userAPIController = {
                     id: usuario.id,
                     nombre: usuario.nombre,
                     apellido: usuario.apellido,
-                    img: `/img/users/${usuario.img}`,
+                    img: `${URL_SERVER}/img/users/${usuario.img}`,
                     email: usuario.email,
                     usuario: usuario.usuario,
                 }

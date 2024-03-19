@@ -2,6 +2,7 @@ const path = require('path');
 const db = require('../../database/models');
 const sequelize = require('sequelize');
 const Op = sequelize.Op;
+const URL_SERVER = "http://localhost:3000"
 
 const productoAPIController = {
     list: async (req, res) => {
@@ -18,7 +19,7 @@ const productoAPIController = {
                 meta: {
                     count: productos.length,
                     status: 200,
-                    url: 'http://localhost:3000/api/product/detail/:id'
+                    url: `${URL_SERVER}/api/product/detail/:id`
                 },
                 data: productos
             }
@@ -41,7 +42,7 @@ const productoAPIController = {
             const result = {
                 meta: {
                     count: verindex.length,
-                    detail: 'http://localhost:3002/api/genres/detail/:id',
+                    detail: `${URL_SERVER}/api/product/detail/:id`,
                 },
                 data: verindex,
             };
@@ -70,7 +71,7 @@ const productoAPIController = {
                     id: producto.id,
                     nombre: producto.nombre,
                     descripcion: producto.descripcion,
-                    img: `/img/product/${producto.img}`,
+                    img: `${URL_SERVER}/img/product/${producto.img}`,
                     precio: producto.precio,
                     especificaciones: producto.especificaciones,
                     verIndex: producto.verIndex.nombre
@@ -86,13 +87,12 @@ const productoAPIController = {
             const ultProd = await db.Productos.findAll({
                 order:[['id','desc']],
                 limit: 1
-            })            
+            })           
             const result = {
-                meta: {
-                    count: ultProd.length,
-                    detail: 'http://localhost:3002/api/genres/detail/:id',
+                meta: {                    
+                    detail: `${URL_SERVER}/api/product/detail/${ultProd[0].id}`,
                 },
-                data: ultProd,
+                data: ultProd[0],
             };
             res.json(result)
             
