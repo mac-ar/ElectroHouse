@@ -29,7 +29,7 @@ window.addEventListener('load', function(){
             errores.push('La descripcion debe tener al menos 20 caracteres')
         }       
        
-        if(imgExt != '.jpg' && imgExt != '.jpeg' && imgExt != '.png' && imgExt != '.gif'){
+        if(imgExt != '.jpg' && imgExt != 'jpeg' && imgExt != '.png' && imgExt != '.gif'){
             errores.push('La imagen no tiene la extension correcta debe ser JPG JPEG PNG GIF')            
         }
 

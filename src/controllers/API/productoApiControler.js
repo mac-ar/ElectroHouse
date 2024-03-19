@@ -80,6 +80,27 @@ const productoAPIController = {
         } catch (error) {
             console.log(error.message);
         }
+    },
+    last: async (req, res) => {
+        try {
+            const ultProd = await db.Productos.findAll({
+                order:[['id','desc']],
+                limit: 1
+            })            
+            const result = {
+                meta: {
+                    count: ultProd.length,
+                    detail: 'http://localhost:3002/api/genres/detail/:id',
+                },
+                data: ultProd,
+            };
+            res.json(result)
+            
+        } catch (error) {
+            console.log(error.message);
+        }
+        
+
     }
 }
 module.exports = productoAPIController;

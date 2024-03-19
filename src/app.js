@@ -5,10 +5,12 @@ const methodOverride = require('method-override')
 const session = require('express-session')
 const cookies = require('cookie-parser');
 const validateUser = require('./middlewares/validateUser.js')
+const cors = require('cors')
 
 app.use(express.urlencoded({ extended: true }))
 app.use(express.json())
 app.use(methodOverride('_method'))
+app.use(cors())
 
 app.use(session({
     secret: 'El Grupo 4',
