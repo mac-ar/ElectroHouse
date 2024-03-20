@@ -137,5 +137,39 @@ const productoAPIController = {
             console.log(error);
         }
     },
+    search: async (req, res) => {
+        try {
+            const name = req.query.nombre;
+
+            const productos = await db.Productos.findAll({
+                where: {
+                    nombre: { [Op.like]: '%' + name + '%' }
+                },
+                attributes: { exclude: ['verIndex_id'] },
+                include: [{
+                    model: db.VerIndex,
+                    as: 'verIndex',
+                    attributes: ['nombre'],
+                }]
+            });
+
+            productos.forEach(element => {
+                element.setDataValue('foto', `${URL_SERVER}/img/product/${element.img}`)
+            });
+
+            const result = {
+                meta: {
+                    status: 200,
+                    url: `${URL_SERVER}/api/product/detail/${productos.id}`
+                },
+                data: productos
+            }
+            res.json(result)
+
+
+        } catch (error) {
+            console.log(error.message);
+        }
+    }
 }
 module.exports = productoAPIController;

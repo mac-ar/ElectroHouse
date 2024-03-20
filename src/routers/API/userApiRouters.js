@@ -8,5 +8,6 @@ router.get('/', userApiController.list);
 router.get('/detail/:id', userApiController.detail);
 router.get('/last', userApiController.last);
 router.get('/show', userApiController.show);
+router.get('/search', userApiController.search);
 
 module.exports = router;

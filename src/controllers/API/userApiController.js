@@ -111,6 +111,40 @@ const userAPIController = {
         } catch (error) {
             console.log(error.message);
         }
+    },
+    search: async (req, res) => {
+        try {
+            const name = req.query.nombre;
+
+            const usuarios = await db.Usuarios.findAll({
+                where: {
+                    nombre: { [Op.like]: '%' + name + '%' }
+                },
+                attributes: { exclude: ['perfil_id', 'password'] },
+                include: [{
+                    model: db.Perfiles,
+                    as: 'perfil',
+                    attributes: ['nombre'],
+                }]
+            });
+
+            usuarios.forEach(element => {
+                element.setDataValue('foto', `${URL_SERVER}/img/users/${element.img}`)
+            });
+
+            const result = {
+                meta: {
+                    status: 200,
+                    url: `${URL_SERVER}/api/product/detail/${usuarios.id}`
+                },
+                data: usuarios
+            }
+            res.json(result)
+
+
+        } catch (error) {
+            console.log(error.message);
+        }
     }
 }
 module.exports = userAPIController;
