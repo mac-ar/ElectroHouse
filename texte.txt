@@ -1,1 +1,34 @@
-hola
+ db.VerIndex.findAll({
+      attributes: ['nombre', [db.sequelize.fn('COUNT', sequelize.col('productos.id')), 'total_productos']], // selecciona el nombre del género y cuenta los productos asociados
+      include: [{
+        model: db.Productos,
+        as: 'producto',
+        attributes: [],
+      }],
+      /where: {
+        total_productos: { [Op.gt]: 0 },
+      },/
+      group: ['id'], // agrupa por el id del género
+    })
+      .then((genres) => {
+        if (genres) {
+          return res.status(200).json({
+            meta: {
+              count: genres.length,
+              detail: http://localhost:3002/api/genres/detail/:id,
+            },
+            data: genres,
+          });
+        } else {
+          res.status(400).json({
+            error: "No results found",
+          });
+        }
+      })
+      .catch((error) => {
+        console.log(error);
+        return res.status(500).json({
+          error: "Could not connect to database",
+        });
+      });
+  },
