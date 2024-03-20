@@ -1,5 +1,7 @@
 const path = require('path');
 const db = require('../../database/models');
+const sequelize = require('sequelize');
+const Op = sequelize.Op;
 const URL_SERVER = "http://localhost:3000"
 
 const userAPIController = {
@@ -13,22 +15,20 @@ const userAPIController = {
                     attributes: [],
                 }],
             })
-            //  const {id, nombre, email} = usuarios
+
             usuarios.forEach(element => {
-                element.setDataValue('detail', `http://localhost:3000/api/users/detail/${element.id}`)
+                element.setDataValue('detail', `${URL_SERVER}/api/users/detail/${element.id}`)
             });
+
             const result = {
                 meta: {
                     count: usuarios.length,
                     status: 200,
-                    // detail: 'http://localhost:3000/api/users/detail/:id'
                 },
-
-                data: usuarios //, detail: `http://localhost:3000/api/users/detail/${usuarios.id}` }
-                /*detalle: `http://localhost:3000/api/users/detail/${usuarios.id}`
-                } */
+                data: usuarios
             }
             res.json(result)
+
         } catch (error) {
             console.log(error);
         }
@@ -47,7 +47,7 @@ const userAPIController = {
             const result = {
                 meta: {
                     status: 200,
-                    url: `http://localhost:3000/api/users/detail/${usuario.id}`
+                    url: `${URL_SERVER}/api/users/detail/${usuario.id}`
                 },
                 data: {
                     id: usuario.id,
@@ -59,6 +59,55 @@ const userAPIController = {
                 }
             }
             res.json(result)
+        } catch (error) {
+            console.log(error.message);
+        }
+    },
+    show: async (req, res) => {
+        try {
+            const perfil = await db.Perfiles.findAll({
+                attributes: ['nombre', [db.sequelize.fn('COUNT', sequelize.col('usuario.perfil_id')), 'total_usuarios']],
+                include: [{
+                    model: db.Usuarios,
+                    as: 'usuario',
+                    attributes: [],
+                }],
+                group: ['id']
+            })
+            const result = {
+                meta: {
+                    count: perfil.length,
+                    detail: `${URL_SERVER}/api/users/show/:id`,
+                },
+                data: perfil,
+            };
+            res.json(result)
+        } catch (error) {
+            console.log(error.message);
+        }
+    },
+    last: async (req, res) => {
+        try {
+            const ultUser = await db.Usuarios.findAll({
+                attributes: ['id', 'nombre', 'apellido', 'email', 'img', 'usuario'],
+                order: [['id', 'desc']],
+                limit: 1
+            })
+            const result = {
+                meta: {
+                    detail: `${URL_SERVER}/api/product/last/${ultUser[0].id}`,
+                },
+                data: {
+                    id: ultUser[0].id,
+                    nombre: ultUser[0].nombre,
+                    apellido: ultUser[0].apellido,
+                    email: ultUser[0].email,
+                    img: `${URL_SERVER}/img/users/${ultUser[0].img}`,
+                    usuario: ultUser[0].usuario,
+                },
+            };
+            res.json(result)
+
         } catch (error) {
             console.log(error.message);
         }

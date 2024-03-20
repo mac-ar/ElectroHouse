@@ -14,7 +14,12 @@ const productoAPIController = {
                     as: 'verIndex',
                     attributes: [],
                 }]
-            })
+            });
+
+            productos.forEach(element => {
+                element.setDataValue('detail', `${URL_SERVER}/api/product/detail/${element.id}`)
+            });
+
             const result = {
                 meta: {
                     count: productos.length,
@@ -42,7 +47,7 @@ const productoAPIController = {
             const result = {
                 meta: {
                     count: verindex.length,
-                    detail: `${URL_SERVER}/api/product/detail/:id`,
+                    detail: `${URL_SERVER}/api/product/show/:id`,
                 },
                 data: verindex,
             };
@@ -65,7 +70,7 @@ const productoAPIController = {
             const result = {
                 meta: {
                     status: 200,
-                    url: `http://localhost:3000/api/users/detail/${producto.id}`
+                    url: `${URL_SERVER}/api/product/detail/${producto.id}`
                 },
                 data: {
                     id: producto.id,
@@ -85,22 +90,52 @@ const productoAPIController = {
     last: async (req, res) => {
         try {
             const ultProd = await db.Productos.findAll({
-                order:[['id','desc']],
+                order: [['id', 'desc']],
                 limit: 1
-            })           
+            })
             const result = {
-                meta: {                    
-                    detail: `${URL_SERVER}/api/product/detail/${ultProd[0].id}`,
+                meta: {
+                    detail: `${URL_SERVER}/api/product/last/${ultProd[0].id}`,
                 },
                 data: ultProd[0],
             };
             res.json(result)
-            
+
         } catch (error) {
             console.log(error.message);
         }
-        
+    },
+    getList: async (req, res) => {
+        try {
+            const lists = await db.Productos.findAll({
+                include: ["verIndex"],
+                attributes: {
+                    exclude: ["verIndex_id"],
+                    // Agregar el campo extra "url" utilizando la función sequelize.literal
+                    include: [
+                        [
+                            sequelize.literal(
+                                `CONCAT('http://localhost:3000/api/product/detail/', Productos.id)`
+                            ),
+                            "url",
+                        ],
+                    ],
+                },
+            });
 
-    }
+            const response = {
+                meta: {
+                    status: 200,
+                    count: lists.length,
+                    path: "http://localhost:3000/api/products",
+                },
+                data: lists,
+            };
+
+            res.json(response);
+        } catch (error) {
+            console.log(error);
+        }
+    },
 }
 module.exports = productoAPIController;
