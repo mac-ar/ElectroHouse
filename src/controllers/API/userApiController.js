@@ -8,7 +8,7 @@ const userAPIController = {
     list: async (req, res) => {
         try {
             const usuarios = await db.Usuarios.findAll({
-                attributes: ['id', 'nombre', 'email'],
+                attributes: ['id', 'nombre','apellido', 'email'],
                 include: [{
                     model: db.Perfiles,
                     as: 'perfil',
