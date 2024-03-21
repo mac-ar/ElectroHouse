@@ -1,5 +1,6 @@
 // Usando la destructuracion uso solamente el body del  express-validator
 const { body } = require('express-validator');
+const path = require('path');
 
 //Creo la logica del middleware de validacion de carga de producto
 module.exports = [
