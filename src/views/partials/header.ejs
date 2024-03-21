@@ -82,7 +82,7 @@
                     <li><a href="/products/menu/2">Oferta</a></li>
                     <li><a href="/products/menu/3">Outlet</a></li>
                     <li><a href="/products">Productos</a></li>
-                    <% if (locals.isLogged) { %>
+                    <% if (locals.isLogged && locals.userLogged.perfil_id===1) { %>
 
                         <li><a href="/products/agregarProducto">Agregar Productos</a></li>
                         <% } %>
