@@ -1,1 +1,12 @@
-[]
+[
+ {
+  "id": 1,
+  "nombre": "Heladera Electrolux",
+  "usuario": 3,
+  "img": "heladera.jpg",
+  "precio": 390770,
+  "descuento": 10,
+  "subtotal": 351693,
+  "cantidad": 1
+ }
+]
