@@ -8,7 +8,7 @@ const productoAPIController = {
     list: async (req, res) => {
         try {
             const productos = await db.Productos.findAll({
-                attributes: ['id', 'nombre', 'descripcion'],
+                attributes: ['id', 'nombre', 'descripcion', 'img'],
                 include: [{
                     model: db.VerIndex,
                     as: 'verIndex',
@@ -18,6 +18,7 @@ const productoAPIController = {
 
             productos.forEach(element => {
                 element.setDataValue('detail', `${URL_SERVER}/api/product/detail/${element.id}`)
+                element.setDataValue('img', `${URL_SERVER}/img/product/${element.img}`)
             });
 
             const result = {
