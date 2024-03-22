@@ -45,6 +45,12 @@
                                     <p>Mis Compras</p><i class="fa-solid fa-basket-shopping"></i>
                                 </a>
                                 <hr>
+                                <% if (locals.userLogged.perfil_id===1) { %>
+                                    <a href="http://localhost:5173/" target="_blank" >
+                                        <p style="font-size:15px;">DashBoard <i class="fas fa-fw fa-tachometer-alt" style="font-size:15px;"></i></p>
+                                    </a>
+                                    <hr>
+                                    <% } %>
                                 <a href="/user/logout">
                                     <p>Logout</p><i class="fa-solid fa-arrow-right-from-bracket"></i>
                                 </a>

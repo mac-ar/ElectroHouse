@@ -217,6 +217,10 @@ body {
     display: block;
 }
 
+.icotach {
+    font-size: 100px;
+}
+
 /* MENU */
 .nav-main {
     background-color: #97e4e9;
