@@ -43,7 +43,7 @@ const productoAPIController = {
                 include: [{
                     model: db.Productos,
                     as: 'producto',
-                    attributes: [],
+                    attributes: ['nombre', 'descripcion', 'img'],
                 }],
 
                 group: ['id']
@@ -52,18 +52,41 @@ const productoAPIController = {
             const produ1 = await db.Productos.findAll({
                 where: {
                     verIndex_id: 1
-                }
+                },
+                attributes: ['nombre', 'descripcion', 'img']
             })
             const produ2 = await db.Productos.findAll({
                 where: {
                     verIndex_id: 2
-                }
+                },
+                attributes: ['nombre', 'descripcion', 'img']
             })
+
             const produ3 = await db.Productos.findAll({
                 where: {
                     verIndex_id: 3
+                },
+                attributes: {
+                    include: [
+                        [
+                            sequelize.literal(
+                                `CONCAT('http://localhost:3000/img/product/', Productos.img)`
+                            ),
+                            "img",
+                        ],
+                    ],
                 }
             })
+
+            produ1.forEach(element => {
+                element.setDataValue('img', `${URL_SERVER}/img/product/${element.img}`)
+            });
+            produ2.forEach(element => {
+                element.setDataValue('img', `${URL_SERVER}/img/product/${element.img}`)
+            });
+            /* produ3.forEach(element => {
+                element.setDataValue('img', `${URL_SERVER}/img/product/${element.img}`)
+            }); */
 
             const result = {
                 meta: {
