@@ -6,9 +6,7 @@
 
     <body>
         <div class="main-body-container">
-
             <%- include('../partials/header.ejs') %>
-
                 <main>
                     <h1>DETALLE DE LA COMPRA</h1>
 
@@ -43,13 +41,10 @@
                                                 <li type='disc'>Otras tarjetas plan Z</li>
 
                                             </ul>
-
-
                         </div>
 
                         <div class="contenedor-producto">
                             <h2 class="modelo-producto">
-
                             </h2>
                             <div class="sucursal">
                                 <p>Confirmar sucursal más cercana para retiro o envío:</p>
@@ -61,7 +56,7 @@
                                 <div class="form-CP">
                                     <label for="codigo postal" name="codpostal">Código postal</label>
                                     <input type="text" id="codigo-postal" name="codpostal" value="G4200"></input>
-                                    <button class="bt-buscar" type="submit">Buscar</button>
+                                    <a href="#"><input type="button" value="Buscar" class="bt-buscar"></a>
                                 </div>
                                 <p>Sucursal: Santiago Del Estero </p>
                                 <br>
@@ -70,7 +65,6 @@
                                     TOTAL A PAGAR <span class="total">
                                         <strong>$ <%=total%></strong></span>
                                 </p>
-
                                 <button class="agregar" type="submit"
                                     onclick=" alert('Gracias Por Su Compra !!!') /* myFunction() */">PAGAR</button>
                             </form>
@@ -78,17 +72,10 @@
                     </section>
 
                 </main>
-
                 <!--  nuevo pie-->
                 <%- include('../partials/footer.ejs') %>
 
         </div>
     </body>
-
-    <script>
-        function myFunction() {
-            alert('Gracias Por Su Compra !!!');
-        }
-    </script>
 
 </html>

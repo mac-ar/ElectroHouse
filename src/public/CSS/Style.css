@@ -226,9 +226,9 @@ body {
     display: block;
 }
 
-.icotach {
-    font-size: 100px;
-}
+/********************************************************
+*********************************************************/
+
 
 /* MENU */
 .nav-main {
@@ -264,6 +264,66 @@ body {
     color: white;
 
 }
+
+/* BARRA DE NAV CATEGORIA */
+
+.menu-categoria {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+
+}
+
+.menu-categoria a {
+    font-size: 15px;
+    margin: 0px 15px;
+}
+
+.menu-categoria p {
+    padding: 3px;
+    color: var(--primary-100);
+}
+
+/* ****************************** */
+
+.menu-categoria .menu-cate-ul {
+    float: left;
+}
+
+.menu-categoria .menu-cate-ul a .dropdown {
+    display: inline-block;
+    color: var(--primary-100);
+    text-align: center;
+    text-decoration: none;
+}
+
+.menu-categoria .menu-cate-ul a p {
+    color: var(--primary-100);
+}
+
+.menu-categoria .dropdown {
+    display: none;
+    position: absolute;
+    background-color: var(--bg-logo-header);
+    min-width: 100px;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+}
+
+.menu-categoria .dropdown a p {
+    color: black;
+    text-decoration: none;
+    display: inline-block;
+    text-align: left;
+}
+
+.menu-categoria .menu-cate-ul:hover .dropdown {
+    display: block;
+}
+
+/********************************************************
+*********************************************************/
+
 
 /*-------------***********   FOOTER  ***********-----------------*/
 

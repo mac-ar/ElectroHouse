@@ -1,12 +1,12 @@
 [
  {
-  "id": 1,
-  "nombre": "Heladera Electrolux",
-  "usuario": 3,
-  "img": "heladera.jpg",
-  "precio": 390770,
-  "descuento": 10,
-  "subtotal": 351693,
+  "id": 9,
+  "nombre": "Aspiradora",
+  "usuario": 1,
+  "img": "aspiradora.jpg",
+  "precio": 85490,
+  "descuento": 40,
+  "subtotal": 51294,
   "cantidad": 1
  }
 ]

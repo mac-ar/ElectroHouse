@@ -82,19 +82,30 @@
             <div class="container-ul">
                 <div class="home-burger"> <a href="/"><i class="fa-solid fa-house "></i></a>
                 </div>
-                <ul class="menu">
-                    <li><a href="/">Inicio</a></i></li>
-                    <li><a href="#">Electrodomesticos</a></li>
-                    <li><a href="#">Refrigeracion</a></li>
-                    <li><a href="#">Calefaccion</a></li>
-                    <li><a href="#">Hogar</a></li>
-                    <li><a href="/products/menu/1">Nuevo</a></li>
-                    <li><a href="/products/menu/2">Oferta</a></li>
-                    <li><a href="/products/menu/3">Outlet</a></li>
-                    <li><a href="/products">Productos</a></li>
-                    <% if (locals.isLogged && locals.userLogged.perfil_id===1) { %>
+                <ul class="menu-categoria">
+                    <li><a href="/">Inicio</a></li>
 
-                        <li><a href="/products/agregarProducto">Agregar Productos</a></li>
+                    <li class="menu-cate-ul"><a href="#">Categorias</a>
+                        <div class="dropdown">
+                            <a href="/products/menu/1">
+                                <p>Nuevo</p>
+                            </a>
+                            <hr>
+                            <a href="/products/menu/2">
+                                <p>Oferta</p>
+                            </a>
+                            <hr>
+                            <a href="/products/menu/3">
+                                <p>Outlet</p>
+                            </a>
+                        </div>
+                    </li>
+                    <li><a href="/products">Productos</a>
+                    </li>
+                    <% if (locals.isLogged && locals.userLogged.perfil_id===1) { %>
+                        <li><a href="/products/agregarProducto">
+                                Agregar Productos Nuevos
+                            </a></li>
                         <% } %>
                 </ul>
             </div>
