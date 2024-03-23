@@ -3,11 +3,15 @@ window.addEventListener("load", function () {
     let btnSubmit = document.querySelector('#btnSubmit');
     let campoUsuario = document.querySelector("#usuario");
     let campoContraseña = document.querySelector("#password");
-
+    let asideFront = document.querySelector('.aside-front');
     let errores = [];
-
     btnSubmit.addEventListener('click', function (e) {
         e.preventDefault();
+        if (errores.length > 0) {
+            errores = [];
+            asideFront.innerHTML = '<aside class="aside-front"> </aside>'
+        }
+
 
         if (campoUsuario.value == "") {
             errores.push("El campo Usuario no debe estár vacío");
@@ -16,15 +20,13 @@ window.addEventListener("load", function () {
             errores.push("El campo Contraseña no debe estár vacío");
         };
 
-        let num = errores.length
-        if (num > 0) {
-            e.preventDefault()
-            let ulErrores = document.querySelector("aside");
-            errores.forEach(error => {
-                ulErrores.innerHTML += ` <div class="alert alert-warning" role="alert">
-                              <i class="fa-solid fa-triangle-exclamation">  
-                              </i>&nbsp; &nbsp;<p>${error}</p>
-                          </div>`;
+        let longitudArray = errores.length
+
+        if (longitudArray > 0) {
+            e.preventDefault();
+            errores.forEach((error) => {
+                asideFront.innerHTML += `<div class="alert alert-warning" role="alert">
+                <i class="fa-solid fa-triangle-exclamation"></i>&nbsp; &nbsp; ${error} </div> `
             })
         } else { formulario.submit(); }
     })

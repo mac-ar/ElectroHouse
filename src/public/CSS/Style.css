@@ -37,6 +37,14 @@ header {
     /* font-family: 'Roboto', sans-serif; */
     font-family: 'Roboto Condensed', sans-serif;
     font-size: 12px;
+    /* width: 100%;*/
+    /* hacemos que la cabecera ocupe el ancho completo de la página */
+    /* left: 0; */
+    /* Posicionamos la cabecera al lado izquierdo */
+    /*  top: 0; */
+    /* Posicionamos la cabecera pegada arriba */
+    /*  position: fixed; */
+    /* Hacemos que la cabecera tenga una posición fija */
 }
 
 
@@ -51,6 +59,7 @@ header a {
 body {
     font-family: 'Roboto', sans-serif;
     font-size: 12px;
+    /* padding-top: 270px; */
 }
 
 .main-body-container {
@@ -139,7 +148,7 @@ body {
 .search-bar button {
     border: solid 1px #00bac2;
     background-color: #ccf6ff;
-   /*  width: 42px;
+    /*  width: 42px;
     height: 42px; */
 }
 

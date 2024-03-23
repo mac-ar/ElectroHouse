@@ -38,22 +38,26 @@
                             </a>
                             <div class="dropdown">
                                 <a href="/user/Perfil/<%= locals.userLogged.id %>">
-                                    <p>Mi Perfil</p><i class="fa-solid fa-user-pen"></i>
+                                    <p>Mi Perfil</p><i class="fa-solid fa-user-pen" style="font-size: 15px;"></i>
                                 </a>
                                 <hr>
                                 <a href="/user/Compras/<%= locals.userLogged.id %>">
-                                    <p>Mis Compras</p><i class="fa-solid fa-basket-shopping"></i>
+                                    <p>Mis Compras</p><i class="fa-solid fa-basket-shopping"
+                                        style="font-size: 15px;"></i>
                                 </a>
                                 <hr>
                                 <% if (locals.userLogged.perfil_id===1) { %>
-                                    <a href="http://localhost:5173/" target="_blank" >
-                                        <p style="font-size:15px;">DashBoard <i class="fas fa-fw fa-tachometer-alt" style="font-size:15px;"></i></p>
+                                    <!-- <a href="/user/Compras/<%= locals.userLogged.id %>"> -->
+                                    <a href="http://localhost:5173/" target="_blank">
+                                        <p>Dashboard</p><i class="fas fa-fw fa-tachometer-alt"
+                                            style="font-size: 15px;"></i>
                                     </a>
                                     <hr>
                                     <% } %>
-                                <a href="/user/logout">
-                                    <p>Logout</p><i class="fa-solid fa-arrow-right-from-bracket"></i>
-                                </a>
+                                        <a href="/user/logout">
+                                            <p>Logout</p><i class="fa-solid fa-arrow-right-from-bracket"
+                                                style="font-size: 15px;"></i>
+                                        </a>
                             </div>
                         </li>
 
