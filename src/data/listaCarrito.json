@@ -1,25 +1,5 @@
 [
  {
-  "id": 5,
-  "nombre": "Microondas BGH",
-  "usuario": 2,
-  "img": "micro.jpg",
-  "precio": 115770,
-  "descuento": 5,
-  "subtotal": 109981.5,
-  "cantidad": 1
- },
- {
-  "id": 7,
-  "nombre": "Cafetera Express",
-  "usuario": 2,
-  "img": "cafetera.jpg",
-  "precio": 116290,
-  "descuento": 40,
-  "subtotal": 69774,
-  "cantidad": 1
- },
- {
   "id": 9,
   "nombre": "Aspiradora",
   "usuario": 1,
