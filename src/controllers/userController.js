@@ -35,7 +35,10 @@ const userControl = {
                     let isOk = bcryptjs.compareSync(password, userFound.password)
 
                     if (isOk) {
+
                         req.session.userLogged = userFound;
+                        res.locals.isLogged = true;
+                        res.locals.userLogged = req.session.userLogged;
 
                         if (req.body.remember_user) {
                             res.cookie('user', usuario, { maxAge: (1000 * 60) * 60 })
@@ -238,7 +241,7 @@ const userControl = {
                     img: req.file?.filename || 'img-default.png',
                     usuario: req.body.usuario,
                     password: pass,
-                    perfil_id: req.body.perfil
+                    perfil_id: 2
                 }
                 await db.Usuarios.create(registerNuevo)
                 res.render('../views/users/Login')

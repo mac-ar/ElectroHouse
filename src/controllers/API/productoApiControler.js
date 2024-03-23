@@ -35,23 +35,47 @@ const productoAPIController = {
         }
     },
     show: async (req, res) => {
+        //let produ = req.params.id
         try {
             const verindex = await db.VerIndex.findAll({
-                attributes: ['nombre', [db.sequelize.fn('COUNT', sequelize.col('producto.verIndex_id')), 'total_productos']], // selecciona el nombre del género y cuenta los productos asociados
+                //verindexid: verindex.id,
+                attributes: ['id', 'nombre', [db.sequelize.fn('COUNT', sequelize.col('producto.verIndex_id')), 'total_productos']], // selecciona el nombre del género y cuenta los productos asociados
                 include: [{
                     model: db.Productos,
                     as: 'producto',
                     attributes: [],
                 }],
+
                 group: ['id']
             })
+
+            const produ1 = await db.Productos.findAll({
+                where: {
+                    verIndex_id: 1
+                }
+            })
+            const produ2 = await db.Productos.findAll({
+                where: {
+                    verIndex_id: 2
+                }
+            })
+            const produ3 = await db.Productos.findAll({
+                where: {
+                    verIndex_id: 3
+                }
+            })
+
             const result = {
                 meta: {
                     count: verindex.length,
                     detail: `${URL_SERVER}/api/product/show/:id`,
                 },
                 data: verindex,
+                produ1: produ1,
+                produ2: produ2,
+                produ3: produ3
             };
+
             res.json(result)
         } catch (error) {
             console.log(error.message);

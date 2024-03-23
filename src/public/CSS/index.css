@@ -1,42 +1,42 @@
-:root{
-    --primary-100:#0066CC;
-    --primary-200:#5c93ff;
-    --primary-300:#ccf6ff;
-    --accent-100:#66CCFF;
-    --accent-200:#006d9b;
-    --text-100:#333333;
-    --text-200:#5c5c5c;
-    --bg-100:#ecf5ff;
-    --bg-200:#e2ebf5;
-    --bg-300:#343131;
+:root {
+    --primary-100: #0066CC;
+    --primary-200: #5c93ff;
+    --primary-300: #ccf6ff;
+    --accent-100: #66CCFF;
+    --accent-200: #006d9b;
+    --text-100: #333333;
+    --text-200: #5c5c5c;
+    --bg-100: #ecf5ff;
+    --bg-200: #e2ebf5;
+    --bg-300: #343131;
     /* Header */
     --bg-bar-service: #e2ebec;
-    --bg-logo-header:#04c4cc;
+    --bg-logo-header: #04c4cc;
     /* Fuente Barra de Servicios */
     --font-bar-service: #767676;
 
-    --primary-100:#FFFFFF;
-    --primary-200:#e0e0e0;
-    --primary-300:#9b9b9b;
-    --accent-100:#FFCC00;
-    --accent-200:#916e00;
-    --text-100:#000000;
-    --text-200:#2c2c2c;
-    --bg-100:#04C4CC;
-    --bg-200:#00bac2;
-    --bg-300:#00939b;
+    --primary-100: #FFFFFF;
+    --primary-200: #e0e0e0;
+    --primary-300: #9b9b9b;
+    --accent-100: #FFCC00;
+    --accent-200: #916e00;
+    --text-100: #000000;
+    --text-200: #2c2c2c;
+    --bg-100: #04C4CC;
+    --bg-200: #00bac2;
+    --bg-300: #00939b;
 }
 
 
 /*  *********  MAIN  ************ */
 
 .main {
-    width: 90%; 
+    width: 90%;
     padding-bottom: 20px;
 }
 
-.banner-oferta{
-    width: 100%;   
+.banner-oferta {
+    width: 100%;
     margin: auto;
 }
 
@@ -45,40 +45,29 @@
     height: 300x;
 }
 
-.section-product {    
+.titulares {
+    font-size: 24px;
+    align-items: center;
+    margin: 20px;
+}
+
+.section-product {
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
-    align-items: center; 
+    align-items: center;
     margin-bottom: 40px;
 }
 
 .section-product a {
-    text-decoration: none;    
+    text-decoration: none;
 }
+
 .section-product article img {
     width: 250px;
     height: 300px;
 }
 
-.pay {
-    background-color: white;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    height: 74.7px;
-}
-
-.pay .cuota{
-    width: 85px;
-    height: 32.40px;
-
-}
-
-.pay .credit-card{
-    width: 85px;
-    height: 46.90px;
-}
 /* .main section article {    
     margin: 35px;
     padding: 10px 0;     
@@ -88,13 +77,13 @@
     width: 250px;
     height: 454px;
     margin: 10px;
-    /* padding: 10px 0;  */   
+    /* padding: 10px 0;  */
 }
 
 
-.items_description {    
+.items_description {
     background-color: white;
-    padding: 10px;    
+    padding: 10px;
     display: none;
     position: relative;
 }
@@ -119,17 +108,12 @@
     top: -15px;
 }
 
-.titulares {
-    font-size: 24px;    
-    align-items: center;
-    margin: 20px;
-}
 
 .container-price {
     display: flex;
     justify-content: center;
-    align-items: center; 
-    margin-bottom: 5px;   
+    align-items: center;
+    margin-bottom: 5px;
 }
 
 .precio {
@@ -144,16 +128,36 @@
     font-weight: bold;
 }
 
-.prod-descripcion {   
-    visibility: hidden;     
-    padding: 5px;  
+.pay {
+    background-color: white;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 74.7px;
+}
+
+.pay .cuota {
+    width: 85px;
+    height: 32.40px;
+
+}
+
+.pay .credit-card {
+    width: 85px;
+    height: 46.90px;
+}
+
+.prod-descripcion {
+    visibility: hidden;
+    padding: 5px;
     font-size: 14px;
     color: black;
     text-align: center;
     font-weight: bold;
     border: solid 1px #39b54a;
-    background-color: rgb(245, 245, 159); 
+    background-color: rgb(245, 245, 159);
 }
+
 /* MEDIA TABLET 493px */
 @media (min-width: 450px) {
     .items_description {
@@ -161,19 +165,20 @@
     }
 
     main article {
-        box-shadow: 0px 0px 10px rgb(100, 100, 100);        
-    }   
-    
-    .section-product {
-        flex-flow: row wrap;
-        
-    }
-    .section-product article:hover{  
-        box-shadow: 10px 15px 10px rgb(100, 100, 100) ;       
+        box-shadow: 0px 0px 10px rgb(100, 100, 100);
     }
 
-    .section-product article:hover .prod-descripcion{    
-        visibility: visible;               
-    }   
+    .section-product {
+        flex-flow: row wrap;
+
+    }
+
+    .section-product article:hover {
+        box-shadow: 10px 15px 10px rgb(100, 100, 100);
+    }
+
+    .section-product article:hover .prod-descripcion {
+        visibility: visible;
+    }
 
 }

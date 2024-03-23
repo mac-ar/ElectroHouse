@@ -20,37 +20,40 @@
                                         <% var cantidad=0 %>
 
                                             <% listaCarrito.forEach(productos=> { %>
-                                                <% var descu=0 %>
-                                                    <% id=productos.id %>
-                                                        <% cantidad=productos.cantidad %>
-                                                            <article class="containerArt">
-                                                                <img src="/img/product/<%= productos.img%>" alt=""
-                                                                    width="150px" height="150px">
-                                                                <label for="number">
-                                                                    <%= productos.nombre%>
-                                                                </label>
-                                                                <p><b>Cantidad</b>
-                                                                    <%= productos.cantidad%>
-                                                                </p>
-                                                                <p>$ <%= productos.precio%>
-                                                                </p>
-                                                                <% descu=productos.precio - (((productos.precio *
-                                                                    productos.descuento ) )/ 100) %>
-                                                                    <% subProducto=descu * productos.cantidad%>
-                                                                        <p><b>SubTotal</b> $ <%=subProducto%>
-                                                                        </p>
-                                                                        <form
-                                                                            action="/Carrito/borrarCarrito/<%= productos.id%>?_method=DELETE"
-                                                                            method="post">
-                                                                            <button type="submit"><i
-                                                                                    class="fa-regular fa-trash-can"></i></button>
-                                                                        </form>
+                                                <% if (productos.usuario==locals.userLogged.id) { %>
 
-                                                                        <% subTotal=subTotal + (productos.precio *
-                                                                            productos.cantidad)%>
-                                                                            <% total=total + subProducto %>
-                                                            </article>
-                                                            <% }) %>
+                                                    <% var descu=0 %>
+                                                        <% id=productos.id %>
+                                                            <% cantidad=productos.cantidad %>
+                                                                <article class="containerArt">
+                                                                    <img src="/img/product/<%= productos.img%>" alt=""
+                                                                        width="150px" height="150px">
+                                                                    <label for="number">
+                                                                        <%= productos.nombre%>
+                                                                    </label>
+                                                                    <p><b>Cantidad</b>
+                                                                        <%= productos.cantidad%>
+                                                                    </p>
+                                                                    <p><b>Precio</b>$ <%= productos.precio%>
+                                                                    </p>
+                                                                    <% descu=productos.precio - (((productos.precio *
+                                                                        productos.descuento ) )/ 100) %>
+                                                                        <% subProducto=descu * productos.cantidad%>
+                                                                            <p><b>Con descuento</b> $ <%=subProducto%>
+                                                                            </p>
+                                                                            <form
+                                                                                action="/Carrito/borrarCarrito/<%= productos.id%>?_method=DELETE"
+                                                                                method="post">
+                                                                                <button type="submit"><i
+                                                                                        class="fa-regular fa-trash-can"></i></button>
+                                                                            </form>
+
+                                                                            <% subTotal=subTotal + (productos.precio *
+                                                                                productos.cantidad)%>
+                                                                                <% total=total + subProducto %>
+                                                                </article>
+                                                                <% } %>
+                                                                    <% }) %>
                         </section>
 
                         <section class="carrito">
