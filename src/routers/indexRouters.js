@@ -4,7 +4,7 @@ const authValidator = require('../middlewares/authValidator')
 
 const indexControl = require('../controllers/indexController');
 
-router.get('/', authValidator, indexControl.index);
+router.get('/', indexControl.index);
 
 
 module.exports = router;
