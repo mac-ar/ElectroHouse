@@ -9,6 +9,7 @@ const fs = require('fs');
 const userControl = {
     login: async (req, res) => {
         try {
+            console.log(req.session);
             res.render('../views/users/Login')
         } catch (error) {
             console.log(error);

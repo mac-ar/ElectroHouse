@@ -1,25 +1,3 @@
-/*const db = require('../database/models')
-const path = require('path')
-async function validateUser(req, res, next) {
-    res.locals.isLogged = false
-    if (req.cookies.user) {
-        let userInCookie = req.cookies.user;
-        let userFromCookie = await db.Usuarios.findOne({
-            where: {
-                usuario: userInCookie
-            }
-        })
-        req.session.userLogged = userFromCookie;
-        if (req.session.userLogged) {
-            res.locals.isLogged = true
-            res.locals.userLogged = req.session.userLogged;
-        }
-    }
-    next();
-}
-
-module.exports = validateUser*/
-
 const db = require('../database/models');
 const path = require('path');
 
@@ -44,7 +22,6 @@ async function validateUser(req, res, next) {
             console.error('Error al validar el usuario:', error);
         }
     }
-
     next();
 }
 
