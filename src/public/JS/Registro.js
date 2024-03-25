@@ -7,6 +7,7 @@ window.addEventListener("load", function () {
     let campoFoto = document.querySelector("#foto");
     let campoUsuario = document.querySelector("#usuario");
     let campoContraseña = document.querySelector("#password");
+    let asideFront = document.querySelector('.aside-front');
 
     let errores = [];
 
@@ -18,6 +19,11 @@ window.addEventListener("load", function () {
         let passwordlen = campoContraseña.value.length
         let isOk = campoEmail.value.indexOf('@');
         let imgExt = campoFoto.value.slice(-4)
+
+        if (errores.length > 0) {
+            errores = [];
+            asideFront.innerHTML = '<aside class="aside-front"> </aside>'
+        }
 
         if (campoNombre.value == "") {
             errores.push("El campo nombre está vacío");
@@ -59,9 +65,9 @@ window.addEventListener("load", function () {
 
         if (longitudArray > 0) {
             e.preventDefault()
-            let ulErrores = document.querySelector("aside");
+            //let ulErrores = document.querySelector(".aside-front");
             errores.forEach(error => {
-                ulErrores.innerHTML += ` <div class="alert alert-warning" role="alert">
+                asideFront.innerHTML += ` <div class="alert alert-warning" role="alert">
                               <i class="fa-solid fa-triangle-exclamation">  
                               </i>&nbsp; &nbsp;<p>${error}</p>
                           </div>`;

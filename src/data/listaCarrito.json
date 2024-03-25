@@ -1,22 +1,12 @@
 [
-    {
-        "id": 9,
-        "nombre": "Aspiradora",
-        "usuario": 1,
-        "img": "aspiradora.jpg",
-        "precio": 85490,
-        "descuento": 40,
-        "subtotal": 51294,
-        "cantidad": 1
-    },
-    {
-        "id": 3,
-        "nombre": "Licuadora Liliana",
-        "usuario": 2,
-        "img": "licuadora.jpg",
-        "precio": 69770,
-        "descuento": 10,
-        "subtotal": 62793,
-        "cantidad": 1
-    }
+ {
+  "id": 2,
+  "nombre": "Aire Split BGH",
+  "usuario": 2,
+  "img": "aire.jpg",
+  "precio": 690770,
+  "descuento": 20,
+  "subtotal": 552616,
+  "cantidad": 1
+ }
 ]
