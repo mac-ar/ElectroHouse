@@ -27,5 +27,6 @@ module.exports = [
         return true;
     }),
     body('usuario').notEmpty().withMessage('Escribe un nombre de Usuario'),
-    body('password').notEmpty().withMessage('Ingrese una Contraseña').bail()
+    body('password').notEmpty().withMessage('Ingrese una Contraseña').bail(),
+    body('perfil').notEmpty().withMessage('Debes Elegir un tipo de Usuario')
 ]

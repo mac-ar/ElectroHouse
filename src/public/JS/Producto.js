@@ -7,8 +7,7 @@ window.addEventListener('load', function(){
     let inputcategoria = this.document.querySelector('#categoria');
     let inputverIndex = this.document.querySelector('#verIndex');
     let inputprecio = this.document.querySelector('#precio');
-    let inputespecificaciones = this.document.querySelector('#especificaciones');  
-    let asideFront = document.querySelector('.aside-front');    
+    let inputespecificaciones = this.document.querySelector('#especificaciones');   
     let errores = []; 
 
     btnSubmit.addEventListener('click', function(e) {
@@ -16,14 +15,8 @@ window.addEventListener('load', function(){
         
         let longitudNombre = inputNombre.value.length
         let longitudDescrip = inputdescripcion.value.length
-        let imgExt = inputimagen.value.slice(-4)      
+        let imgExt = inputimagen.value.slice(-4)
 
-        if(errores.length > 0) {           
-            errores = [];
-            asideFront.innerHTML = '<aside class="aside-front"> </aside>'            
-         } 
-
-        
         if(inputNombre.value == ''){           
             errores.push('El nombre del Producto no debe ser vacio')
         }else if (longitudNombre < 3){
@@ -43,13 +36,15 @@ window.addEventListener('load', function(){
         let longitudArray = errores.length
 
         if(longitudArray > 0){
-            e.preventDefault();
+            e.preventDefault();            
+            let asideFront = document.querySelector('.aside-front'); 
             errores.forEach((error) => {
                 asideFront.innerHTML += `<div class="alert alert-warning" role="alert">
                 <i class="fa-solid fa-triangle-exclamation"></i>&nbsp; &nbsp; ${error} </div> `
              })            
         }else 
-        {formulario.submit();}        
-    })      
+        {formulario.submit();}
+        
+    })
     
 })

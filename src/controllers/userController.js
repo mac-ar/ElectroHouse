@@ -9,7 +9,6 @@ const fs = require('fs');
 const userControl = {
     login: async (req, res) => {
         try {
-            console.log(req.session);
             res.render('../views/users/Login')
         } catch (error) {
             console.log(error);
@@ -36,10 +35,7 @@ const userControl = {
                     let isOk = bcryptjs.compareSync(password, userFound.password)
 
                     if (isOk) {
-
                         req.session.userLogged = userFound;
-                        res.locals.isLogged = true;
-                        res.locals.userLogged = req.session.userLogged;
 
                         if (req.body.remember_user) {
                             res.cookie('user', usuario, { maxAge: (1000 * 60) * 60 })
@@ -242,7 +238,7 @@ const userControl = {
                     img: req.file?.filename || 'img-default.png',
                     usuario: req.body.usuario,
                     password: pass,
-                    perfil_id: 2
+                    perfil_id: req.body.perfil
                 }
                 await db.Usuarios.create(registerNuevo)
                 res.render('../views/users/Login')

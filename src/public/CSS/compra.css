@@ -33,7 +33,7 @@
     --bg-3000: #00939b;
 }
 
-main form {
+form {
     width: 450px;
     height: auto;
     border: 1.5px solid var(--bg-300);
@@ -42,12 +42,12 @@ main form {
     box-shadow: 7px 13px 37px var(--text-100);
 }
 
-main form h2 {
+form h2 {
     text-align: center;
     margin: 20px;
 }
 
-main form .formulario {
+form .formulario {
     width: 90%;
     margin: 0 auto;
     display: flex;
@@ -55,13 +55,13 @@ main form .formulario {
     /* text-align: center;*/
 }
 
-main form .formulario .register {
+form .formulario .register {
     width: 100%;
     display: flex;
     flex-direction: row;
 }
 
-main form .formulario .register label {
+form .formulario .register label {
     width: 30%;
     height: 20px;
     margin: 10px auto;
@@ -69,7 +69,7 @@ main form .formulario .register label {
     text-align: end;
 }
 
-main form .formulario .register input {
+form .formulario .register input {
     width: 50%;
     height: 20px;
     margin: 10px auto;
@@ -77,20 +77,20 @@ main form .formulario .register input {
     text-align: end;
 }
 
-main form .botones {
+form .botones {
     width: 70%;
     margin: 30px auto;
     text-align: center;
 }
 
-main form .botones button {
+form .botones button {
     width: 100px;
     height: 30px;
     background-color: var(--accent-100);
     color: var(--bg-300);
 }
 
-main form .botones button:hover {
+form .botones button:hover {
     background-color: var(--primary-100);
     color: var(--bg-100);
     cursor: pointer;

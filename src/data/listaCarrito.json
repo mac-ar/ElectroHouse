@@ -1,12 +1,1 @@
-[
- {
-  "id": 9,
-  "nombre": "Aspiradora",
-  "usuario": 1,
-  "img": "aspiradora.jpg",
-  "precio": 85490,
-  "descuento": 40,
-  "subtotal": 51294,
-  "cantidad": 1
- }
-]
+[]

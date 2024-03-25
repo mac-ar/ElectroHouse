@@ -91,9 +91,7 @@ const carritoController = {
                 await db.DetalleCompras.create(deta)
             }
             // Borrar el Carrito Json
-
-            let newProducts = listaCarrito.filter(usuario => usuario.usuario != req.session.userLogged.id)
-
+            let newProducts = []
             fs.writeFileSync(pathCarrito, JSON.stringify(newProducts, null, ' '))
 
             //alert('Gracias por su Compra')

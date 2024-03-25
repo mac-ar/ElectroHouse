@@ -8,7 +8,7 @@ const productoAPIController = {
     list: async (req, res) => {
         try {
             const productos = await db.Productos.findAll({
-                attributes: ['id', 'nombre', 'descripcion', 'img'],
+                attributes: ['id', 'nombre', 'descripcion'],
                 include: [{
                     model: db.VerIndex,
                     as: 'verIndex',
@@ -18,7 +18,6 @@ const productoAPIController = {
 
             productos.forEach(element => {
                 element.setDataValue('detail', `${URL_SERVER}/api/product/detail/${element.id}`)
-                element.setDataValue('img', `${URL_SERVER}/img/product/${element.img}`)
             });
 
             const result = {
@@ -35,70 +34,23 @@ const productoAPIController = {
         }
     },
     show: async (req, res) => {
-        //let produ = req.params.id
         try {
             const verindex = await db.VerIndex.findAll({
-                //verindexid: verindex.id,
-                attributes: ['id', 'nombre', [db.sequelize.fn('COUNT', sequelize.col('producto.verIndex_id')), 'total_productos']], // selecciona el nombre del género y cuenta los productos asociados
+                attributes: ['nombre', [db.sequelize.fn('COUNT', sequelize.col('producto.verIndex_id')), 'total_productos']], // selecciona el nombre del género y cuenta los productos asociados
                 include: [{
                     model: db.Productos,
                     as: 'producto',
-                    attributes: ['nombre', 'descripcion', 'img'],
+                    attributes: [],
                 }],
-
                 group: ['id']
             })
-
-            const produ1 = await db.Productos.findAll({
-                where: {
-                    verIndex_id: 1
-                },
-                attributes: ['nombre', 'descripcion', 'img']
-            })
-            const produ2 = await db.Productos.findAll({
-                where: {
-                    verIndex_id: 2
-                },
-                attributes: ['nombre', 'descripcion', 'img']
-            })
-
-            const produ3 = await db.Productos.findAll({
-                where: {
-                    verIndex_id: 3
-                },
-                attributes: {
-                    include: [
-                        [
-                            sequelize.literal(
-                                `CONCAT('http://localhost:3000/img/product/', Productos.img)`
-                            ),
-                            "img",
-                        ],
-                    ],
-                }
-            })
-
-            produ1.forEach(element => {
-                element.setDataValue('img', `${URL_SERVER}/img/product/${element.img}`)
-            });
-            produ2.forEach(element => {
-                element.setDataValue('img', `${URL_SERVER}/img/product/${element.img}`)
-            });
-            /* produ3.forEach(element => {
-                element.setDataValue('img', `${URL_SERVER}/img/product/${element.img}`)
-            }); */
-
             const result = {
                 meta: {
                     count: verindex.length,
                     detail: `${URL_SERVER}/api/product/show/:id`,
                 },
                 data: verindex,
-                produ1: produ1,
-                produ2: produ2,
-                produ3: produ3
             };
-
             res.json(result)
         } catch (error) {
             console.log(error.message);
