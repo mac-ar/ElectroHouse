@@ -8,5 +8,15 @@
   "descuento": 40,
   "subtotal": 51294,
   "cantidad": 1
+ },
+ {
+  "id": 3,
+  "nombre": "Licuadora Liliana",
+  "usuario": 2,
+  "img": "licuadora.jpg",
+  "precio": 69770,
+  "descuento": 10,
+  "subtotal": 62793,
+  "cantidad": 1
  }
 ]
