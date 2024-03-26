@@ -89,32 +89,27 @@
                                     </p>
                                     <% } %>
                             </div>
-                            <div class="register">
 
-                                <% if (locals.oldData? oldData.perfil_id=='1' :userFound.perfil_id=='1' ) { %>
-                                    <label for="administrador">Administrador</label>
-                                    <input type="radio" id="administrador" name="perfil" value="1" checked>
-                                    <label for="cliente">Cliente</label>
-                                    <input type="radio" id="cliente" name="perfil" value="2">
-                                    <% } else { %>
+                            <% if (locals.userLogged.perfil_id===1) { %>
+                                <div class="register">
+                                    <% if (locals.oldData? oldData.perfil_id==1 : userFound.perfil_id==1) { %>
                                         <label for="administrador">Administrador</label>
-                                        <input type="radio" id="administrador" name="perfil" value="1">
+                                        <input type="radio" id="administrador" name="perfil" value="1" checked>
                                         <label for="cliente">Cliente</label>
-                                        <input type="radio" id="cliente" name="perfil" value="2" checked>
-                                        <% } %>
-                            </div>
-                            <div>
-                                <% if (locals.errors && errors.perfil_id) { %>
-                                    <p style="color: red; text-align: end;">
-                                        <%= errors.perfil_id.msg %>
-                                    </p>
-                                    <% } %>
-                            </div>
+                                        <input type="radio" id="cliente" name="perfil" value="2">
+                                        <% } else { %>
+                                            <label for="administrador">Administrador</label>
+                                            <input type="radio" id="administrador" name="perfil" value="1">
+                                            <label for="cliente">Cliente</label>
+                                            <input type="radio" id="cliente" name="perfil" value="2" checked>
+                                            <% } %>
+                                </div>
+                                <% } %>
 
-                            <div class="botones">
-                                <button type="reset">Borrar</button>
-                                <button type="submit" id="btnSubmit">Actualizar</button>
-                            </div>
+                                    <div class="botones">
+                                        <button type="reset">Borrar</button>
+                                        <button type="submit" id="btnSubmit">Actualizar</button>
+                                    </div>
                     </form>
                 </main>
 

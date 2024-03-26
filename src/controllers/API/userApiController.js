@@ -71,9 +71,40 @@ const userAPIController = {
                 include: [{
                     model: db.Usuarios,
                     as: 'usuario',
-                    attributes: [],
+                    attributes: ['nombre', 'apellido', 'img'],
                 }],
                 group: ['id']
+            })
+
+            const usuario1 = await db.Usuarios.findAll({
+                where: {
+                    perfil_id: 1
+                },
+                attributes: {
+                    include: [
+                        [
+                            sequelize.literal(
+                                `CONCAT('http://localhost:3000/img/users/', Usuarios.img)`
+                            ),
+                            "img",
+                        ],
+                    ],
+                }
+            })
+            const usuario2 = await db.Usuarios.findAll({
+                where: {
+                    perfil_id: 2
+                },
+                attributes: {
+                    include: [
+                        [
+                            sequelize.literal(
+                                `CONCAT('http://localhost:3000/img/users/', Usuarios.img)`
+                            ),
+                            "img",
+                        ],
+                    ],
+                }
             })
             const result = {
                 meta: {
@@ -81,6 +112,8 @@ const userAPIController = {
                     detail: `${URL_SERVER}/api/users/show/:id`,
                 },
                 data: perfil,
+                usuario1: usuario1,
+                usuario2: usuario2,
             };
             res.json(result)
         } catch (error) {
@@ -96,7 +129,7 @@ const userAPIController = {
             })
             const result = {
                 meta: {
-                    detail: `${URL_SERVER}/api/product/last/${ultUser[0].id}`,
+                    detail: `${URL_SERVER}/api/users/last/${ultUser[0].id}`,
                 },
                 data: {
                     id: ultUser[0].id,
@@ -136,7 +169,7 @@ const userAPIController = {
             const result = {
                 meta: {
                     status: 200,
-                    url: `${URL_SERVER}/api/product/detail/${usuarios.id}`
+                    url: `${URL_SERVER}/api/users/detail/${usuarios.id}`
                 },
                 data: usuarios
             }

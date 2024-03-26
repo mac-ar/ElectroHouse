@@ -1,12 +1,1 @@
-[
- {
-  "id": 2,
-  "nombre": "Aire Split BGH",
-  "usuario": 2,
-  "img": "aire.jpg",
-  "precio": 690770,
-  "descuento": 20,
-  "subtotal": 552616,
-  "cantidad": 1
- }
-]
+[]
