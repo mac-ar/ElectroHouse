@@ -1,1 +1,12 @@
-[]
+[
+ {
+  "id": 5,
+  "nombre": "Microondas BGH",
+  "usuario": 2,
+  "img": "micro.jpg",
+  "precio": 115770,
+  "descuento": 5,
+  "subtotal": 109981.5,
+  "cantidad": 1
+ }
+]
